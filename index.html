@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>DAC Consulting</title>
+  <title>FiF UK Chatbot - Asistent pre výberové konania</title>
+  <meta name="description" content="AI asistent Filozofickej fakulty Univerzity Komenského pre výberové konania, habilitačné a inauguračné kritériá">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="bot.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -21,11 +22,11 @@
       <!-- Kompletný režim (otvorený) -->
       <div class="user-info">
         <div class="avatar-wrapper">
-          <img src="dac.png" alt="DAC Consulting Asistent">
+          <img src="fif-uk-logo.png" alt="FiF UK Asistent" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cdefs%3E%3ClinearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%232159A0;stop-opacity:1%22 /%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%231B4B87;stop-opacity:1%22 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22url(%23grad)%22/%3E%3Ctext x=%2250%22 y=%2258%22 font-family=%22Ubuntu,sans-serif%22 font-size=%2232%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EUK%3C/text%3E%3C/svg%3E'">
           <div class="status-indicator"></div>
         </div>
         <div class="user-details">
-          <div class="user-name">DAC Consulting Asistent</div>
+          <div class="user-name">Asistent výberových konaní</div>
           <div class="user-status">Online</div>
         </div>
       </div>
@@ -35,7 +36,7 @@
 
     <!-- Header pre zatvorený stav -->
     <div id="chatbot-header-closed" onclick="toggleChatbot()" style="display: none;">
-      <img src="dac.png" alt="DAC Consulting Asistent" style="height:40px; width:40px; border-radius:50%; object-fit:cover;">
+      <span class="closed-bot-text">Asistent výberových konaní</span>
     </div>
 
     <div id="chatbot-body">
@@ -63,7 +64,7 @@
     let chatHistory = [
       {
         role: "system",
-        content: "Si presný a spoľahlivý AI asistent firmy DAC Consulting 2.0, špecializujúcej sa na colné poradenstvo, spotrebné dane, CBAM a školenia. KRITICKÉ PRAVIDLÁ: 1) Používaj VÝLUČNE informácie z poskytnutého kontextu. 2) Môžeš uvádzať IBEN ceny školení, ak sú explicitne uvedené v kontexte (napr. '260 € bez DPH', '145 € bez DPH', '520 € bez DPH', 'individuálna dohoda'). 3) ZAKÁZANÉ je vymýšľať akékoľvek iné ceny, poplatky, sadzby alebo číselné údaje, ktoré NIE SÚ v kontexte. 4) Pri otázkach o cenách iných služieb (nie školení) VŽDY odpovedz: 'Pre informácie o cenách našich služieb nás prosím kontaktujte, radi vám pripravíme cenovú ponuku.' 5) NIKDY neuvádzaj konkrétne percentuálne úspory, mesačné poplatky alebo ročné ceny, ktoré NIE SÚ v kontexte. 6) Odpovedaj profesionálne, stručne a len na základe faktov z kontextu. DAC Consulting 2.0 sa špecializuje na colné poradenstvo, spotrebné dane, CBAM mechanizmus a školenia."
+        content: "Si presný a spoľahlivý AI asistent Filozofickej fakulty Univerzity Komenského v Bratislave (FiF UK). Špecializuješ sa na informácie o výberových konaniach, habilitačných a inauguračných kritériách, vnútorných predpisoch fakulty a akademických procesoch. KRITICKÉ PRAVIDLÁ: 1) Používaj VÝLUČNE informácie z poskytnutého kontextu databázy. 2) Pri odkazovaní na vnútorné predpisy VŽDY uvádzaj ich presné čísla (napr. 'VP č. 7/2025', 'VP č. 19/2022', 'Smernica dekana č. 7/2024'). 3) ZAKÁZANÉ je vymýšľať akékoľvek kritériá, termíny, lehoty alebo numerické požiadavky, ktoré NIE SÚ explicitne uvedené v kontexte. 4) Pri nejasnostiach alebo absencii informácií v kontexte odporuč kontaktovanie zodpovednej osoby (Gabriela Baková, gabriela.bakova@uniba.sk). 5) Odpovedaj profesionálne, presne a akademicky, s rešpektom k univerzitným pravidlám a postupom. 6) Pri dotazoch na konkrétne kritériá (publikácie, citácie, projekty) uvádzaj presné číselné požiadavky z predpisov."
       }
     ];
 
@@ -73,10 +74,15 @@
       if (window.aiPowerData && window.RAGSystem) {
         ragSystem = new window.RAGSystem(window.aiPowerData.knowledgeBase);
         console.log('RAG systém inicializovaný s', window.aiPowerData.knowledgeBase.length, 'záznamami');
+        
+        // Zobrazenie štatistík databázy v konzole
+        const stats = ragSystem.getStats();
+        console.log('Kategórie v databáze:', stats.categories);
+        console.log('Počty záznamov:', stats.categoryCounts);
       }
       
       // Zobrazenie úvodnej správy s dynamickými kategóriami
-      appendMessage("DAC Consulting", "Dobrý deň! Som asistent spoločnosti DAC Consulting 2.0. Môžete si vybrať z ponúkaných tlačidiel alebo napísať vlastnú otázku. 👋", "bot", false, false, false);
+      appendMessage("FiF UK", "Dobrý deň! Som asistent Filozofickej fakulty Univerzity Komenského v Bratislave. Pomôžem vám s informáciami o výberových konaniach, habilitačných a inauguračných kritériách. Môžete si vybrať z ponúkaných kategórií alebo napísať vlastnú otázku. 👋", "bot", false, false, false);
       showCategoryButtons();
     });
 
@@ -142,11 +148,16 @@
       const formId = 'contact-form-' + Date.now(); // Unikátne ID pre každý formulár
       return `
         <div class="contact-form">
-          <h4>Pošlite nám správu</h4>
+          <h4>Kontaktujte Oddelenie personálnej práce</h4>
+          <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">
+            Pre bližšie informácie o výberových konaniach kontaktujte:<br>
+            <strong>Gabriela Baková</strong><br>
+            Email: <a href="mailto:gabriela.bakova@uniba.sk">gabriela.bakova@uniba.sk</a>
+          </p>
           <form id="${formId}" onsubmit="handleContactSubmit(event, '${formId}')">
             <div class="form-group">
-              <label for="${formId}-name">Meno *</label>
-              <input type="text" id="${formId}-name" name="from_name" placeholder="Vaše meno" required>
+              <label for="${formId}-name">Meno a priezvisko *</label>
+              <input type="text" id="${formId}-name" name="from_name" placeholder="Vaše meno a priezvisko" required>
             </div>
             <div class="form-group">
               <label for="${formId}-email">Email *</label>
@@ -154,7 +165,7 @@
             </div>
             <div class="form-group">
               <label for="${formId}-message">Správa *</label>
-              <textarea id="${formId}-message" name="message" placeholder="Opíšte vašu otázku alebo požiadavku..." required></textarea>
+              <textarea id="${formId}-message" name="message" placeholder="Opíšte vašu otázku týkajúcu sa výberových konaní..." required></textarea>
             </div>
             <button type="submit" class="form-submit-btn" id="${formId}-submit">
               Odoslať správu
@@ -182,7 +193,7 @@
             console.log('SUCCESS!', response.status, response.text);
             
             // Úspešná správa
-            appendMessage("DAC Consulting", "🎉 **Ďakujeme!** Vaša správa bola úspešne odoslaná. Odpovieme vám čo najskôr.", "bot");
+            appendMessage("FiF UK", "🎉 **Ďakujeme!** Vaša správa bola úspešne odoslaná na Oddelenie personálnej práce FiF UK. Odpovieme vám čo najskôr.", "bot");
             
             // Skryť formulár po úspešnom odoslaní
             const formContainer = form.closest('.contact-form').parentElement;
@@ -194,7 +205,7 @@
             console.log('FAILED...', error);
             
             // Chybová správa
-            appendMessage("DAC Consulting", "❌ **Ups!** Nastala chyba pri odosielaní správy. Skúste to prosím znovu alebo nás kontaktujte priamo na office@dacconsulting.sk", "bot");
+            appendMessage("FiF UK", "❌ **Ups!** Nastala chyba pri odosielaní správy. Skúste to prosím znovu alebo kontaktujte priamo Gabrielu Bakovú na gabriela.bakova@uniba.sk", "bot");
             
             // Obnoviť tlačidlo
             submitBtn.disabled = false;
@@ -222,7 +233,7 @@
       // Špeciálne spracovanie pre "Mám inú otázku"
       if (question === "Mám inú otázku") {
         appendMessage("Ty", question, "user");
-        appendMessage("DAC Consulting", "Samozrejme! Opýtajte sa ma na čokoľvek, čo vás zaujíma. Som tu, aby som vám pomohol. 😊", "bot");
+        appendMessage("FiF UK", "Samozrejme! Opýtajte sa ma na čokoľvek týkajúce sa výberových konaní, kritérií alebo predpisov FiF UK. Som tu, aby som vám pomohol. 😊", "bot");
         return;
       }
       
@@ -295,38 +306,26 @@
       // Pridaj správu užívateľa
       appendMessage("Ty", category, "user");
       
-      // Špeciálne spracovanie pre kategóriu "O spoločnosti" - priamo hľadaj v databáze
-      if (category === "O spoločnosti") {
+      // Špeciálne spracovanie pre kategórie ktoré majú priame odpovede
+      const directCategories = [
+        "Základné informácie", 
+        "Vedenie a organizácia", 
+        "Kontakt - výberové konania",
+        "Časová os výberového konania",
+        "Formulár žiadosti"
+      ];
+      
+      if (directCategories.some(cat => category.includes(cat))) {
         searchInDatabase(category);
         return;
       }
       
-      // Špeciálne spracovanie pre kategóriu "Kontakt" - priamo hľadaj v databáze
-      if (category === "Kontakt") {
-        searchInDatabase(category);
-        return;
-      }
-      
-      // Špeciálne spracovanie pre kategóriu "Cieľová skupina" - priamo hľadaj v databáze
-      if (category === "Cieľová skupina") {
-        searchInDatabase(category);
-        return;
-      }
-      
-      // Špeciálne spracovanie pre kategóriu "Služby" - zobraz podkategórie
-      if (category === "Služby") {
-        const subcategories = getUniqueSubcategories(category);
+      // Pre kategórie s podkategóriami (ak existujú)
+      const subcategories = getUniqueSubcategories(category);
+      if (subcategories.length > 0) {
+        const responseText = `Vyberte si konkrétnu oblasť z kategórie **${category}**:`;
+        appendMessage("FiF UK", responseText, "bot");
         
-        if (subcategories.length === 0) {
-          appendMessage("DAC Consulting", "Prepáčte, v tejto kategórii momentálne nemám žiadne informácie.", "bot");
-          return;
-        }
-
-        // Bot odpoveď
-        const responseText = `Vyberte si oblasť služieb, ktorá vás zaujíma:`;
-        appendMessage("DAC Consulting", responseText, "bot");
-        
-        // Vytvor quick buttons s podkategóriami
         const quickRepliesDiv = document.createElement('div');
         quickRepliesDiv.className = 'quick-replies';
         
@@ -347,13 +346,13 @@
       const items = getItemsByCategory(category);
       
       if (items.length === 0) {
-        appendMessage("DAC Consulting", "Prepáčte, v tejto kategórii momentálne nemám žiadne informácie.", "bot");
+        appendMessage("FiF UK", "Prepáčte, v tejto kategórii momentálne nemám žiadne informácie.", "bot");
         return;
       }
 
-      //Bot odpoveď
+      // Bot odpoveď
       const responseText = `Vyberte si konkrétnu tému z oblasti **${category}**:`;
-      appendMessage("DAC Consulting", responseText, "bot");
+      appendMessage("FiF UK", responseText, "bot");
       
       // Vytvor quick buttons s title z danej kategórie
       const quickRepliesDiv = document.createElement('div');
@@ -362,7 +361,7 @@
       items.forEach(item => {
         const btn = document.createElement('button');
         btn.className = 'quick-reply-btn';
-        btn.textContent = truncateText(item.title);
+        btn.textContent = truncateText(item.title, 50); // Dlhšie texty pre akademické názvy
         btn.title = item.title; // Celý text v tooltipe
         btn.onclick = () => handleTopicClick(item);
         quickRepliesDiv.appendChild(btn);
@@ -372,7 +371,7 @@
       chatbox.scrollTop = chatbox.scrollHeight;
     }
 
-    // Spracovanie kliknutia na podkategóriu (pre Služby)
+    // Spracovanie kliknutia na podkategóriu
     function handleSubcategoryClick(category, subcategory) {
       // Pridaj správu užívateľa
       appendMessage("Ty", subcategory, "user");
@@ -381,13 +380,13 @@
       const items = getItemsBySubcategory(category, subcategory);
       
       if (items.length === 0) {
-        appendMessage("DAC Consulting", "Prepáčte, v tejto oblasti momentálne nemám žiadne informácie.", "bot");
+        appendMessage("FiF UK", "Prepáčte, v tejto oblasti momentálne nemám žiadne informácie.", "bot");
         return;
       }
 
       // Bot odpoveď
       const responseText = `Vyberte si konkrétnu tému z oblasti **${subcategory}**:`;
-      appendMessage("DAC Consulting", responseText, "bot");
+      appendMessage("FiF UK", responseText, "bot");
       
       // Vytvor quick buttons s témami
       const quickRepliesDiv = document.createElement('div');
@@ -396,7 +395,7 @@
       items.forEach(item => {
         const btn = document.createElement('button');
         btn.className = 'quick-reply-btn';
-        btn.textContent = truncateText(item.title);
+        btn.textContent = truncateText(item.title, 50);
         btn.title = item.title; // Celý text v tooltipe
         btn.onclick = () => handleTopicClick(item);
         quickRepliesDiv.appendChild(btn);
@@ -415,13 +414,19 @@
       chatHistory.push({ role: "user", content: item.title });
       
       // Zobraz loading správu
-      appendMessage("DAC Consulting", "Pripravujem odpoveď...", "bot", true);
+      appendMessage("FiF UK", "Pripravujem odpoveď...", "bot", true);
       
       try {
         await delay(500);
         
         // Vytvor RAG kontext z tohto konkrétneho item
-        const ragContext = `Kontext:\nTitul: ${item.title}\nObsah: ${item.content}`;
+        let ragContext = `Kontext:\nKategória: ${item.category}\n`;
+        if (item.id) ragContext += `ID: ${item.id}\n`;
+        ragContext += `Titul: ${item.title}\nObsah: ${item.content}`;
+        if (item.keywords && item.keywords.length > 0) {
+          ragContext += `\nKľúčové slová: ${item.keywords.join(', ')}`;
+        }
+        
         const sources = [item.title];
         
         // API volanie s RAG kontextom
@@ -443,13 +448,16 @@
         }
 
         const data = await response.json();
-        let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáč, neviem na to odpovedať.";
+        let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
 
         // Odstráň loading správu
         removeLastBotMessage();
         
+        // Kontrola či odpoveď vyžaduje kontaktné tlačidlo
+        const needsContact = reply.includes("kontakt") || reply.includes("Gabriela Baková");
+        
         // Zobraz odpoveď od LLM
-        appendMessage("DAC Consulting", reply, "bot");
+        appendMessage("FiF UK", reply, "bot", false, false, needsContact);
         
         // Pridaj odpoveď do histórie
         chatHistory.push({ role: "assistant", content: reply });
@@ -457,22 +465,22 @@
       } catch (error) {
         console.error("Chyba pri volaní API:", error);
         removeLastBotMessage();
-        appendMessage("DAC Consulting", "Prepáčte, nastala chyba pri spracovaní vašej otázky. Skúste to prosím znova.", "bot");
+        appendMessage("FiF UK", "Prepáčte, nastala chyba pri spracovaní vašej otázky. Skúste to prosím znova alebo kontaktujte priamo Oddelenie personálnej práce.", "bot", false, false, true);
       }
     }
 
     // Späť na kategórie
     function showBackToCategories() {
-      appendMessage("DAC Consulting", "Vyberte si oblasť, ktorá vás zaujíma:", "bot");
+      appendMessage("FiF UK", "Vyberte si oblasť, ktorá vás zaujíma:", "bot");
       showCategoryButtons();
     }
 
-    // Funkcia pre vyhľadávanie v databáze (pre kategórie ako "O spoločnosti")
+    // Funkcia pre vyhľadávanie v databáze
     async function searchInDatabase(query) {
       chatHistory.push({ role: "user", content: query });
 
       // Vždy používaj RAG systém pre odpovede
-      appendMessage("DAC Consulting", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
+      appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
 
       try {
         await delay(800);
@@ -484,7 +492,7 @@
         let useRAG = false;
 
         if (ragSystem) {
-          relevantContent = ragSystem.searchRelevantContent(query, 3);
+          relevantContent = ragSystem.searchRelevantContent(query, 5); // Zvýšené na 5 pre komplexnejšie dotazy
           if (relevantContent.length > 0) {
             ragContext = ragSystem.buildContext(relevantContent);
             sources = relevantContent.map(item => item.title);
@@ -512,11 +520,11 @@
         }
 
         const data = await response.json();
-        let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáč, neviem na to odpovedať.";
+        let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
 
-        // Kontrola či odpoveď obsahuje "nemám presné informácie" alebo podobné frázy
+        // Kontrola či odpoveď obsahuje nedostatočné informácie
         const isInsufficientAnswer = reply.includes("nemám presné informácie") || 
-                                    reply.includes("kontaktujte nás") ||
+                                    reply.includes("kontaktujte") ||
                                     reply.includes("neviem na to odpovedať") ||
                                     reply.includes("nemám dostatok informácií");
 
@@ -524,12 +532,12 @@
         const isContactRelated = reply.includes("kontakt") || 
                                 reply.includes("telefón") || 
                                 reply.includes("email") ||
-                                reply.includes("office@dacconsulting.sk") ||
-                                reply.includes("+421") ||
+                                reply.includes("gabriela.bakova@uniba.sk") ||
+                                reply.includes("Gabriela Baková") ||
                                 sources.some(source => source.toLowerCase().includes("kontakt"));
 
         removeLastBotMessage();
-        appendMessage("DAC Consulting", reply, "bot", false, false, isInsufficientAnswer || isContactRelated);
+        appendMessage("FiF UK", reply, "bot", false, false, isInsufficientAnswer || isContactRelated);
         chatHistory.push({ role: "assistant", content: reply });
 
       } catch (error) {
@@ -538,9 +546,9 @@
         
         // Fallback pre lokálne testovanie
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-          appendMessage("DAC Consulting", "Na túto otázku neviem dostatočne odpovedať.", "bot", false, false, true);
+          appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Oddelenie personálnej práce.", "bot", false, false, true);
         } else {
-          appendMessage("DAC Consulting", `Ups, nastala chyba: ${error.message}`, "bot");
+          appendMessage("FiF UK", `Ups, nastala chyba: ${error.message}`, "bot");
         }
       }
     }
@@ -561,7 +569,7 @@ async function sendMessage() {
     .replace(/[\u0300-\u036f]/g, ''); // odstráni diakritiku
 
   // Vždy používaj RAG systém pre odpovede
-  appendMessage("DAC Consulting", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
+  appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
 
   try {
     await delay(800);
@@ -573,7 +581,7 @@ async function sendMessage() {
     let useRAG = false;
 
     if (ragSystem) {
-      relevantContent = ragSystem.searchRelevantContent(message, 3);
+      relevantContent = ragSystem.searchRelevantContent(message, 5); // Zvýšené na 5 pre lepší kontext
       if (relevantContent.length > 0) {
         ragContext = ragSystem.buildContext(relevantContent);
         sources = relevantContent.map(item => item.title);
@@ -601,11 +609,11 @@ async function sendMessage() {
     }
 
     const data = await response.json();
-    let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáč, neviem na to odpovedať.";
+    let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
 
-    // Kontrola či odpoveď obsahuje "nemám presné informácie" alebo podobné frázy
+    // Kontrola či odpoveď obsahuje nedostatočné informácie
     const isInsufficientAnswer = reply.includes("nemám presné informácie") || 
-                                reply.includes("kontaktujte nás") ||
+                                reply.includes("kontaktujte") ||
                                 reply.includes("neviem na to odpovedať") ||
                                 reply.includes("nemám dostatok informácií");
 
@@ -613,12 +621,12 @@ async function sendMessage() {
     const isContactRelated = reply.includes("kontakt") || 
                             reply.includes("telefón") || 
                             reply.includes("email") ||
-                            reply.includes("office@dacconsulting.sk") ||
-                            reply.includes("+421") ||
+                            reply.includes("gabriela.bakova@uniba.sk") ||
+                            reply.includes("Gabriela Baková") ||
                             sources.some(source => source.toLowerCase().includes("kontakt"));
 
     removeLastBotMessage();
-    appendMessage("DAC Consulting", reply, "bot", false, false, isInsufficientAnswer || isContactRelated);
+    appendMessage("FiF UK", reply, "bot", false, false, isInsufficientAnswer || isContactRelated);
     chatHistory.push({ role: "assistant", content: reply });
 
   } catch (error) {
@@ -627,9 +635,9 @@ async function sendMessage() {
     
     // Fallback pre lokálne testovanie
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      appendMessage("DAC Consulting", "Na túto otázku neviem dostatočne odpovedať.", "bot", false, false, true);
+      appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Oddelenie personálnej práce.", "bot", false, false, true);
     } else {
-      appendMessage("DAC Consulting", `Ups, nastala chyba: ${error.message}`, "bot");
+      appendMessage("FiF UK", `Ups, nastala chyba: ${error.message}`, "bot");
     }
   }
 }
@@ -660,12 +668,12 @@ async function sendMessage() {
       if (role === 'bot' && showContactButton) {
         const browserLang = navigator.language || navigator.userLanguage;
         const isEnglishBrowser = browserLang.startsWith('en');
-        const buttonText = isEnglishBrowser ? "Send us a message" : "Pošli nám správu";
+        const buttonText = isEnglishBrowser ? "Contact us" : "Kontaktovať nás";
         
         const contactBtnDiv = document.createElement('div');
         contactBtnDiv.innerHTML = `
           <button class="contact-btn" onclick="showContactForm(this)">
-            ${buttonText}
+            <i class="fas fa-envelope"></i> ${buttonText}
           </button>
         `;
         chatbox.appendChild(contactBtnDiv);

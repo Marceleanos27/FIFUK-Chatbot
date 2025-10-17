@@ -1,5 +1,5 @@
 // rag-system.js
-// RAG (Retrieval-Augmented Generation) systém pre AI chatbot
+// RAG (Retrieval-Augmented Generation) systém pre FIFUK Chatbot
 
 class RAGSystem {
   constructor(knowledgeBase) {
@@ -10,27 +10,31 @@ class RAGSystem {
       'ne', 'ni', 'no', 'od', 'po', 'pri', 'ro', 'ta', 'te', 'ti', 'tu', 'ty', 'uz', 'vo', 'za'
     ]);
     
-    // Synonymá pre lepšie vyhľadávanie
+    // Synonymá pre lepšie vyhľadávanie (prispôsobené pre FiF UK)
     this.synonyms = {
-      'clo': ['colny', 'colne', 'colnictvo', 'dovozne', 'vyvozne', 'customs', 'duty'],
-      'dan': ['dane', 'danovy', 'spotrebna', 'excise', 'odvod', 'zdanenie'],
-      'cbam': ['uhlikov', 'carbon', 'emisie', 'uhlikova', 'hranicny', 'mechanizmus'],
-      'poradenstvo': ['konzultacia', 'konzultacie', 'poradca', 'poradenstvi', 'consulting', 'advisory'],
-      'audit': ['kontrola', 'overenie', 'revize', 'prehliadka', 'inspekcia'],
-      'zastupovanie': ['zastupca', 'representation', 'zahranicny', 'zahranicie', 'zastupenie'],
-      'dovoz': ['import', 'dovozca', 'dovezie', 'dovazat', 'dovozu'],
-      'vyvoz': ['export', 'vyvozca', 'vyvezie', 'vyvazat', 'vyvozu'],
-      'tarif': ['sadzba', 'tarifny', 'sadzobnik', 'klasifikacia', 'kod'],
-      'origin': ['povod', 'povodove', 'origin', 'eur1', 'preukaz'],
-      'skolenie': ['kurz', 'vzdelavanie', 'training', 'seminar', 'workshop'],
-      'legislativa': ['zakon', 'predpisy', 'legislativny', 'normy', 'pravidla'],
+      'profesor': ['profesorsky', 'profesura', 'profesor', 'inauguracny', 'inauguracia'],
+      'docent': ['docentsky', 'docentura', 'docent', 'habilitacny', 'habilitacia'],
+      'vyberkone': ['vyberove', 'konanie', 'vyber', 'konkurz', 'selection'],
+      'kriterium': ['kriteria', 'podmienky', 'poziadavky', 'requirements', 'predpoklady'],
+      'publikacia': ['publikacie', 'publikacny', 'vysledky', 'vystup', 'clanok', 'monografia'],
+      'citacia': ['citacie', 'citovany', 'ohlas', 'ohlasovost', 'citation'],
+      'projekt': ['projekty', 'vyskum', 'grant', 'vega', 'apvv', 'kega'],
+      'doktorand': ['doktorandi', 'doktorandsky', 'dizertacia', 'phd', 'skolitel'],
+      'katedra': ['katedry', 'pracovisko', 'oddelenie', 'department'],
+      'dekan': ['dekana', 'dekanske', 'vedenie', 'fakulta'],
+      'ucitel': ['ucitela', 'pedagogicky', 'pedagog', 'vyucba', 'vyucujuci'],
+      'zmluva': ['pracovny', 'pomer', 'contract', 'employment', 'obsadenie'],
+      'funkcia': ['funkcne', 'miesto', 'pozicia', 'position'],
+      'studium': ['studijny', 'program', 'odbor', 'bakalarske', 'magisterske', 'doktorandske'],
+      'komisia': ['vyberova', 'rada', 'committee', 'hodnotenie'],
+      'ziadost': ['prihlaska', 'application', 'formular', 'dokumenty'],
       'kontakt': ['spojenie', 'informacie', 'udaje', 'email', 'telefon', 'adresa'],
-      'cena': ['cenny', 'ceny', 'kolko', 'stoji', 'price', 'cenova', 'ponuka']
+      'termin': ['lehota', 'datum', 'cas', 'deadline', 'faza']
     };
   }
 
   // Hlavná metóda pre vyhľadávanie relevantného obsahu
-  searchRelevantContent(query, maxResults = 3) {
+  searchRelevantContent(query, maxResults = 5) {
     const normalizedQuery = this.normalizeText(query);
     const queryWords = this.extractKeywords(normalizedQuery);
     const bigrams = this.extractBigrams(normalizedQuery);
@@ -48,64 +52,82 @@ class RAGSystem {
     .sort((a, b) => b.relevanceScore - a.relevanceScore)
     .slice(0, maxResults);
 
-    console.log('RAG Search Results:', results.map(r => ({ title: r.title, score: r.relevanceScore })));
+    console.log('RAG Search Results:', results.map(r => ({ 
+      id: r.id, 
+      title: r.title, 
+      category: r.category,
+      score: r.relevanceScore 
+    })));
     return results;
   }
 
-  // Výpočet skóre relevancie (vylepšený)
+  // Výpočet skóre relevancie (optimalizovaný pre FiF UK)
   calculateRelevanceScore(item, queryWords, fullQuery, bigrams = []) {
     let score = 0;
     const normalizedTitle = this.normalizeText(item.title);
     const normalizedContent = this.normalizeText(item.content);
     const normalizedKeywords = item.keywords.map(k => this.normalizeText(k));
+    const normalizedCategory = this.normalizeText(item.category);
     
-    // 1. Scoring pre jednotlivé slová
+    // 1. Scoring pre kategóriu (prioritizácia podľa typu obsahu)
+    queryWords.forEach(word => {
+      if (normalizedCategory.includes(word)) {
+        score += 3; // Bonus za relevantnosť kategórie
+      }
+    });
+    
+    // 2. Scoring pre jednotlivé slová
     queryWords.forEach(word => {
       // Kľúčové slová (najvyššia priorita)
       const keywordMatch = normalizedKeywords.some(keyword => 
         keyword.includes(word) || word.includes(keyword) || this.isSimilar(word, keyword)
       );
       if (keywordMatch) {
-        score += 6; // Zvýšené z 5 na 6
+        score += 7; // Vysoká váha pre keywords
       }
       
       // Názov
       if (normalizedTitle.includes(word)) {
-        score += 4;
+        score += 5;
       }
       
       // Obsah (s TF-IDF boost pre zriedkavé slová)
       if (normalizedContent.includes(word)) {
         const frequency = (normalizedContent.match(new RegExp(word, 'g')) || []).length;
-        score += Math.min(frequency * 1.5, 4); // Max 4 body za slovo
+        score += Math.min(frequency * 1.2, 5); // Max 5 body za slovo v obsahu
       }
     });
 
-    // 2. Scoring pre bigramy (2-slovné frázy)
+    // 3. Scoring pre bigramy (2-slovné frázy)
     bigrams.forEach(bigram => {
       if (normalizedContent.includes(bigram) || normalizedTitle.includes(bigram)) {
-        score += 5; // Vysoké skóre pre presné frázy
+        score += 6; // Vysoké skóre pre presné frázy
       }
       normalizedKeywords.forEach(keyword => {
         if (keyword.includes(bigram)) {
-          score += 6;
+          score += 8; // Extra vysoké skóre pre bigram v keywords
         }
       });
     });
 
-    // 3. Bonus za presný match celej frázy
+    // 4. Bonus za presný match celej frázy
     if (normalizedContent.includes(fullQuery) || normalizedTitle.includes(fullQuery)) {
-      score += 8; // Zvýšené z 3 na 8
+      score += 10; // Vysoký bonus za presný match
     }
 
-    // 4. Bonus za čísla (ceny školení, telefónne čísla, dátumy)
+    // 5. Bonus za čísla (roky, čísla predpisov, telefónne čísla)
     const numbers = fullQuery.match(/\d+/g);
     if (numbers) {
       numbers.forEach(num => {
-        if (normalizedContent.includes(num)) {
-          score += 3;
+        if (normalizedContent.includes(num) || item.id.includes(num)) {
+          score += 4; // Bonus za zhodu čísel
         }
       });
+    }
+
+    // 6. Bonus za ID match (napr. VP_7_2025)
+    if (item.id && fullQuery.includes(item.id.toLowerCase())) {
+      score += 15; // Veľký bonus za priamy match ID
     }
 
     return score;
@@ -116,7 +138,7 @@ class RAGSystem {
     return normalizedText
       .split(/\s+/)
       .filter(word => word.length > 2 && !this.stopWords.has(word))
-      .slice(0, 12);
+      .slice(0, 15); // Zvýšené z 12 na 15 pre komplexnejšie dotazy
   }
 
   // Extrakcia bigramov (2-slovné frázy)
@@ -126,13 +148,26 @@ class RAGSystem {
     
     for (let i = 0; i < words.length - 1; i++) {
       const bigram = `${words[i]} ${words[i + 1]}`;
-      // Preskočiť bigramy so stop words
-      if (!this.stopWords.has(words[i]) || !this.stopWords.has(words[i + 1])) {
+      // Preskočiť bigramy kde sú OBE slová stop words
+      if (!(this.stopWords.has(words[i]) && this.stopWords.has(words[i + 1]))) {
         bigrams.push(bigram);
       }
     }
     
     return bigrams;
+  }
+
+  // Extrakcia trigramov (3-slovné frázy) pre ešte presnejšie vyhľadávanie
+  extractTrigrams(normalizedText) {
+    const words = normalizedText.split(/\s+/).filter(w => w.length > 0);
+    const trigrams = [];
+    
+    for (let i = 0; i < words.length - 2; i++) {
+      const trigram = `${words[i]} ${words[i + 1]} ${words[i + 2]}`;
+      trigrams.push(trigram);
+    }
+    
+    return trigrams;
   }
 
   // Rozšírenie slov o synonymá
@@ -160,18 +195,23 @@ class RAGSystem {
     if (Math.abs(word1.length - word2.length) > 2) return false;
     if (word1.includes(word2) || word2.includes(word1)) return true;
     
-    // Tolerancia max 1 preklep
+    // Levenshtein distance - tolerancia max 1-2 preklepy
+    const maxChanges = word1.length > 6 ? 2 : 1;
     let changes = 0;
     const maxLen = Math.max(word1.length, word2.length);
+    
     for (let i = 0; i < maxLen; i++) {
       if (word1[i] !== word2[i]) changes++;
-      if (changes > 1) return false;
+      if (changes > maxChanges) return false;
     }
-    return changes <= 1;
+    
+    return changes <= maxChanges;
   }
 
   // Normalizácia textu
   normalizeText(text) {
+    if (!text) return '';
+    
     return text.toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '') // Odstránenie diakritiky
@@ -189,24 +229,70 @@ class RAGSystem {
     }
     
     const context = relevantContent
-      .map((item, index) => `**${index + 1}. ${item.title}**:\n${item.content}`)
+      .map((item, index) => {
+        let contextPart = `**${index + 1}. ${item.title}** [${item.category}]`;
+        if (item.id) {
+          contextPart += ` (ID: ${item.id})`;
+        }
+        contextPart += `:\n${item.content}`;
+        return contextPart;
+      })
       .join('\n\n');
     
-    // Kontrola či obsahuje konzultačné kľúčové slová
-    const isConsultationRelated = relevantContent.some(item => 
-      item.keywords.some(kw => ['konzultácia', 'stretnutie', 'poradenstvo'].includes(kw.toLowerCase()))
+    // Kontrola či obsahuje kontaktné informácie
+    const hasContactInfo = relevantContent.some(item => 
+      item.category === 'Kontakt - výberové konania' || 
+      item.keywords.some(kw => ['kontakt', 'email', 'telefon'].includes(kw.toLowerCase()))
     );
     
-    const consultationNote = isConsultationRelated 
-      ? ' Pri ponuke konzultácie odporuč kontaktovanie na telefón alebo email uvedený v kontexte.'
+    // Kontrola či ide o kritériá alebo predpisy
+    const isCriteriaRelated = relevantContent.some(item => 
+      item.category.includes('Vnútorný predpis') || 
+      item.category.includes('Habilitačné a inauguračné konanie')
+    );
+    
+    const contactNote = hasContactInfo 
+      ? '\n\nPOZNÁMKA: Pri odpovedaní na otázky o kontaktoch použi presne uvedené kontaktné údaje (email, telefón).'
       : '';
     
-    return `PRESNÉ INFORMÁCIE O DAC CONSULTING 2.0 (používaj LEN tieto fakty):\n\n${context}\n\nINŠTRUKCIE: Odpovedaj presne podľa týchto informácií. NEPRÍDÁVAJ žiadne vlastné detaily.${consultationNote} Ceny školení uvedené v kontexte môžeš používať. Pre ceny iných služieb odporuč kontaktovanie firmy.`;
+    const criteriaNote = isCriteriaRelated
+      ? '\n\nPOZNÁMKA: Uvádzaj presné požiadavky a kritériá ako sú uvedené v predpisoch. Pri nejasnostiach odporuč kontaktovanie zodpovednej osoby.'
+      : '';
+    
+    return `PRESNÉ INFORMÁCIE O FILOZOFICKEJ FAKULTE UK (používaj LEN tieto fakty):\n\n${context}\n\nINŠTRUKCIE: Odpovedaj presne podľa týchto informácií z databázy FiF UK. NEPRÍDÁVAJ žiadne vlastné interpretácie alebo detaily, ktoré nie sú explicitne uvedené v kontexte. Pri odkazovaní na vnútorné predpisy uvádzaj ich čísla (napr. VP č. 7/2025).${contactNote}${criteriaNote}`;
   }
 
   // Vyhľadávanie podľa ID
   getById(id) {
     return this.knowledgeBase.find(item => item.id === id);
+  }
+
+  // Vyhľadávanie podľa kategórie
+  getByCategory(category) {
+    return this.knowledgeBase.filter(item => 
+      item.category.toLowerCase().includes(category.toLowerCase())
+    );
+  }
+
+  // Vyhľadávanie podľa kľúčových slov
+  getByKeyword(keyword) {
+    const normalized = this.normalizeText(keyword);
+    return this.knowledgeBase.filter(item =>
+      item.keywords.some(kw => this.normalizeText(kw).includes(normalized))
+    );
+  }
+
+  // Získanie štatistík databázy
+  getStats() {
+    const categories = [...new Set(this.knowledgeBase.map(item => item.category))];
+    return {
+      totalItems: this.knowledgeBase.length,
+      categories: categories,
+      categoryCounts: categories.map(cat => ({
+        category: cat,
+        count: this.knowledgeBase.filter(item => item.category === cat).length
+      }))
+    };
   }
 }
 

@@ -1,457 +1,207 @@
 // database.js
-// DAC Consulting Knowledge Base - Aktualizovaná databáza (Október 2025)
+// FIFUK Knowledge Base - Aktualizovaná databáza (17Október 2025)
 
 window.aiPowerData = {
   
   knowledgeBase: [
-    // Landing page - DAC Consulting 2.0
-{
-id: "dac_hp_01",
-category: "O spoločnosti",
-title: "DAC Consulting 2.0 v Bratislave",
-content: "V našom tíme nájdete expertov s dlhoročnými skúsenosťami v oblasti ciel, daní a medzinárodného obchodu. V našej spoločnosti si dávame záležať na tom, aby náš servis bol vždy aktuálny, a preto sústavne sledujeme vývoj v odbore i v relevantnej legislatíve. V súčasnej podobe funguje spoločnosť DAC Consulting už od roku 2007. Už od samého začiatku nám ide o to, aby od nás každý z našich klientov dostával služby presne podľa svojich potrieb a požiadaviek a dostal tak možnosť zjednodušiť svoj systém, zefektívniť svoje procesy a ušetriť výdavky v rámci platných pravidiel.",
-keywords: ["DAC Consulting 2.0", "Bratislava", "rok 2007", "colná problematika", "spotrebné dane", "medzinárodný obchod", "experti", "dlhoročné skúsenosti", "služby na mieru", "zefektívnenie procesov"]
-},
+  
+  
+  {
+    "id": "VP_7_2025-Čl1",
+    "category": "Vnútorný predpis",
+    "title": "Všeobecné kritériá na obsadzovanie funkčných miest profesorov a docentov",
+    "content": "Stanovuje kvalifikačné predpoklady pre obsadenie funkčných miest profesora a docenta. Pre profesora je to splnenie kritérií na titul profesor v príslušnom alebo súvisiacom odbore. Pre docenta je to splnenie kritérií na titul docent. Uchádzač na miesto profesora musí mať predpoklady rozvíjať študijný odbor a niesť zodpovednosť za kvalitu a rozvoj magisterských a doktorandských študijných programov, ako aj za rozvoj habilitačného a inauguračného odboru. Uchádzač na miesto docenta musí mať predpoklady rozvíjať študijný odbor a niesť zodpovednosť za kvalitu a rozvoj bakalárskeho študijného programu, ako aj za rozvoj habilitačného a inauguračného odboru.",
+    "keywords": ["kvalifikačný predpoklad", "funkčné miesto profesora", "funkčné miesto docenta", "habilitačné konanie", "inauguračné konanie", "študijný odbor", "zodpovednosť za študijný program"]
+  },
+  {
+    "id": "VP_7_2025-Čl2",
+    "category": "Vnútorný predpis",
+    "title": "Opakované obsadenie funkčného miesta profesora a docenta",
+    "content": "Definuje podmienky pre opakované obsadenie funkčného miesta. Pre profesora: za posledných 5 rokov musí mať najmenej 5 publikácií (V1-V3, P1), z toho aspoň jedna monografia V1 alebo 3 práce v Web of Science/Scopus, maximálne jedna učebnica P1, aspoň dve práce s kvalitatívnou úrovňou A-, zahraničné citácie od autorov z iného pracoviska a byť riešiteľom výskumného projektu. Pre docenta: podmienky sú podobné, stačí však jedna monografia V1 alebo jedna práca v Web of Science/Scopus. Obdobie sa predlžuje o materskú/rodičovskú dovolenku, PN a pod.",
+    "keywords": ["opakované obsadenie", "výstup kategórie V1", "Web of Science", "Scopus", "kvalitatívna úroveň A-", "citácie", "zahraničný ohlas", "riešiteľ projektu", "monografia"]
+  },
+  {
+    "id": "VP_7_2025-Čl3",
+    "category": "Vnútorný predpis",
+    "title": "Konkrétne podmienky na obsadzovanie funkčných miest profesorov",
+    "content": "Uchádzač na miesto profesora musí spĺňať všetky všeobecné aj opakované podmienky. Konkrétne podmienky pre každé miesto stanovuje dekan na základe návrhu vedúceho katedry, s prihliadnutím na potreby študijných programov a zameranie výskumu katedry. Tieto konkrétne podmienky sa zverejňujú v ozname o výberovom konaní. Obsadzovanie miest prebieha formou výberového konania podľa zásad UK.",
+    "keywords": ["konkrétne podmienky", "dekan", "vedúci katedry", "výberové konanie", "oznam o výberovom konaní"]
+  },
+  {
+    "id": "VP_7_2025-Úvod",
+    "category": "Vnútorný predpis",
+    "title": "Úvodné ustanovenia a záverečné ustanovenia",
+    "content": "Dokument je Vnútorný predpis č. 7/2025 Filozofickej fakulty UK s názvom 'Všeobecné kritériá na obsadzovanie funkčných miest profesorov a docentov a konkrétne podmienky na obsadzovanie funkčných miest profesorov'. Bol schválený Vedeckou radou FIF UK 29. mája 2025 a Vedeckou radou UK 2. júna 2025. Platnosť a účinnosť nadobúda dňom schválenia VR UK. Týmto predpisom sa rušia predchádzajúce všeobecné kritériá z roku 2014.",
+    "keywords": ["Vnútorný predpis č. 7/2025", "Filozofická fakulta UK", "Vedecká rada", "platnosť", "účinnosť", "zrušenie predchádzajúceho predpisu"]
+  },
+  {
+    "id": "VP_7_2024-Čl1",
+    "category": "Vnútorný predpis",
+    "title": "Vyhlásenie výberového konania",
+    "content": "Stanovuje postup vyhlásenia výberového konania na FiF UK. Personálne oddelenie v októbri informuje o končiacich pracovných pomeroch. Vedúci katedry žiada dekana o vyhlásenie konania zaslaním oznamu (Príloha 1) - pre funkčné miesta najmenej 12 týždňov pred nástupom, pre pracovné miesta 8 týždňov. Dekan výberové konanie vyhlasuje zverejnením oznamu. Žiadosť musí potvrdiť, že miesto je neobsadené, je v súlade so systemizáciou a má finančné krytie.",
+    "keywords": ["vyhlásenie výberového konania", "vedúci katedry", "dekan", "oznam o výberovom konaní", "systemizácia", "termín nástupu", "personálne oddelenie"]
+  },
+  {
+    "id": "VP_7_2024-Čl2",
+    "category": "Vnútorný predpis", 
+    "title": "Žiadosť o zaradenie do výberového konania",
+    "content": "Upravuje povinný obsah žiadosti uchádzača. Pre pracovné/funkčné miesta: žiadosť (Príloha 3), vedecko-pedagogická charakteristika/životopis, kópie dokladov o vzdelaní, zoznam publikačných výstupov, informácia o plnení inauguračných/habilitačných kritérií (Príloha 4) a vyjadrenie k zverejneniu údajov (Príloha 5). Pre funkciu vedúceho katedry: koncepcia rozvoja pracoviska. Neúplná žiadosť znamená nezaradenie do konania.",
+    "keywords": ["žiadosť o zaradenie", "povinné prílohy", "vedecko-pedagogická charakteristika", "zoznam publikácií", "habilitačné kritériá", "inauguračné kritériá", "koncepcia rozvoja", "neúplná žiadosť"]
+  },
+  {
+    "id": "VP_7_2024-Čl3",
+    "category": "Vnútorný predpis",
+    "title": "Hodnotenie uchádzača",
+    "content": "Popisuje proces hodnotenia. Pre funkčné miesta komisia najprv posudzuje splnenie inauguračných/habilitačných kritérií. Nesplnenie znamená nepozvanie na konanie. Následne komisia hodnotí všetkých pozvaných uchádzačov podľa kvalitatívnych a kvantitatívnych kritérií, ktoré reflektujú pedagogickú a tvorivú činnosť s medzinárodným rozmerom. Hodnotenie je primerané a nediskriminačné, s prihliadnutím na dĺžku praxe a dlhodobé prerušenie činnosti (materská/rodičovská dovolenka, PN).",
+    "keywords": ["hodnotenie uchádzača", "výberová komisia", "inauguračné kritériá", "habilitačné kritériá", "kvalitatívne kritériá", "kvantitatívne kritériá", "medzinárodný rozmer", "nediskriminačné hodnotenie", "prerušenie činnosti"]
+  },
+  {
+    "id": "VP_7_2024-Úvod",
+    "category": "Vnútorný predpis",
+    "title": "Úvod a záverečné ustanovenia",
+    "content": "Dokument je Smernicou dekana č. 7/2024 s názvom 'Organizácia výberových konaní na FiF UK'. Nadobúda platnosť a účinnosť 1. júla 2024. Ruší sa predchádzajúci vnútorný predpis č. 1/2023. Prílohy obsahujú vzorové dokumenty: oznamy o výberovom konaní, žiadosť, informáciu o plnení kritérií, vyjadrenie k zverejneniu údajov a správu o neplnení kritérií.",
+    "keywords": ["Smernica dekana č. 7/2024", "Organizácia výberových konaní", "platnosť od 1.7.2024", "zrušenie VP 1/2023", "prílohy", "vzorové dokumenty"]
+  },
+  {
+    "id": "VP_19_2022-Čl1",
+    "category": "Vnútorný predpis",
+    "title": "Úvodné ustanovenia a všeobecné zásady",
+    "content": "Tento predpis upravuje zásady a priebeh výberových konaní na UK. Obsadzovanie miest sa uskutočňuje podľa schválenej systemizácie. Výnimky z povinnosti výberového konania: pracovné pomery na dobu určitú do 1 roka, kratší pracovný čas a dohody. Vedúceho zamestnanca je možné bez výberového konania vymenovať maximálne na 6 mesiacov. Pracovný pomer vysokoškolského učiteľa sa uzatvára maximálne na 5 rokov, s predĺžením o materskú/rodičovskú dovolenku a PN. Funkčné miesto možno obsadiť na 5 rokov, po tretom obsadení a celkovo 9 rokov získava učiteľ právo na zmluvu do 70 rokov veku.",
+    "keywords": ["výberové konanie", "systemizácia", "výnimky z výberového konania", "pracovný pomer na dobu určitú", "funkčné miesto", "doba trvania pracovného pomeru", "vek 70 rokov"]
+  },
+  {
+    "id": "VP_19_2022-Čl2-3",
+    "category": "Vnútorný predpis",
+    "title": "Vyhlásenie a oznámenie výberového konania",
+    "content": "Výberové konania sa vyhlasujú na webovej stránke Ministerstva školstva a na úradnej výveske minimálne 3 týždne pred konaním. Pre vedúcich zamestnancov aj v masmédiách. Oznámenie musí obsahovať: označenie zamestnávateľa, názov miesta/funkcie, pracovnú náplň, kvalifikačné predpoklady, základnú mzdu, lehotu a miesto podania žiadosti, zoznam požadovaných dokladov. Pre funkčné miesta musí oznámenie obsahovať požiadavky v oblasti pedagogickej a tvorivej činnosti v súlade s rámcovými kritériami UK a fakulty.",
+    "keywords": ["vyhlásenie výberového konania", "oznam o výberovom konaní", "kvalifikačné predpoklady", "základná mzda", "pracovná náplň", "rámcové kritériá", "ministerstvo školstva"]
+  },
+  {
+    "id": "VP_19_2022-Čl4",
+    "category": "Vnútorný predpis",
+    "title": "Výberová komisia",
+    "content": "Zamestnávateľ zriaďuje výberovú komisiu. Pre bežné pracovné miesta a funkcie vedúcich má najmenej 3 členov. Pre funkčné miesta docentov a profesorov má presne 5 členov: 2 vymenúva rektor (jeden na návrh zástupcu zamestnancov), 1 vedúci pracoviska, 1 Vedecká rada UK, 1 dekan. Členovia pre funkčné miesta musia spĺňať kvalifikačné predpoklady na dané miesto, dvaja musia byť z inštitúcií mimo UK. Na konaní sa zúčastňuje aj zástupca študentov bez hlasovacieho práva.",
+    "keywords": ["výberová komisia", "zloženie komisie", "rektor", "dekan", "Vedecká rada UK", "kvalifikačné predpoklady", "zástupca študentov", "externý člen"]
+  },
+  {
+    "id": "VP_19_2022-Čl5-6",
+    "category": "Vnútorný predpis",
+    "title": "Priebeh výberového konania a hlasovanie",
+    "content": "Výberové konanie môže prebiehať písomne, formou pohovoru, videokonferencie alebo hybridne. Konania na miesta vysokoškolských učiteľov a funkčné miesta sú verejné. Komisia hodnotí schopnosti, pedagogickú a tvorivú činnosť uchádzača. Hlasovanie je tajné, členovia zostavujú poradie uchádzačov. Používa sa systém dvoch kôl - v prvom kole musí uchádzač získať od väčšiny členov 1. miesto, inak nasleduje 2. kolo. Poradie je záväzné, zamestnávateľ musí uzavrieť zmluvu s uchádzačom na 1. mieste.",
+    "keywords": ["priebeh výberového konania", "tajné hlasovanie", "dve kolá hlasovania", "verejné konanie", "hodnotenie uchádzača", "záväzné poradie", "videokonferencia"]
+  },
+  {
+    "id": "VP_19_2022-Čl7-8",
+    "category": "Vnútorný predpis",
+    "title": "Výsledky výberového konania a záverečné ustanovenia",
+    "content": "O výberovom konaní sa vedie zápisnica. Pre miesta učiteľov a funkčné miesta sa zverejňujú: zoznam členov komisie, údaje vybraného uchádzača (so súhlasom), študijný odbor a počet uchádzačov. Zamestnávateľ oznámi výsledky do 10 dní. Predpis nadobúda platnosť schválením v Akademickom senáte UK a ruší predchádzajúce predpisy č. 14/2014 a 24/2014.",
+    "keywords": ["zápisnica", "zverejnenie výsledkov", "oznámenie výsledkov", "platnosť predpisu", "zrušenie predchádzajúcich predpisov", "Akademický senát UK"]
+  },
+  {
+    "id": "HIK_MINIMÁLNE_KRITÉRIÁ",
+    "category": "Habilitačné a inauguračné konanie",
+    "title": "Minimálne kritériá na titul docent a profesor na FiF UK",
+    "content": "Stanovuje minimálne povinné požiadavky pre získanie titulov docent a profesor na Filozofickej fakulte UK. Kritériá sú štruktúrované do piatich oblastí: 1. Vzdelávacia činnosť a tvorba študijných materiálov (pedagogická prax, učebnice, vedenie záverečných prác), 2. Vedeckovýskumná alebo tvorivá umelecká činnosť (výstupy v kategóriách A+, A, A-), 3. Ohlasy na publikačné výstupy (celkové ohlasy a ohlasy vo WoS/Scopus), 4. Vedecká škola (výchova doktorandov, účast vo výskumných projektoch), 5. Ďalšie špecifické kritériá odboru (monografie, výstupy v medzinárodnom jazyku, H-index). Požadované hodnoty sa líšia pre docent a profesor.",
+    "keywords": ["minimálne kritériá", "titul docent", "titul profesor", "vedeckovýskumná činnosť", "vzdelávacia činnosť", "vedecká škola", "ohlasové citácie", "výskumné projekty"]
+  },
+  {
+    "id": "HIK_KATEGORIZÁCIA",
+    "category": "Habilitačné a inauguračné konanie", 
+    "title": "Kategorizácia vedeckých výstupov",
+    "content": "Definuje kvalitatívne úrovne vedeckých publikácií A+, A, A-, B, C na základe citovanosti a typu publikácie. Úroveň A+ vyžaduje napr. 5 citácií od autorov z rôznych pracovísk, citácie zo 4 krajín alebo inštitúcií, monografiu recenzovanú v SCIE/SSCI/AHCI, alebo článok v týchto indexoch. Úroveň A vyžaduje 3 takéto citácie, úroveň A- jednu citáciu od externého autora. Úroveň B sa udeľuje za akúkoľvek externú citáciu alebo monografiu, úroveň C pre výstupy, ktoré nespĺňajú vyššie kritériá.",
+    "keywords": ["kategorizácia výstupov", "úroveň A+", "úroveň A", "úroveň A-", "Web of Science", "Scopus", "citovanosť", "medzinárodná citovanosť", "vedecká monografia"]
+  },
+  {
+    "id": "HIK_DOKTORANDI_PROJEKTY",
+    "category": "Habilitačné a inauguračné konanie",
+    "title": "Špecifické kritériá pre vedeckú školu a projekty",
+    "content": "Špecifikuje požiadavky na výchovu doktorandov a účast vo výskumných projektoch. Pre docenta: 2 projekty ako účastník/vedúci, z toho 1 úspešne ukončený. Pre profesora: 2 doktorandi (1 po dizertačnej skúške), 2 projekty ako vedúci, z toho 1 úspešne ukončený. Započítavajú sa projekty APVV, VEGA, KEGA, EU a iné medzinárodné súťažné granty. Interné granty sa nezapočítavajú. Obdobie 6 rokov sa predlžuje o materskú/rodičovskú dovolenku, PN a pod.",
+    "keywords": ["výchova doktorandov", "dizertačná skúška", "výskumné projekty", "APVV", "VEGA", "KEGA", "európske projekty", "riešiteľ projektu", "granty"]
+  },
+  {
+    "id": "HIK_PUBLIKAČNÉ_POŽIADAVKY",
+    "category": "Habilitačné a inauguračné konanie",
+    "title": "Špecifické publikačné požiadavky podľa odborov",
+    "content": "Dopĺňa špecifické kritériá pre jednotlivé odbory. Pre profesora: povinná 1 vedecká monografia (6 AH), 1 ďalší vedecký výstup (3 AH), spolu 40 vedeckých výstupov (z toho 9 v medzinárodnom jazyku), 18 odborných a pedagogických výstupov, 9 medzinárodných účasťí, H-index 6. Pre filologické odbory sa odborný preklad (3 AH) započítava ako 3 odborné práce. Medzinárodný jazyk: angličtina, nemčina, francúzština, španielčina, pre filológie aj príslušný filologický jazyk.",
+    "keywords": ["vedecká monografia", "autorský hárok", "medzinárodný jazyk", "odborný preklad", "H-index", "filologické odbory", "aktívna účasť na podujatí"]
+  },
+  {
+    "id": "CASOVA_OS_1",
+    "category": "Časová os výberového konania",
+    "title": "Začiatok procesu a vyhlásenie konania",
+    "content": "Proces začína v októbri, kedy Oddelenie personálnej práce informuje vedúcich katedier a pracovníkov SAČK o končiacich pracovných pomeroch na nasledujúci kalendárny rok. Vedúci katedry následne žiada dekana o vyhlásenie výberového konania zaslaním Oznamu (Príloha 1 alebo 2) - pre funkčné miesta najmenej 12 týždňov pred nástupom, pre iné pracovné miesta 8 týždňov. Dekan potom vyhlási výberové konanie zverejnením Oznamu.",
+    "keywords": ["začiatok procesu", "oddelenie personálnej práce", "končiace pracovné pomery", "vedúci katedry", "oznam o výberovom konaní", "12 týždňov", "8 týždňov", "vyhlásenie konania"]
+  },
+  {
+    "id": "CASOVA_OS_2",
+    "category": "Časová os výberového konania",
+    "title": "Podávanie žiadostí a predbežné posúdenie",
+    "content": "Uchádzači podávajú Žiadosť o zaradenie do výberového konania (Príloha 3) a požadované doklady podľa pokynov v zverejnenom ozname. Výberová komisia následne vykonáva predbežné posúdenie žiadostí pred pozvaním uchádzačov na konanie. V prípade nesplnenia kritérií vypracuje internú správu (Príloha 6).",
+    "keywords": ["podanie žiadosti", "žiadosť o zaradenie", "povinné prílohy", "predbežné posúdenie", "výberová komisia", "interná správa", "nesplnenie kritérií"]
+  },
+  {
+    "id": "CASOVA_OS_3",
+    "category": "Časová os výberového konania",
+    "title": "Hodnotenie a uzavretie výberového konania",
+    "content": "Výberová komisia pozýva uchádzačov na zasadnutie, kde prebieha hodnotenie kvalitatívnych a kvantitatívnych aspektov pedagogickej a tvorivej činnosti. Po vykonaní hodnotenia a stanovení poradia uchádzačov dekan uzatvára výberové konanie a oznamuje výsledok uchádzačovi.",
+    "keywords": ["hodnotenie uchádzačov", "zasadnutie výboru", "kvalitatívne hodnotenie", "kvantitatívne hodnotenie", "pedagogická činnosť", "tvorivá činnosť", "uzavretie konania", "oznámenie výsledkov"]
+  },
+  {
+    "id": "ZIADOST_FORMULAR_1",
+    "category": "Formulár žiadosti",
+    "title": "Štruktúra a všeobecné informácie žiadosti",
+    "content": "Formulár žiadosti o zaradenie do výberového konania na FiF UK pozostáva z 5 častí: 1. Úvodné informácie (výber miesta, katedry, registračného čísla), 2. Osobné údaje uchádzača, 3. Povinné prílohy (VUPCH/životopis, doklady o vzdelaní, zoznam publikácií), 4. Informácia o plnení inauguračných/habilitačných kritérií, 5. Informácia o plnení ďalších podmienok pre opakované obsadenie. Výberové konanie sa riadi zákonom č. 131/2002 Z.z. a vnútornými predpismi UK č. 19/2022, 8/2025 a FiF UK č. 7/2024, 7/2025.",
+    "keywords": ["štruktúra formulára", "výberové konanie", "právny rámec", "vnútorné predpisy", "5 častí formulára"]
+  },
+  {
+    "id": "ZIADOST_FORMULAR_2",
+    "category": "Formulár žiadosti",
+    "title": "Povinné prílohy a osobné údaje",
+    "content": "Povinné prílohy zahŕňajú: vedecko/umelecko-pedagogickú charakteristiku (VUPCH) alebo štruktúrovaný životopis pre zahraničných uchádzačov, kópie dokladov o vzdelaní (pre zamestnancov FiF UK až pri nástupe), zoznam publikovaných výstupov s bibliografickými kategóriami a ohlasmi. Osobné údaje zahŕňajú: meno, tituly, kontaktné údaje, dátum narodenia, pohlavie, trvalé bydlisko, informáciu o súčasnom zamestnaní na FiF UK.",
+    "keywords": ["povinné prílohy", "VUPCH", "doklady o vzdelaní", "zoznam publikácií", "osobné údaje", "kontaktné údaje", "štruktúrovaný životopis"]
+  },
+  {
+    "id": "ZIADOST_FORMULAR_3",
+    "category": "Formulár žiadosti",
+    "title": "Podmienky pre opakované obsadenie miest",
+    "content": "Pre opakované obsadenie miest docenta/profesora musia uchádzači spĺňať špecifické podmienky: splnenie kritérií na titul, publikačnú činnosť (5 výstupov za 5 rokov, špecifické požiadavky na monografie/WoS/Scopus), citovanosť (ohlasové citácie od externých autorov), účast vo výskumných projektoch, zodpovednosť za študijné programy a habilitačné/inauguračné odbory. Obdobie sa predlžuje o materskú/rodičovskú dovolenku, PN a pod.",
+    "keywords": ["opakované obsadenie", "publikačné výstupy", "Web of Science", "Scopus", "citovanosť", "výskumné projekty", "zodpovednosť za študijné programy", "predĺženie obdobia"]
+  },
+  {
+    "id": "ZIADOST_FORMULAR_4",
+    "category": "Formulár žiadosti", 
+    "title": "Súhlasy so spracovaním a zverejnením údajov",
+    "content": "Formulár obsahuje súhlasy so spracovaním osobných údajov podľa GDPR a zákona č. 18/2018 Z.z. a súhlas so zverejnením údajov podľa § 76 ods. 10 zákona o vysokých školách (meno, tituly, vzdelanie, zamestnania, pedagogická činnosť, publikačná činnosť, ohlasy, školenie doktorandov). Uchádzač má právo súhlas kedykoľvek odvolať.",
+    "keywords": ["súhlas so spracovaním údajov", "GDPR", "zverejnenie údajov", "ochrana osobných údajov", "odvolanie súhlasu", "§ 76 ods. 10"]
+  },
+  {
+    "id": "ZIADOST_FORMULAR_5",
+    "category": "Formulár žiadosti",
+    "title": "Upozornenia a dôvody pre vylúčenie",
+    "content": "Žiadosť nebude zaradená do výberového konania, ak je neúplná, obsahuje nepravdivé informácie, alebo uchádzač nespĺňa platné inauguračné/habilitačné kritériá pre príslušný odbor, resp. ďalšie podmienky pre opakované obsadenie miesta. Formulár kladie dôraz na pravdivosť a úplnosť poskytnutých informácií.",
+    "keywords": ["vylúčenie z konania", "neúplná žiadosť", "nepravdivé informácie", "nesplnenie kritérií", "dôveryhodnosť údajov"]
+  },
+  {
+    "id": "FiF_UK_ZAKLAD",
+    "category": "Základné informácie",
+    "title": "Všeobecná charakteristika fakulty",
+    "content": "Filozofická fakulta Univerzity Komenského v Bratislave (FiF UK) je verejná vysoká škola zameraná na humanitné, spoločenské vedy a vedy o umení. Patrí medzi najstaršie fakulty univerzity, založená bola v roku 1919 a výučbu začala v roku 1921. Fakulta poskytuje vzdelanie v troch stupňoch štúdia (bakalárske, magisterské, doktorandské) a v súčasnosti na nej študuje približne 3000 študentov. Jej oficiálna adresa je Gondova ulica 2, 811 02 Bratislava.",
+    "keywords": ["Filozofická fakulta UK", "humanitné vedy", "Gondova 2", "1919", "3000 študentov", "bakalárske štúdium", "magisterské štúdium", "doktorandské štúdium"]
+  },
+  {
+    "id": "FiF_UK_VEDENIE",
+    "category": "Vedenie a organizácia",
+    "title": "Vedenie fakulty a štatistické údaje",
+    "content": "Fakultu v súčasnosti vedie dekán prof. Mgr. Marián Zouhar, PhD. V jej činnosti pokračuje prodekánmi a tajomníkom. Organizačne fakulta pozostáva z 28 katedier. Okrem výchovy budúcich stredoškolských učiteľov a odborníkov v spoločenskovedných disciplínach sa venuje aj celoživotnému vzdelávaniu, organizuje kurzy cudzích jazykov, štátne jazykové skúšky a pre cudzincov kurzy slovenského jazyka.",
+    "keywords": ["dekán", "Marián Zouhar", "prodekáni", "28 katedier", "celoživotné vzdelávanie", "jazykové kurzy", "štátne jazykové skúšky"]
+  },
+  {
+    "id": "FiF_UK_KONTAKT_VYBK",
+    "category": "Kontakt - výberové konania",
+    "title": "Kontaktné údaje pre výberové konania na FiF UK",
+    "content": "Hlavná budova fakulty sa nachádza na adrese Gondova ulica 2, 811 02 Bratislava. Pre otázky a konzultácie týkajúce sa výberových konaní je kontaktnou osobou Gabriela Baková, email: gabriela.bakova@uniba.sk. Všeobecné fakturačné údaje fakulty: IČO: 00397865, DIČ: 2020845332, IČ DPH: SK2020845332. Informácie o vyhlásených výberových konaniach sú zverejňované na úradnej výveske fakulty a na webovej stránke Ministerstva školstva.",
+    "keywords": ["Gabriela Baková", "gabriela.bakova@uniba.sk", "kontaktná osoba", "výberové konania", "Gondova 2", "úradná výveska", "Ministerstvo školstva"]
+  }
 
-{
-id: "dac_hp_02",
-category: "Služby",
-subcategory: "Všeobecné služby",
-title: "Colná problematika",
-content: "Problematike ciel sa v spoločnosti DAC Consulting 2.0 sústavne venujeme už viac ako desať rokov. Colnú oblasť vieme pokryť v celej šírke od poradenstva a konzultácií až po zastupovanie klientov pred orgánmi štátnej a verejnej správy.",
-keywords: ["colná problematika", "clá", "clo", "colné poradenstvo", "konzultácie", "zastupovanie klientov", "orgány štátnej správy", "verejná správa"]
-},
-
-{
-id: "dac_hp_03",
-category: "Služby",
-subcategory: "Všeobecné služby",
-title: "Spotrebné dane",
-content: "V spoločnosti DAC Consulting 2.0 sa v oblasti daní sústreďujeme predovšetkým na komplexné poradenstvo pri uplatňovaní predpisov o spotrebných daniach. V našom tíme pracujú špecialisti na problematiku SPD, v ktorej sú potrebné osobitné vedomosti, skúsenosti a zručnosti.",
-keywords: ["spotrebné dane", "SPD", "komplexné poradenstvo", "špecialisti", "predpisy"]
-},
-
-{
-id: "dac_hp_04",
-category: "Služby",
-subcategory: "Všeobecné služby",
-title: "Medzinárodný obchod",
-content: "Venujeme sa všetkým aj príbuzným témam súvisiacim s pohybom tovaru na medzinárodnej úrovni, ako sú napríklad INTRASTAT, INCOTERMS, CMR, CIM, ADR a iné.",
-keywords: ["medzinárodný obchod", "INTRASTAT", "INCOTERMS", "CMR", "CIM", "ADR", "pohyb tovaru"]
-},
-
-{
-id: "dac_hp_05",
-category: "Služby",
-subcategory: "Všeobecné služby",
-title: "Semináre a školenia",
-content: "Každý rok ponúkame množstvo odborných školení a seminárov zameraných na oblasť cla a spotrebných daní.",
-keywords: ["semináre", "školenia", "odborné školenia", "colné školenia", "školenia spotrebné dane"]
-},
-
-{
-id: "dac_hp_06",
-category: "Cieľová skupina",
-title: "Pre koho sú naše služby určené?",
-content: "Každú zo svojich služieb poskytujeme svojim klientom na mieru a na základe podrobnej znalosti ich preferencií a požiadaviek. Naše služby sú určené pre: subjekty obchodujúce s krajinami EÚ, subjekty obchodujúce s krajinami mimo EÚ (colné predpisy) a podnikateľov pôsobiacich na Slovensku v oblasti spotrebných daní.",
-keywords: ["služby na mieru", "obchod s EÚ", "obchod mimo EÚ", "colné predpisy", "podnikatelia na Slovensku", "spotrebné dane"]
-},
-
-{
-id: "dac_hp_07",
-category: "Kontakt",
-title: "Kontaktné údaje a tím",
-content: "Colné právo, právo spotrebných daní: JUDr. Maroš Prosman (+421 907 760 347, prosman@dacconsulting.sk), JUDr. Rastislav Vysocký, LL.M. (vysocky@dacconsulting.sk). Colná problematika: Ing. Tibor Vojtko (+421 944 393 883, vojtko@dacconsulting.sk). Spotrebné dane: Mgr. Bc. Roman Šajgalík (+421 917 815 092, sajgalik@dacconsulting.sk). Hlavné kontakty: Telefón: 02/2311 4771, E-mail: office@dacconsulting.sk.",
-keywords: ["kontakt", "telefón", "email", "office@dacconsulting.sk", "02/2311 4771", "+421 907 760 347", "+421 944 393 883", "+421 917 815 092", "JUDr. Maroš Prosman", "JUDr. Rastislav Vysocký", "Ing. Tibor Vojtko", "Mgr. Bc. Roman Šajgalík"]
-},
-
-
-// Colná problematika - DAC Consulting 2.0
-{
-id: "colna_problematika_01",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Colné poradenstvo - Úvod",
-content: "Podnikateľom alebo fyzickým osobám, ktoré uplatňujú colné predpisy vieme poskytnúť služby v celej šírke od poradenstva a konzultácií až po zastupovanie klientov pred orgánmi štátnej a verejnej správy. V našom tíme sú spoločníci a konzultanti, ktorí dlhoročne pracovali v colnej, resp. finančnej správe a to aj na riadiacich pozíciách ovplyvňujúcich metodiku a rozhodovanie. Súčasťou našich služieb je aj organizovanie seminárov a školení zameraných na oblasti cla a spotrebných daní, tak vo forme školení otvoreného typu, ako aj vo forme firemných školení pripravených presne podľa požiadaviek klienta.",
-keywords: ["colné poradenstvo", "zastupovanie klientov", "konzultácie", "colné predpisy", "školenia", "semináre"]
-},
-
-{
-id: "colna_problematika_02",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Colné zatrieďovanie tovaru (tarifná klasifikácia)",
-content: "Colné zatrieďovanie tovaru je určenie podpoložky v Colnom sadzobníku pre daný tovar. Dovozné clo a ostatné opatrenia sa uplatňujú najmä podľa tohto zatriedenia. Colný sadzobník pozostáva z tovarovej nomenklatúry (systematický zoznam tovarov s číselným kódom) a colných sadzieb (hodnotové, špecifické, kombinované). Zatriedenie nie je vždy jednoduché, pretože ten istý tovar môže spĺňať opis viacerých podpoložiek. Na správne zatriedenie sa používajú Vysvetlivky ku kombinovanej nomenklatúre a Všeobecné pravidlá na interpretáciu, ktoré majú povahu administratívneho pokynu.",
-keywords: ["colné zatrieďovanie", "tarifná klasifikácia", "colný sadzobník", "kombinovaná nomenklatúra", "tovarová nomenklatúra", "colná sadzba", "dovozné clo", "Vysvetlivky KN", "Všeobecné pravidlá interpretácie"]
-},
-
-{
-id: "colna_problematika_03",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Colná hodnota (colné hodnotenie)",
-content: "Colná hodnota je hodnota tovaru používaná ako základ pre výpočet valorického cla. Táto hodnota sa určuje podľa šiestich metód v určenom poradí. Colné predpisy definíciu priamo neobsahujú, no vychádzajú z medzinárodných dohôd (GATT, Dohovor WCO) a európskej colnej legislatívy. Na rozdiel od špecifického cla, ktoré vychádza napr. z hmotnosti, si určenie colnej hodnoty vyžaduje osobitnú a komplexnú úpravu.",
-keywords: ["colná hodnota", "colné hodnotenie", "valorické clo", "špecifické clo", "šesť metód", "GATT", "WCO", "Svetová colná organizácia", "výpočet cla"]
-},
-
-{
-id: "colna_problematika_04",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Pôvod tovaru (preferenčný a nepreferenčný)",
-content: "Pôvod tovaru je kľúčová kategória pre určenie colnej sadzby a uplatnenie obchodnopolitických opatrení. Rozlišuje sa nepreferenčný pôvod (pre uplatnenie obchodnopolitických opatrení) a preferenčný pôvod (pre poskytnutie znížených colných sadzieb, napr. v rámci všeobecného systému preferencií - GSP). Preukázanie pôvodu je predpokladom pre priznanie preferenčného sadzobného opatrenia pri dovoze aj vývoze tovaru.",
-keywords: ["pôvod tovaru", "preferenčný pôvod", "nepreferenčný pôvod", "všeobecný systém preferencií", "GSP", "colné sadzby"]
-},
-
-{
-id: "colna_problematika_05",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Zjednodušené colné postupy",
-content: "Zjednodušené postupy urýchľujú colné formality a sú súčasťou colnej politiky EÚ. Ich podstatou je presun určitých oprávnení colných orgánov na držiteľa povolenia alebo zmenšenie jeho povinností. Colný kódex Únie pozná tieto druhy zjednodušení: zjednodušené colné vyhlásenia, zjednodušenie vyhotovenia colných vyhlásení na tovar z rôznych podpoložiek, centralizované colné konanie, zápis do evidencie deklaranta a samovymeriavanie. Mnohé zjednodušenia súvia so statusom Schváleného hospodárskeho subjektu (AEO).",
-keywords: ["zjednodušené postupy", "colné konanie", "Schválený hospodársky subjekt", "AEO", "Colný kódex Únie", "centralizované colné konanie"]
-},
-
-{
-id: "colna_problematika_06",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Schválený hospodársky subjekt (SHS/AEO)",
-content: "Schválený hospodársky subjekt (AEO) je 'bezpečná súčasť dodávateľského reťazca'. Ponúkame kompletnú pomoc pri získaní tohto statusu: spracovanie žiadosti a príloh, zastúpenie počas konania, komunikáciu s colnými orgánmi, optimalizáciu procesov klienta a kontinuálne konzultácie. Status AEO prináša výhody ako minimalizácia formalít, menej kontrol a značka kvality. Zariaďujeme žiadosti pre všetky typy osvedčení: typ C (colné zjednodušené postupy), typ S (zjednodušenie colných kontrol) a typ F (kombinované osvedčenie).",
-keywords: ["Schválený hospodársky subjekt", "SHS", "AEO", "colné zjednodušenia", "dodávateľský reťazec", "colné orgány"]
-},
-
-{
-id: "colna_problematika_07",
-category: "Služby",
-subcategory: "Colné poradenstvo",
-title: "Kontrola pri vývoze (tovar dvojitého použitia)",
-content: "Tovar s dvojakým použitím je definovaný ako tovar, softvér alebo technológia použiteľná na civilné aj vojenské účely, vrátane výroby jadrových zbraní. Európska a národná legislatíva pre takýto tovar zavádza striktné pravidlá, zoznamy, licenčné povinnosti a sankcie. V tejto mimoriadne citlivej agende ponúkame klientom podporu a pomoc.",
-keywords: ["tovar dvojitého použitia", "kontrola vývozu", "licenčné povinnosti", "európska legislatíva", "jadrové zbrane"]
-},
-
-
-// Zastupovanie + colný audit
-
-{
-id: "colne_sluzby_01",
-category: "Služby",
-subcategory: "Colný audit a zastupovanie",
-title: "Colný audit",
-content: "Ako prevenciu pred negatívnymi následkami kontrol odporúčame firmám zaoberajúcim sa dovozom, tranzitom a vývozom tovaru vykonávať ad hoc kontroly colných transakcií (prístup zameraný na konkrétne transakcie) alebo colný audit na celý systém dodržiavania colných a iných predpisov (prístup zameraný na celý systém). S pomocou nášho tímu sa môžete vyhnúť negatívnym následkom zistení colných orgánov pri kontrolách po prepustení tovaru, pri preverovaní podmienok povolení alebo osvedčení, deliktuálnym konaniam alebo trestným konaniam za colné alebo daňové trestné činy.",
-keywords: ["colný audit", "kontrola colných transakcií", "dodržiavanie colných predpisov", "prevencia", "colné orgány", "colný delikt"]
-},
-
-{
-id: "colne_sluzby_02",
-category: "Služby",
-subcategory: "Colný audit a zastupovanie",
-title: "Zastupovanie v colnom konaní",
-content: "Colné konanie je konanie o konkrétnej zásielke tovaru pri dovoze, tranzite a vývoze, ktoré sa začína podaním colného vyhlásenia a končí sa prepustením tovaru do navrhovaného colného režimu. Poskytujeme zastupovanie v špecifických prípadoch, ktoré si vyžadujú konzultácie s colníkmi, hlbšie znalosti colnej a daňovej problematiky a osobitný prístup. Medzi takéto prípady patrí dovoz a vývoz elektriny a plynu, dovoz osobitného tovaru s oslobodením od cla a DPH, alebo prepustenie tovaru do colného režimu dočasné použitie s úplným oslobodením od dovozného cla.",
-keywords: ["colné konanie", "zastupovanie", "colné vyhlásenie", "colné režimy", "dočasné použitie", "oslobodenie od cla"]
-},
-
-{
-id: "colne_sluzby_03",
-category: "Služby",
-subcategory: "Colný audit a zastupovanie",
-title: "Zastupovanie v iných konaniach podľa colných predpisov",
-content: "Okrem colných konaní poskytujeme zastupovanie aj v ďalších konaniach podľa colných predpisov, kde máme špecializované vedomosti a bohaté skúsenosti. Medzi takéto konania patria: žiadosti o povolenie zjednodušených postupov, povolenia osobitných colných režimov (Aktívny/Pasívny zušľachťovací styk, Dočasný sklad, Colné uskladnenie, Dočasné použitie, Konečné použitie), upustenie od poskytnutia zábezpeky, osvedčenie SHS/AEO, povolenie odkladu platby colného dlhu, ako aj colné priestupky a delikty.",
-keywords: ["colné povolenia", "colné režimy", "zušľachťovací styk", "colné uskladnenie", "SHS/AEO", "colný delikt", "colný priestupok"]
-},
-
-{
-id: "colne_sluzby_04",
-category: "Služby",
-subcategory: "Colný audit a zastupovanie",
-title: "Zastupovanie pri kontrole po prepustení tovaru (následná kontrola)",
-content: "Colné orgány majú oprávnenie vykonať kontrolu po prepustení tovaru (následnú kontrolu), ktorá sa uskutočňuje po colnom konaní a kontroluje určité obdobie alebo balík transakcií. Zastupovanie pri týchto kontrolách poskytujeme v spolupráci s advokátskou kanceláriou Prosman a Pavlovič. Máme bohaté skúsenosti s týmito konaniami, vrátane sporov, ktoré sme dotiahli až po rozhodnutie Najvyššieho súdu SR. Pomáhame klientom pochopiť ich oprávnenia a povinnosti, nastaviť procesnú taktiku a využiť všetky prostriedky obrany.",
-keywords: ["kontrola po prepustení tovaru", "následná kontrola", "colné orgány", "advokátska kancelária", "Najvyšší súd SR", "procesná taktika", "colný spor"]
-},
-
-// Poradenstvo v oblasti spotrebných daní
-
-{
-id: "spotrebne_dane_01",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Spotrebné dane - Úvod",
-content: "Colné úrady v Slovenskej republike prevzali správu spotrebnej dane v roku 2004 v súvislosti so vstupom SR do Európskej Únie a prevzatím európskej daňovej legislatívy. Problematika spotrebných daní má špecifiká v predmete dane, sadzbách, systéme oslobodenia, daňového dozoru a kontroly, daňových režimoch, systéme zábezpek a osobitostiach pri preprave. V SR sú zavedené tieto spotrebné dane: daň z alkoholických nápojov, tabakových výrobkov, minerálneho oleja, elektriny, uhlia a zemného plynu. Procesným predpisom pre správu je zákon č. 563/2009 Z.z. (daňový poriadok).",
-keywords: ["spotrebné dane", "správa daní", "colné úrady", "daňový poriadok", "európska legislatíva", "dane na Slovensku"]
-},
-
-{
-id: "spotrebne_dane_02",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Poradenstvo v oblasti spotrebných daní",
-content: "Vzhľadom na množstvo špecifík, povinností a oprávnení spojených so správou spotrebných daní, subjekty obchodujúce s predmetmi spotrebných daní alebo prepravujúce tieto predmety musia byť dostatočne zorientované v problematike. Sankcie a iné právne dôsledky porušenia zákona sú pre daňové subjekty tak závažné, až fatálne, že poradenstvo v tejto oblasti, poskytované skúsenými expertmi na problematiku SPD, sa javí ako nevyhnutné.",
-keywords: ["poradenstvo spotrebné dane", "daňové povinnosti", "sankcie SPD", "expertíza", "daňová legislatíva"]
-},
-
-{
-id: "spotrebne_dane_03",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Spotrebná daň z alkoholických nápojov",
-content: "Zdaňovanie alkoholických nápojov je upravené zákonom č. 530/2011 Z.z. Alkoholickým nápojom je lieh, víno, medziprodukt a pivo. Ponúkame pomoc pri povolení na prevádzkovanie daňového skladu, získaní registrácie oprávneného príjemcu, zaradení do evidencie užívateľských podnikov, registrácii registrovaného odosielateľa, kategorizácii alkoholických nápojov, oslobodeniach od dane, vzniku daňovej povinnosti, konaní o vyrubení dane, vrátení dane, denaturácii liehu, meraní množstva liehu, problematike pestovateľských páleníc, označovaní kontrolnou známkou, povoleniach na predaj a distribúciu, ako aj v konaniach o správnych deliktoch.",
-keywords: ["daň z alkoholu", "lieh", "víno", "pivo", "daňový sklad", "kontrolná známka", "pestovateľská pálenica", "medziprodukt"]
-},
-
-{
-id: "spotrebne_dane_04",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Spotrebná daň z tabakových výrobkov",
-content: "Zdaňovanie tabakových výrobkov je upravené zákonom č. 106/2004 Z.z. Ponúkame pomoc pri povolení na prevádzkovanie daňového skladu, získaní registrácie oprávneného príjemcu a registrovaného odosielateľa, kategorizácii tabakových výrobkov, oslobodeniach od dane, vzniku daňovej povinnosti, konaní o vyrubení dane, vrátení dane, zákaze predaja, vedení evidencií, označovaní tabakových výrobkov kontrolnou známkou a v konaniach o správnych deliktoch pri porušení daňových predpisov.",
-keywords: ["daň z tabaku", "tabakové výrobky", "kontrolná známka", "daňový sklad", "zákaz predaja", "správny delikt"]
-},
-
-{
-id: "spotrebne_dane_05",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Spotrebná daň z minerálneho oleja",
-content: "Zdaňovanie minerálnych olejov je upravené zákonom č. 98/2004 Z.z. Ponúkame pomoc pri povolení na prevádzkovanie daňového skladu, získaní registrácie oprávneného príjemcu, zaradení do evidencie užívateľských podnikov, registrácii registrovaného odosielateľa, získaní statusu obchodníka s vybraným minerálnym olejom alebo distribútora pohonných látok, výrobe a nakladaní s indikačnou látkou, kategorizácii minerálnych olejov (vrátane zvýhodnenej sadzby pre olej s obsahom biogénnej látky), oslobodeniach od dane, vzniku daňovej povinnosti, konaní o vyrubení dane, vrátení dane, vedení evidencií a v konaniach o správnych deliktoch.",
-keywords: ["daň z minerálneho oleja", "pohonné látky", "biogénna látka", "indikačná látka", "distribútor", "daňový sklad"]
-},
-
-{
-id: "spotrebne_dane_06",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Spotrebná daň z elektriny, uhlia a zemného plynu",
-content: "Zdaňovanie elektriny, uhlia a zemného plynu je upravené zákonom č. 609/2007 Z.z. Ponúkame pomoc pri registrácii platiteľa dane z elektriny, uhlia a zemného plynu, registrácii oprávneného spotrebiteľa pre všetky tri komodity, oslobodeniach od dane, vzniku daňovej povinnosti, konaní o vyrubení dane, vrátení dane, vedení evidencií a v konaniach o správnych deliktoch pri porušení daňových predpisov.",
-keywords: ["daň z elektriny", "daň z uhlia", "daň zo zemného plynu", "oprávnený spotrebiteľ", "platiteľ dane", "energetické komodity"]
-},
-
-
-// Interný audit pre spotrebné dane
-
-{
-id: "spotrebne_dane_07",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Interný audit pre spotrebné dane",
-content: "Ako prevenciu pred negatívnymi následkami daňových kontrol odporúčame firmám zaoberajúcim sa obchodovaním, skladovaním alebo prepravou predmetov podliehajúcim spotrebným daniam vykonávať ad hoc kontroly jednotlivých transakcií (prístup zameraný na konkrétne transakcie) alebo audit na celý systém dodržiavania predpisov spojených so správou spotrebných daní (prístup zameraný na celý systém daňového subjektu). S pomocou nášho tímu sa môžete vyhnúť negatívnym následkom zistení colných orgánov pri daňových kontrolách, súvisiacich deliktuálnych konaniach alebo trestných konaniach.",
-keywords: ["interný audit", "daňové kontroly", "prevencia", "dodržiavanie predpisov", "spotrebné dane", "daňový subjekt"]
-},
-
-{
-id: "spotrebne_dane_08",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Zastúpenie pri registráciách a povoleniach pre spotrebné dane",
-content: "V oblasti spotrebných daní ponúkame konzultácie a zastúpenie vo všetkých konaniach o žiadostiach o registrácie alebo povolenia podľa zákonov o spotrebných daniach. Medzi typické registrácie a povolenia patrí: povolenie na prevádzkovanie daňového skladu, registrácia oprávneného príjemcu, registrovaného odosielateľa, povolenia pre liehovarnícke závody, pestovateľské pálenice, podniky na výrobu vína, piva, tabakových výrobkov, minerálneho oleja, registrácie platiteľov dane pre elektrinu, uhlie a zemný plyn, registrácie oprávnených spotrebiteľov a ďalšie špecifické povolenia pre jednotlivé druhy spotrebných daní.",
-keywords: ["registrácie", "povolenia", "daňový sklad", "oprávnený príjemca", "registrovaný odosielateľ", "platiteľ dane", "oprávnený spotrebiteľ"]
-},
-
-{
-id: "spotrebne_dane_09",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Zastúpenie pri daňových kontrolách pre spotrebné dane",
-content: "V spolupráci s advokátskou kanceláriou Prosman a Pavlovič poskytujeme zastupovanie klientov vo všetkých štádiách a druhoch konaní, najmä v daňovom vyrubovacom konaní, v konaní o daňových deliktoch, pri miestnych zisťovaniach, ústnych pojednávaniach pre SPD a DPH a pri daňových kontrolách. Zastupovanie poskytujeme úplne od začatia daňovej kontroly, čím zabezpečíme odbornosť, kontinuitu a konzistentnosť obrany a argumentácie daňového subjektu vo všetkých štádiách konania, vrátane súdu.",
-keywords: ["daňové kontroly", "zastupovanie", "advokátska kancelária", "vyrubovacie konanie", "daňové delikty", "správne konanie"]
-},
-
-{
-id: "spotrebne_dane_10",
-category: "Služby",
-subcategory: "Spotrebné dane",
-title: "Správa systému EMCS",
-content: "Klientom v rámci systému EMCS (Excise Movement and Control System) zabezpečíme vystavovanie sprievodného administratívneho dokladu a ukončenie prepráv predmetov spotrebných daní v systéme EMCS s možnosťou sledovania stavu čerpania zábezpeky.",
-keywords: ["EMCS", "systém EMCS", "preprava spotrebných daní", "sprievodný doklad", "zábezpka", "administratívny systém"]
-},
-
-// Medzinárodný obchod
-
-{
-id: "medzinarodny_obchod_01",
-category: "Služby",
-subcategory: "Všeobecné služby",
-title: "Medzinárodný obchod - Úvod",
-content: "Naša spoločnosť sa venuje primárne colnej problematike a problematike spotrebných daní, čo má veľmi blízky vzťah k medzinárodnému obchodu a všetkým príbuzným témam. Venujeme sa problematike INCOTERMS, INTRASTAT, problematike zasielateľstva a prepravy tovaru (medzinárodné dohovory CMR, CIM), ako aj DPH pri dovoze. Okrem poradenstva organizujeme semináre a školenia, kde pôsobíme ako lektori. Našou výhodou je úzka spolupráca s advokátskou kanceláriou Prosman a Pavlovič, s.r.o., ktorá poskytuje právne konzultácie a zastupovanie v sporoch s orgánmi verejnej správy.",
-keywords: ["medzinárodný obchod", "INCOTERMS", "INTRASTAT", "CMR", "CIM", "DPH pri dovoze", "advokátska kancelária"]
-},
-
-{
-id: "medzinarodny_obchod_02",
-category: "Služby",
-subcategory: "Všeobecné služby",
-title: "Poradenstvo v medzinárodnom obchode",
-content: "Ponúkame poradenstvo v oblastiach: INCOTERMS - dodacie doložky pre medzinárodnú kúpu tovaru, ktoré určujú zodpovednosť, poistenie a náklady; INTRASTAT - systém na zbieranie štatistických údajov o obchode medzi krajinami EÚ; a medzinárodné prepravné dohovory (CMR, CIM) v spolupráci s advokátskou kanceláriou Prosman a Pavlovič, vrátane zastupovania v súdnych sporoch.",
-keywords: ["INCOTERMS", "INTRASTAT", "CMR dohovor", "CIM dohovor", "medzinárodná preprava", "štatistika obchodu"]
-},
-
-{
-id: "medzinarodny_obchod_03",
-category: "Služby",
-subcategory: "CBAM",
-title: "Mechanizmus uhlíkovej kompenzácie (CBAM) - Prechodné obdobie",
-content: "CBAM (Mechanizmus uhlíkovej kompenzácie na hraniciach) je nástroj EÚ na dosiahnutie cieľov zníženia emisií o 55% do roku 2030. Prechodné obdobie trvá od 1.10.2023 do 31.12.2025 a zahŕňa len oznamovaciu povinnosť pre dovozcov alebo nepriamych colných zástupcov bez platenia 'uhlíkového cla'. Dovozcovia musia podávať štvrťročné Správy o CBAM do konca mesiaca po skončení príslušného štvrťroka. Mechanizmus sa vzťahuje na tovar: Cement, Hliník, Hnojivá, Elektrická energia, Železo a oceľ.",
-keywords: ["CBAM", "mechanizmus uhlíkovej kompenzácie", "uhlíkové clo", "prechodné obdobie 2023-2025", "oznamovacia povinnosť", "štvrťročné správy CBAM", "cement", "hliník", "hnojivá", "elektrická energia", "železo a oceľ", "zníženie emisií 55%"]
-},
-
-{
-id: "medzinarodny_obchod_04",
-category: "Služby",
-subcategory: "CBAM",
-title: "Mechanizmus uhlíkovej kompenzácie (CBAM) - Konečné obdobie",
-content: "Od roku 2026 začína konečné obdobie CBAM, kedy sa začnú predávať CBAM certifikáty členskými štátmi Schváleným deklarantom. Cena certifikátov sa bude odvíjať od EU ETS (Európskeho systému na obchodovanie s emisiami) a meniť sa týždenne. Schválený deklarant musí do 31. mája každého roku (prvýkrát v roku 2027) odovzdať vyhlásenie za predchádzajúci rok spolu s počtom certifikátov zodpovedajúcim deklarovaným emisiám.",
-keywords: ["CBAM certifikáty", "konečné obdobie od 2026", "rok 2026", "EU ETS", "Európsky systém obchodovania s emisiami", "Schválený deklarant", "vyhlásenie do 31. mája", "prvé vyhlásenie 2027"]
-},
-
-{
-id: "medzinarodny_obchod_05",
-category: "Služby",
-subcategory: "CBAM",
-title: "Služby pre CBAM - analýza a poradenstvo",
-content: "Ponúkame špecializované služby pre CBAM: analýzu dovážaných tovarov pre súlad s CBAM a environmentálnymi predpismi; poradenstvo a stratégie na zlepšenie koordinácie s obchodnými partnermi na elimináciu sankcií; komplexné poradenstvo v interpretácii regulácií CBAM; optimalizáciu procesov na minimalizáciu finančných a operačných dopadov CBAM; ako aj školenia pre zvládnutie prechodného obdobia a vstupu do plného režimu CBAM.",
-keywords: ["CBAM analýza", "environmentálne predpisy", "optimalizácia procesov", "CBAM školenia", "súlad s legislatívou", "emisné stratégie"]
-},
-
-{
-id: "medzinarodny_obchod_06",
-category: "Služby",
-subcategory: "CBAM",
-title: "Služby pre CBAM - zastupovanie a reporting",
-content: "Poskytujeme služby registrácie do Prechodného registra CBAM, prípravu a podanie pravidelných štvrťročných Správ o CBAM, ako aj zastupovanie a komunikáciu s príslušnými úradmi. Zabezpečujeme kompletnú administráciu reportovacích povinností súvisiacich s mechanizmom uhlíkovej kompenzácie.",
-keywords: ["CBAM registrácia", "CBAM reporting", "štvrťročné správy", "zastupovanie", "komunikácia s úradmi", "administratíva CBAM"]
-},
-
-// Semináre a školenia
-
-{
-id: "skolenia_01",
-category: "Školenia",
-title: "Colná problematika v kocke",
-content: "Školenie určené pre obchodníkov, manažérov, pracovníkov logistiky a ďalších pracovníkov podieľajúcich sa na zahraničnoobchodných aktivitách. Cieľom je oboznámiť účastníkov s colnými predpismi uplatňovanými pri dovoze, vývoze a tranzite tovaru a s ich uplatňovaním v praxi. Rozsah: 2 dni (2 × 6÷8 hod.). Cena: 260 € bez DPH. Obsah: Základné colné predpisy EÚ a SR, terminológia, predbežné colné vyhlásenia, colné režimy, zjednodušené postupy, SHS, colný sadzobník EÚ, pôvod tovaru, preferenčné dohody, doklady o pôvode, colné doklady, pravidlá INCOTERMS.",
-keywords: ["colné školenie", "základy colnej problematiky", "colné predpisy", "colné režimy", "SHS", "INCOTERMS"]
-},
-
-{
-id: "skolenia_02",
-category: "Školenia",
-title: "Intrastat",
-content: "Školenie určené pre pracovníkov zodpovedných za vedenie evidencií súvisiacich s pohybom tovaru medzi členskými štátmi EÚ alebo za zostavovanie hlásení INTRASTAT. Cieľom je oboznámiť účastníkov s legislatívou upravujúcou oblasť INTRASTATU a s jej správnym uplatňovaním v praxi. Rozsah: 1 deň (6 hod.). Cena: 145 € bez DPH. Obsah: Úvod do štatistiky zahraničného obchodu, predpisy EÚ a SR, metodika zberu štatistických údajov, postup pri príprave štatistických hlásení, elektronická príprava hlásení, praktické príklady.",
-keywords: ["INTRASTAT", "štatistika obchodu", "pohyb tovaru v EÚ", "štatistické hlásenia", "európska štatistika"]
-},
-
-{
-id: "skolenia_03",
-category: "Školenia",
-title: "Dodacie podmienky v zahraničnom obchode",
-content: "Školenie určené pre obchodníkov, manažérov, pracovníkov logistiky a colných deklarantov. Cieľom je oboznámiť účastníkov s pravidlami používania dodacích podmienok v zahraničnom obchode a s ich správnym uplatňovaním v praxi. Rozsah: 1 deň (6 hod.). Cena: 145 € bez DPH. Obsah: Úvod do problematiky dodacích podmienok, charakteristika medzinárodných pravidiel, výklad jednotlivých alternatív, prehľad povinností predávajúceho a kupujúceho, vplyv na colné prerokovanie, praktické príklady.",
-keywords: ["dodacie podmienky", "INCOTERMS", "medzinárodný obchod", "zahraničný obchod", "dodacie doložky"]
-},
-
-{
-id: "skolenia_04",
-category: "Školenia",
-title: "Colná problematika pre pokročilých",
-content: "Seminár určený pre záujemcov o hlbšie vedomosti v špecifických oblastiach uplatňovania colných predpisov. Cieľom je rozšíriť vedomosti v špecifických oblastiach colných predpisov. Odporúča sa ako firemné školenie 'šité na mieru'. Ponúkané témy: nový Colný kódex Únie, pravidlá zatrieďovania tovaru, pravidlá pôvodu tovaru, colná hodnota a výmer cla. Cena: individuálna dohoda.",
-keywords: ["pokročilé colné školenie", "Colný kódex Únie", "zatrieďovanie tovaru", "pôvod tovaru", "colná hodnota", "firemné školenie"]
-},
-
-{
-id: "skolenia_05",
-category: "Školenia",
-title: "Spotrebné dane - ich uplatňovanie v praxi",
-content: "Školenie určené pre obchodníkov, manažérov, pracovníkov logistiky podieľajúcich sa na výrobe, predaji, skladovaní alebo preprave tovaru podliehajúceho spotrebným daniam. Cieľom je oboznámiť účastníkov s legislatívou upravujúcou oblasť spotrebných daní. Rozsah: podľa požiadaviek. Cena: 145 € bez DPH (otvorený typ) alebo individuálna dohoda. Obsah: Úvod do problematiky SPD, predpisy EÚ a SR, metodika aplikovania zákonov, povinnosti daňových subjektov, výroba, skladovanie a preprava tovaru, elektronická komunikácia s colným úradom.",
-keywords: ["spotrebné dane školenie", "SPD", "daňové povinnosti", "preprava tovaru", "elektronická komunikácia", "colný úrad"]
-},
-
-{
-id: "skolenia_06",
-category: "Školenia",
-title: "Kurz colného deklaranta - colná problematika pre začiatočníkov",
-content: "Kurz určený pre pracovníkov začínajúcich v oblasti colnej deklarácie, novoprijatých pracovníkov alebo podnikateľov vstupujúcich do oblasti colnej deklarácie. Cieľom je poskytnúť základný prehľad v oblasti colných predpisov a naučiť vyplňovať a podávať colné vyhlásenia. Rozsah: 4 dni (denne 7-8 hodín). Cena: 520 € bez DPH. Absolvent získa základné vedomosti pre samostatnú prácu na pozícii colný deklarant.",
-keywords: ["kurz colného deklaranta", "začiatočnícke školenie", "colná deklarácia", "colné vyhlásenia", "základy colnej problematiky"]
-},
-
-{
-id: "skolenia_07",
-category: "Školenia",
-title: "Podmienky účasti na školeniach",
-content: "Daňový doklad sa odovzdá po skončení školenia alebo pošle do 14 dní. Vyplnením prihlasovacieho formulára sa účastník záväzne prihlasuje. Účastnícky poplatok zahŕňa študijné materiály, občerstvenie a náklady na zabezpečenie aktivity. Platba bezhotovostne na účet Tatra banka č. 2622824855/1100. Účastnícky poplatok je splatný v deň uzávierky prihlášok. Storno podmienky: do uzávierky prihlášok bez poplatku, medzi uzávierkou a konaním školenia 50% poplatok. Poskytujú sa zľavy pre stálych klientov a pri hromadnej účasti.",
-keywords: ["podmienky školenia", "prihlášky na školenie", "účastnícky poplatok", "storno podmienky", "zľavy na školenia", "platba školení"]
-},
-
-// Aktuality
-
-{
-id: "aktuality_01",
-category: "Aktuality",
-title: "USA zavádzajú 25% clá na dovoz vozidiel",
-content: "Prezident USA Donald Trump oznámil zavedenie 25% ciel na všetky automobily, ktoré nie sú vyrobené v USA. Clá nadobudnú účinnosť 2. apríla a výber sa začne od 3. apríla od 5:00 SEČ. Tieto clá sa pripočítajú k už existujúcim 2,5% clám na osobné automobily. Očakáva sa, že opatrenie prinesie dodatočných 100 miliárd USD príjmov. Clá by mohli výrazne zvýšiť ceny automobilov v USA a ovplyvniť globálne dodávateľské reťazce.",
-keywords: ["USA clá", "dovoz automobilov", "25% clo", "2,5% existujúce clo", "Donald Trump", "účinnosť 2. apríla", "100 miliárd USD", "globálne dodávateľské reťazce", "ceny automobilov"]
-},
-
-{
-id: "aktuality_02",
-category: "Aktuality",
-title: "Reakcia EÚ na americké clá na autá",
-content: "Európska únia plánuje reagovať na zavedenie amerických dovozných ciel na autá. Predsedníčka Európskej komisie Ursula von der Leyenová vyhlásila, že EÚ posúdi oznámenie USA a bude chrániť svoje hospodárske záujmy. Nemecký minister hospodárstva Robert Habeck vyzval k rázej reakcii EÚ. EÚ má k dispozícii nástroj proti nátlaku (ACI), ktorý umožňuje zaviesť recipročné clá, obmedziť podnikanie amerických firiem v Európe alebo uplatniť reštrikcie v oblasti duševného vlastníctva.",
-keywords: ["reakcia EÚ", "Ursula von der Leyenová", "recipročné clá", "nástroj proti nátlaku", "Robert Habeck", "ochrana hospodárskych záujmov"]
-},
-
-{
-id: "aktuality_03",
-category: "Aktuality",
-title: "Dopad amerických ciel na slovenský automobilový priemysel",
-content: "Zavedenie amerických ciel výrazne ovplyvní slovenský automobilový priemysel, kde viac ako 75% vývozu do USA tvoria osobné vozidlá a súčiastky. Najviac postihnutý bude bratislavský závod Volkswagen, ktorý exportuje modely Porsche Cayenne, Audi Q7 a Q8 do USA, pričom Severná Amerika sa podieľa na jeho tržbách až 25%. Clá sa najskôr budú vzťahovať na hotové automobily, neskôr aj na automobilové súčiastky.",
-keywords: ["Slovensko", "slovenský automobilový priemysel", "Volkswagen Bratislava", "75% vývozu", "Porsche Cayenne", "Audi Q7", "Audi Q8", "export do USA", "Severná Amerika 25% tržieb", "automobilové súčiastky", "dopad amerických ciel"]
-},
-
-{
-id: "aktuality_04",
-category: "Aktuality",
-title: "Možné riešenia pre vývozcov automobilov do USA",
-content: "Vývozcovia automobilov z EÚ do USA môžu na zmiernenie dopadov 25% ciel zvážiť nasledujúce stratégie: lokalizácia výroby v USA (presun montáže alebo výroby), využitie colného režimu zušľachťovacieho styku, zvýšenie podielu lokálnej pridanej hodnoty v USA alebo diverzifikácia trhov. Každá stratégia má svoje výhody a obmedzenia a vyžaduje individuálny prístup a odborné poradenstvo v oblasti colného práva a dodávateľských reťazcov.",
-keywords: ["lokalizácia výroby", "zušľachťovací styk", "lokálna pridaná hodnota", "diverzifikácia trhov", "colné režimy", "obchodné stratégie"]
-},
-
-// O nás
-
-{
-id: "o_nas_01",
-category: "O spoločnosti",
-title: "O nás - DAC Consulting 2.0",
-content: "Spoločnosť DAC Consulting, s.r.o. bola založená už v roku 2007 ako poradenská spoločnosť tvorená expertmi v oblastiach colného práva, práva spotrebných daní, DPH pri dovoze a vo všetkých príbuzných právnych úpravách, ktorými sa riadi medzinárodný obchod. Máme za sebou stovky zákaziek pre klientov z radu veľkých i menších spoločností, ktoré sa venujú obchodu v rámci Slovenska, Európskej únie i tretích krajín. Už od samého začiatku nám ide o to, aby od nás každý z našich klientov dostával služby presne podľa svojich potrieb a požiadaviek a dostal tak možnosť zjednodušiť svoj systém, zefektívniť svoje procesy a ušetriť výdavky v rámci platných pravidiel. Pravidelne sa vzdelávame a svoje skúsenosti i znalosti radi odovzdávame profesionálom v rámci seminárov a školení s colnou i daňovou problematikou.",
-keywords: ["založenie 2007", "colné poradenstvo", "spotrebné dane", "medzinárodný obchod", "dlhodobé skúsenosti", "školenia", "individuálny prístup"]
-},
-
-{
-id: "o_nas_02",
-category: "Tím",
-title: "JUDr. Maroš Prosman - odborník na colné právo a spotrebné dane",
-content: "JUDr. Maroš Prosman je advokát s dlhoročnými skúsenosťami. Dlhú dobu pracoval na vedúcich pozíciách na právnom odbore Colného riaditeľstva SR, kde aktívne ovplyvňoval vývoj colnej problematiky v súvislosti so vstupom Slovenskej republiky do Európskej únie a reprezentoval Slovenskú republiku počas radu jednaní výborov Európskej komisie pre clá a spotrebné dane. V súčasnej dobe pracuje ako spoločník a konateľ spoločnosti DAC Consulting 2.0. Kontakt: +421 907 760 347, prosman@dacconsulting.sk",
-keywords: ["JUDr. Maroš Prosman", "advokát", "colné právo", "spotrebné dane", "Colné riaditeľstvo SR", "Európska komisia", "spoločník"]
-},
-
-{
-id: "o_nas_03",
-category: "Tím",
-title: "Ing. Tibor Vojtko - odborník na colnú problematiku",
-content: "Ing. Tibor Vojtko je dlhoročným spolupracovníkom spoločnosti DAC Consulting 2.0 a v súčasnej dobe v nej pôsobí ako expert na problematiku ciel. Zároveň je spoločníkom a konateľom spoločnosti. Oblasti ciel sa odborne venuje už od začiatku svojej colníckej kariéry (1991). Viac než dvadsať rokov pôsobil v colnej správe, kde pracoval na rôznych pracovných pozíciách, mimo iného aj na pozícii riaditeľa odboru Colného riaditeľstva SR. Hlavnými oblasťami jeho špecializácie tu boli colné konanie a colný dohľad, ale tiež informatika a analýza rizík. Kontakt: +421 944 393 883, vojtko@dacconsulting.sk",
-keywords: ["Ing. Tibor Vojtko", "colná problematika", "colné konanie", "colný dohľad", "Colné riaditeľstvo SR", "analýza rizík", "spoločník"]
-},
-
-{
-id: "o_nas_04",
-category: "Tím",
-title: "Mgr. Bc. Roman Šajgalík - odborník na spotrebné dane",
-content: "Mgr. Bc. Roman Šajgalík získal právnické vzdelanie na Právnickej fakulte Trnavskej univerzity a pedagogické vzdelanie na Pedagogickej fakulte UMB v Banskej Bystrici. Špecializuje sa na problematiku spotrebných daní, ktorej sa venoval počas dlhého pôsobenia vo Finančnej správe SR a taktiež sa špecializuje na oblasť DPH a oblasť daňového konania. Kontakt: +421 917 815 092, sajgalik@dacconsulting.sk",
-keywords: ["Mgr. Bc. Roman Šajgalík", "spotrebné dane", "DPH", "daňové konanie", "Finančná správa SR", "právnické vzdelanie"]
-},
-
-{
-id: "o_nas_05",
-category: "Tím",
-title: "JUDr. Rastislav Vysocký, LL.M. - odborník na colné právo a spotrebné dane",
-content: "JUDr. Rastislav Vysocký, LL.M. je absolventom Právnickej fakulty Univerzity Mateja Bela v Banskej Bystrici. Dlhodobé pôsobenie v colnej správe, vrátane pozície námestníka colného úradu Bratislava, mu výrazne pomohlo pri širšom poznaní colnej problematiky. Špecializuje sa najmä na problematiku colného práva a práva spotrebných daní. Bol právnym garantom vo viacerých právnych oblastiach spojených s colníctvom. Pôsobil v rôznych odborných a pracovných komisiách generálneho riaditeľa a riaditeľa colného úradu, zastupoval colnú správu na lokálnej a medzinárodnej úrovni. Kontakt: vysocky@dacconsulting.sk",
-keywords: ["JUDr. Rastislav Vysocký", "colné právo", "spotrebné dane", "námestník colného úradu", "právny garant", "medzinárodná úroveň"]
-}
   ]
 };
