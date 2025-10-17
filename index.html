@@ -413,8 +413,8 @@
       // Pridaj otázku do histórie
       chatHistory.push({ role: "user", content: item.title });
       
-      // Zobraz loading správu
-      appendMessage("FiF UK", "Pripravujem odpoveď...", "bot", true);
+      // Zobraz loading správu s typing indicator
+      appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
       
       try {
         await delay(500);
