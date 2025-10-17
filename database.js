@@ -201,7 +201,56 @@ window.aiPowerData = {
     "title": "Kontaktné údaje pre výberové konania na FiF UK",
     "content": "Hlavná budova fakulty sa nachádza na adrese Gondova ulica 2, 811 02 Bratislava. Pre otázky a konzultácie týkajúce sa výberových konaní je kontaktnou osobou Gabriela Baková, email: gabriela.bakova@uniba.sk. Všeobecné fakturačné údaje fakulty: IČO: 00397865, DIČ: 2020845332, IČ DPH: SK2020845332. Informácie o vyhlásených výberových konaniach sú zverejňované na úradnej výveske fakulty a na webovej stránke Ministerstva školstva.",
     "keywords": ["Gabriela Baková", "gabriela.bakova@uniba.sk", "kontaktná osoba", "výberové konania", "Gondova 2", "úradná výveska", "Ministerstvo školstva"]
+  },
+  {
+    "id": "CASOVA_OS_LINK",
+    "category": "Odkazy na dokumenty",
+    "title": "Časová os výberových konaní",
+    "content": "Odkaz na dokument Časová os výberových konaní na FiF UK",
+    "keywords": ["časová os", "proces", "harmonogram", "výberové konania"],
+    "url": "https://fphil.uniba.sk/fileadmin/ruk/uradna_vyveska/Vyberove_konanie/FIFUK/casova_os/Casova_os_final.pdf"
+  },
+  {
+    "id": "VP_7_2025_LINK",
+    "category": "Odkazy na dokumenty",
+    "title": "Vnútorný predpis č. 7/2025 - Kritériá pre profesorov a docentov",
+    "content": "Odkaz na vnútorný predpis o všeobecných kritériách na obsadzovanie funkčných miest profesorov a docentov",
+    "keywords": ["kritériá", "profesor", "docent", "funkčné miesto", "2025"],
+    "url": "https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2025/VP_7_2025.pdf"
+  },
+  {
+    "id": "VP_7_2024_LINK",
+    "category": "Odkazy na dokumenty", 
+    "title": "Vnútorný predpis č. 7/2024 - Organizácia výberových konaní",
+    "content": "Odkaz na smernicu dekana o organizácii výberových konaní na FiF UK",
+    "keywords": ["organizácia", "výberové konanie", "smernica dekana", "2024"],
+    "url": "https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2024/VP_7_2024.pdf"
+  },
+  {
+    "id": "VP_19_2022_LINK",
+    "category": "Odkazy na dokumenty",
+    "title": "Vnútorný predpis č. 19/2022 - Zásady výberového konania",
+    "content": "Odkaz na zásady výberového konania pre celú Univerzitu Komenského",
+    "keywords": ["zásady", "výberové konanie", "univerzitný predpis", "2022"],
+    "url": "https://uniba.sk/fileadmin/ruk/legislativa/2022/Vp_2022_19.pdf"
+  },
+  {
+    "id": "HIK_SCHVALENE_LINK",
+    "category": "Odkazy na dokumenty",
+    "title": "Minimálne kritériá na titul docent a profesor",
+    "content": "Odkaz na minimálne kritériá pre habilitačné a inauguračné konania na FiF UK",
+    "keywords": ["habilitačné konanie", "inauguračné konanie", "titul docent", "titul profesor", "kritériá"],
+    "url": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
+  },
+  {
+    "id": "FORMULAR_ZIADOSTI_LINK",
+    "category": "Odkazy na dokumenty",
+    "title": "Formulár žiadosti o výberové konanie",
+    "content": "Odkaz na online formulár pre podanie žiadosti o vyhlásenie výberového konania na FiF UK",
+    "keywords": ["formulár", "žiadosť", "výberové konanie", "podanie", "online"],
+    "url": "https://forms.office.com/e/8tS0xb7Fmb"
   }
+
 
   ]
 };
