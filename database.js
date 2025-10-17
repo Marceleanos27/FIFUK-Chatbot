@@ -248,7 +248,7 @@ window.aiPowerData = {
     "title": "Formulár žiadosti o výberové konanie",
     "content": "Odkaz na online formulár pre podanie žiadosti o vyhlásenie výberového konania na FiF UK",
     "keywords": ["formulár", "žiadosť", "výberové konanie", "podanie", "online"],
-    "url": "https://forms.office.com/e/8tS0xb7Fmb"
+    "url": "https://form.jotform.com/241893677272368"
   }
 
 
