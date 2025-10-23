@@ -3,10 +3,10 @@
   window.marcelChatbotLoaded = true;
 
   // Vercel URL - ZMENIŤ LEN TU
-  const VERCEL_URL = "https://dacconsulting.vercel.app";
+  const VERCEL_URL = "https://fifuk-chatbot.vercel.app/";
 
   // Povolene domény
-  const allowed = ["dacconsulting.sk", "www.dacconsulting.sk", "localhost", "127.0.0.1", "ragnetiq.com", "www.ragnetiq.com"];
+  const allowed = ["uniba.sk", "ragnetiq.com", "www.ragnetiq.com"];
   if (!allowed.includes(window.location.hostname)) {
     console.warn("Tento widget nie je povolený na tejto doméne");
     return; // NEvytvára iframe
