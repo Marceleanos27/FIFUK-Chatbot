@@ -92,18 +92,33 @@
     // Detekcia iframe a pridanie triedy
     if (window.self !== window.top) {
       document.body.classList.add('iframe-mode');
+      // V iframe režime začíname zatvorení
+      const container = document.getElementById("chatbot-container");
+      if (container) {
+        container.classList.add('closed');
+      }
     }
 
-    // Informuj parent, že je chatbot na začiatku zatvorený
-    if (window.parent !== window) {
-      window.parent.postMessage({ type: "chatbot-closed" }, "*");
-    }
-
-    // Listener pre resize správy z widgetu
+    // Listener pre správy z widgetu
     window.addEventListener("message", function(event) {
-      if (event.data.type === "resize") {
-        // Donúti prehliadač prepočítať layout
-        window.dispatchEvent(new Event("resize"));
+      const container = document.getElementById("chatbot-container");
+      const openHeader = document.getElementById("chatbot-header");
+      const closedHeader = document.getElementById("chatbot-header-closed");
+      
+      if (event.data.type === "widget-opened") {
+        // Widget sa otvoril - zobraz plný chatbot
+        if (container) {
+          container.classList.remove('closed');
+          if (openHeader) openHeader.style.display = "flex";
+          if (closedHeader) closedHeader.style.display = "none";
+        }
+      } else if (event.data.type === "widget-closed") {
+        // Widget sa zatvoril - zobraz len kompaktný header
+        if (container) {
+          container.classList.add('closed');
+          if (openHeader) openHeader.style.display = "none";
+          if (closedHeader) closedHeader.style.display = "flex";
+        }
       }
     });
 
@@ -122,25 +137,24 @@
       const closedHeader = document.getElementById("chatbot-header-closed");
       const icon = document.getElementById("toggle-icon");
       
+      // V iframe režime posielame správu parent widgetu
+      if (window.parent !== window && window.self !== window.top) {
+        window.parent.postMessage({ type: "chatbot-toggle" }, "*");
+        return;
+      }
+      
+      // Standalone režim - lokálne prepínanie
       container.classList.toggle("closed");
       
       if (container.classList.contains("closed")) {
         // Zatvorený stav
-        openHeader.style.display = "none";
-        closedHeader.style.display = "block";
-        // Informuj parent o zatvorení
-        if (window.parent !== window) {
-          window.parent.postMessage({ type: "chatbot-closed" }, "*");
-        }
+        if (openHeader) openHeader.style.display = "none";
+        if (closedHeader) closedHeader.style.display = "flex";
       } else {
         // Otvorený stav
-        openHeader.style.display = "flex";
-        closedHeader.style.display = "none";
-        icon.innerText = "−";
-        // Informuj parent o otvorení
-        if (window.parent !== window) {
-          window.parent.postMessage({ type: "chatbot-opened" }, "*");
-        }
+        if (openHeader) openHeader.style.display = "flex";
+        if (closedHeader) closedHeader.style.display = "none";
+        if (icon) icon.innerText = "−";
       }
     }
 
