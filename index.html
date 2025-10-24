@@ -104,6 +104,7 @@
       const container = document.getElementById("chatbot-container");
       const openHeader = document.getElementById("chatbot-header");
       const closedHeader = document.getElementById("chatbot-header-closed");
+      const icon = document.getElementById("toggle-icon");
       
       if (event.data.type === "widget-opened") {
         // Widget sa otvoril - zobraz plný chatbot
@@ -111,6 +112,7 @@
           container.classList.remove('closed');
           if (openHeader) openHeader.style.display = "flex";
           if (closedHeader) closedHeader.style.display = "none";
+          if (icon) icon.innerText = "−";
         }
       } else if (event.data.type === "widget-closed") {
         // Widget sa zatvoril - zobraz len kompaktný header
@@ -118,6 +120,7 @@
           container.classList.add('closed');
           if (openHeader) openHeader.style.display = "none";
           if (closedHeader) closedHeader.style.display = "flex";
+          if (icon) icon.innerText = "+";
         }
       }
     });
@@ -150,6 +153,7 @@
         // Zatvorený stav
         if (openHeader) openHeader.style.display = "none";
         if (closedHeader) closedHeader.style.display = "flex";
+        if (icon) icon.innerText = "+";
       } else {
         // Otvorený stav
         if (openHeader) openHeader.style.display = "flex";
