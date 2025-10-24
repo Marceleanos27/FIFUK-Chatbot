@@ -436,6 +436,14 @@ window.aiPowerData = {
     "content": "Gabriela Baková - Kancelária Dekana Filozofickej fakulty Univerzity Komenského v Bratislave. Kontaktný email: gabriela.bakova@uniba.sk. Táto osoba je k dispozícii pre konzultácie a informácie týkajúce sa výberových konaní na FiF UK.",
     "keywords": ["kontaktná osoba", "Gabriela Baková", "Kancelária dekana", "email", "konzultácie", "informácie", "výberové konania"],
     "link": ""
+  },
+  {
+    "id": 55,
+    "category": "Ochrana osobných údajov",
+    "title": "GDPR a ochrana súkromia v chatbote",
+    "content": "Tento chatbot nespracúva, neukladá ani nezhromažďuje žiadne osobné údaje (GDPR údaje) užívateľov. Všetky konverzácie sú dočasné a nie sú archivované. Chatbot nezdieľa žiadne informácie so žiadnymi tretími stranami. Vaše otázky a odpovede zostávajú súkromné a nie sú uchovávané po ukončení relácie. Chatbot slúži výhradne na poskytovanie informácií o výberových konaniach na FiF UK na základe verejne dostupných predpisov a kritérií.",
+    "keywords": ["GDPR", "osobné údaje", "ochrana súkromia", "bezpečnosť", "privacy", "data protection", "tretie strany", "ukladanie údajov", "spracovanie údajov"],
+    "link": ""
   }
 
    ]
