@@ -394,12 +394,28 @@
         btn.onclick = () => {
           appendMessage("Ty", category.text, "user");
           
-          // Špeciálne otvorenie formulára v novom okne (pri Online formulár)
+          // Špeciálne spracovanie pre Online formulár - inštantná odpoveď
           if (category.isFormLink) {
-            window.open('https://form.jotform.com/241893677272368', '_blank');
+            const formularResponse = "**Online formulár žiadosti o zaradenie do výberového konania**\n\n" +
+              "Formulár môžete vyplniť priamo online na nasledujúcom linku:\n" +
+              "https://form.jotform.com/241893677272368\n\n" +
+              "Formulár obsahuje 7 hlavných častí:\n" +
+              "1. Úvodné informácie (obsadzované miesto, katedra, registračné číslo)\n" +
+              "2. Osobné údaje uchádzača\n" +
+              "3. Povinné prílohy (VUPCH, doklady o vzdelaní, zoznam publikácií)\n" +
+              "4. Informácie o plnení kritérií (pre profesorov/docentov)\n" +
+              "5. Podmienky pre opakované obsadenie (ak relevantné)\n" +
+              "6. Súhlas so zverejnením údajov\n" +
+              "7. Súhlas so spracovaním osobných údajov\n\n" +
+              "Pri otázkach k vyplneniu formulára kontaktujte Gabrielu Bakovú (gabriela.bakova@uniba.sk)";
+            
+            appendMessage("FiF UK", formularResponse, "bot", false, false, true);
+            chatHistory.push({ role: "user", content: category.text });
+            chatHistory.push({ role: "assistant", content: formularResponse });
+            return;
           }
           
-          // Vyhľadaj odpoveď cez RAG systém
+          // Pre ostatné tlačidlá - vyhľadaj odpoveď cez RAG systém
           handleQuickReplyWithRAG(category.query);
         };
         
