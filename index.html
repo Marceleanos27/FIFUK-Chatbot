@@ -64,7 +64,7 @@
     let chatHistory = [
       {
         role: "system",
-        content: "Si presný a spoľahlivý AI asistent Filozofickej fakulty Univerzity Komenského v Bratislave (FiF UK). Špecializuješ sa na informácie o výberových konaniach, habilitačných a inauguračných kritériách, vnútorných predpisoch fakulty a akademických procesoch. KRITICKÉ PRAVIDLÁ: 1) Používaj VÝLUČNE informácie z poskytnutého kontextu databázy. 2) Pri odkazovaní na vnútorné predpisy VŽDY uvádzaj ich presné čísla (napr. 'VP č. 7/2025', 'VP č. 19/2022', 'Smernica dekana č. 7/2024'). 3) ZAKÁZANÉ je vymýšľať akékoľvek kritériá, termíny, lehoty alebo numerické požiadavky, ktoré NIE SÚ explicitne uvedené v kontexte. 4) Pri nejasnostiach alebo absencii informácií v kontexte odporuč kontaktovanie zodpovednej osoby (Gabriela Baková, gabriela.bakova@uniba.sk). 5) Odpovedaj profesionálne, presne a akademicky, s rešpektom k univerzitným pravidlám a postupom. 6) Pri dotazoch na konkrétne kritériá (publikácie, citácie, projekty) uvádzaj presné číselné požiadavky z predpisov. 7) DÔLEŽITÉ: Odpovedaj STRUČNE a VÝSTIŽNE - maximálne 3-4 vety, ak nie je nutné viac. Nerozpisuj sa zbytočne. Používaj odrážky len keď je to nevyhnutné. 8) URL linky NEUVÁDZAJ v bežných odpovediach. VÝJIMKA - keď sa používateľ pýta na link/odkaz/zdroj (aj formuláciami ako 'daj link', 'daj mi na to link', 'odkaz na to'), POZORNE si preštuduj PREDOŠLÚ konverzáciu a urči na KTORÝ konkrétny predpis/dokument sa odvoláva. Použij príslušný URL z tohto zoznamu: VP č. 7/2025: https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2025/VP_7_2025.pdf | VP č. 7/2024: https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2024/VP_7_2024.pdf | VP č. 19/2022: https://uniba.sk/fileadmin/ruk/legislativa/2022/Vp_2022_19.pdf | HIK kritériá: https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf | Časová os: https://fphil.uniba.sk/fileadmin/ruk/uradna_vyveska/Vyberove_konanie/FIFUK/casova_os/Casova_os_final.pdf | Formulár: https://form.jotform.com/241893677272368. VŽDY uveď v odpovedi aj NÁZOV predpisu spolu s linkom (napr. 'VP č. 19/2022: [link]')."
+        content: "Si presný AI asistent Filozofickej fakulty UK špecializovaný na výberové konania. Máš prístup k 54 záznamom v databáze pokrývajúcim: výberové konania (formulár, podmienky, prílohy), habilitačné kritériá pre docentov, inauguračné kritériá pre profesorov, opakované obsadenie, vnútorné predpisy (VP 7/2024, 7/2025, 19/2022, 6/2025) a kontakty.\n\nZÁKLADNÉ PRAVIDLÁ:\n1) Používaj IBA informácie z poskytnutého RAG kontextu\n2) NIKDY nevymýšľaj čísla, dátumy, kritériá alebo požiadavky\n3) Odpovedaj STRUČNE (2-4 vety), rozpisuj sa len pri zložitých témach\n4) Pri nejasnostiach odporuč kontakt: Gabriela Baková (gabriela.bakova@uniba.sk)\n\nŠPECIFICKÉ PRAVIDLÁ:\n• HABILITAČNÉ KRITÉRIÁ (docent): Rozlišuj kategórie A+/A/A-, uvádzaj minimálne počty (napr. \"5 výstupov A+/A/A- spolu, z toho 2 za 6 rokov\")\n• INAUGURAČNÉ KRITÉRIÁ (profesor): Vyššie požiadavky ako docent (napr. \"12 výstupov, 5 v A+/A\")\n• OPAKOVANÉ OBSADENIE: Rozlišuj medzi docentom/profesorom a postupom z docenta na profesora. Špecifikuj V1/V2/V3/P1 výstupy\n• FORMULÁR: Vysvetľuj po častiach (1-7), upozorňuj na povinné polia (*), prílohy (VUPCH, doklady, zoznam publikácií)\n• PREDPISY: Cituj čísla presne (\"VP č. 7/2024\", \"VP č. 19/2022\", \"VP č. 6/2025\")\n• KATEDRY: Poznáš všetky skratky (KAA, KAKA, KDVU atď.)\n• LEHOTY: 12 týždňov pre funkčné miesta, 8 týždňov pre ostatné\n\nLINKY - uvádzaj LEN na výslovnú žiadosť (\"link\", \"odkaz\", \"kde nájdem\"):\n• VP 7/2025: https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2025/VP_7_2025.pdf\n• VP 7/2024: https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2024/VP_7_2024.pdf\n• VP 19/2022: https://uniba.sk/fileadmin/ruk/legislativa/2022/Vp_2022_19.pdf\n• HIK kritériá: https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf\n• Formulár: https://form.jotform.com/241893677272368\n\nŠTÝL: Profesionálny, akademický, priateľský. Ak informácia chýba v kontexte, povedz to priamo a odporuč kontakt na Kanceláriu dekana (Gabriela Baková, gabriela.bakova@uniba.sk)."
       }
     ];
 
@@ -82,7 +82,7 @@
       }
       
       // Zobrazenie úvodnej správy s dynamickými kategóriami
-      appendMessage("FiF UK", "Dobrý deň! Som asistent Filozofickej fakulty Univerzity Komenského v Bratislave. Pomôžem vám s informáciami o výberových konaniach, habilitačných a inauguračných kritériách. Môžete si vybrať z ponúkaných kategórií alebo napísať vlastnú otázku. 👋", "bot", false, false, false);
+      appendMessage("FiF UK", "Dobrý deň! Som asistent Filozofickej fakulty Univerzity Komenského v Bratislave. Pomôžem vám s informáciami o výberových konaniach, habilitačných a inauguračných kritériách. Môžete si vybrať z ponúkaných kategórií alebo napísať vlastnú otázku.", "bot", false, false, false);
       showCategoryButtons();
     });
 
@@ -166,7 +166,7 @@
       const formId = 'contact-form-' + Date.now(); // Unikátne ID pre každý formulár
       return `
         <div class="contact-form">
-          <h4>Kontaktujte Oddelenie personálnej práce</h4>
+          <h4>Kontaktujte Kanceláriu dekana</h4>
           <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">
             Pre bližšie informácie o výberových konaniach kontaktujte:<br>
             <strong>Gabriela Baková</strong><br>
@@ -211,7 +211,7 @@
             console.log('SUCCESS!', response.status, response.text);
             
             // Úspešná správa
-            appendMessage("FiF UK", "🎉 **Ďakujeme!** Vaša správa bola úspešne odoslaná na Oddelenie personálnej práce FiF UK. Odpovieme vám čo najskôr.", "bot");
+            appendMessage("FiF UK", "**Ďakujeme!** Vaša správa bola úspešne odoslaná na Kanceláriu dekana FiF UK. Odpovieme vám čo najskôr.", "bot");
             
             // Skryť formulár po úspešnom odoslaní
             const formContainer = form.closest('.contact-form').parentElement;
@@ -223,7 +223,7 @@
             console.log('FAILED...', error);
             
             // Chybová správa
-            appendMessage("FiF UK", "❌ **Ups!** Nastala chyba pri odosielaní správy. Skúste to prosím znovu alebo kontaktujte priamo Gabrielu Bakovú na gabriela.bakova@uniba.sk", "bot");
+            appendMessage("FiF UK", "**Ups!** Nastala chyba pri odosielaní správy. Skúste to prosím znovu alebo kontaktujte priamo Gabrielu Bakovú na gabriela.bakova@uniba.sk", "bot");
             
             // Obnoviť tlačidlo
             submitBtn.disabled = false;
@@ -251,13 +251,84 @@
       // Špeciálne spracovanie pre "Mám inú otázku"
       if (question === "Mám inú otázku") {
         appendMessage("Ty", question, "user");
-        appendMessage("FiF UK", "Samozrejme! Opýtajte sa ma na čokoľvek týkajúce sa výberových konaní, kritérií alebo predpisov FiF UK. Som tu, aby som vám pomohol. 😊", "bot");
+        appendMessage("FiF UK", "Samozrejme! Opýtajte sa ma na čokoľvek týkajúce sa výberových konaní, kritérií alebo predpisov FiF UK. Som tu, aby som vám pomohol.", "bot");
         return;
       }
       
       // Pre ostatné quick replies - nastav otázku do input fieldu a odošli ju
       inputField.value = question;
       sendMessage();
+    }
+
+    // Nová funkcia pre spracovanie quick reply cez RAG systém
+    async function handleQuickReplyWithRAG(query) {
+      chatHistory.push({ role: "user", content: query });
+
+      // Zobraz typing indicator
+      appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
+
+      try {
+        await delay(800);
+
+        // RAG vyhľadávanie relevantného obsahu
+        let relevantContent = [];
+        let ragContext = '';
+        let sources = [];
+        let useRAG = false;
+
+        if (ragSystem) {
+          relevantContent = ragSystem.searchRelevantContent(query, 5);
+          if (relevantContent.length > 0) {
+            ragContext = ragSystem.buildContext(relevantContent);
+            sources = relevantContent.map(item => item.title);
+            useRAG = true;
+            console.log('Quick Reply RAG kontext:', sources);
+          }
+        }
+
+        // API volanie s RAG kontextom
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ 
+            messages: chatHistory,
+            useRAG: useRAG,
+            ragContext: ragContext,
+            sources: sources
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Chyba ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
+
+        // Kontrola či odpoveď vyžaduje kontaktné tlačidlo
+        const isContactRelated = reply.includes("kontakt") || 
+                                reply.includes("telefón") || 
+                                reply.includes("email") ||
+                                reply.includes("gabriela.bakova@uniba.sk") ||
+                                reply.includes("Gabriela Baková") ||
+                                query.toLowerCase().includes("kontakt");
+
+        removeLastBotMessage();
+        appendMessage("FiF UK", reply, "bot", false, false, isContactRelated);
+        chatHistory.push({ role: "assistant", content: reply });
+
+      } catch (error) {
+        console.error("Chyba:", error);
+        removeLastBotMessage();
+        
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Kanceláriu dekana.", "bot", false, false, true);
+        } else {
+          appendMessage("FiF UK", `Ups, nastala chyba: ${error.message}`, "bot");
+        }
+      }
     }
 
     function delay(ms) {
@@ -301,17 +372,37 @@
       return text.substring(0, maxLength) + '...';
     }
 
-    // Zobrazenie kategórií ako quick buttons
+    // Zobrazenie hlavných quick buttons
     function showCategoryButtons() {
-      const categories = getUniqueCategories();
       const quickRepliesDiv = document.createElement('div');
       quickRepliesDiv.className = 'quick-replies';
       
-      categories.forEach(category => {
+      // Definované hlavné kategórie (max 4-5)
+      const mainCategories = [
+        { text: 'Habilitačné kritériá', query: 'Aké sú habilitačné kritériá pre docenta?' },
+        { text: 'Inauguračné kritériá', query: 'Aké sú inauguračné kritériá pre profesora?' },
+        { text: 'Online formulár', query: 'Ako vyplniť formulár výberového konania?', isFormLink: true },
+        { text: 'Kontakt', query: 'Kontakt na výberové konania', isContact: true }
+      ];
+      
+      mainCategories.forEach(category => {
         const btn = document.createElement('button');
         btn.className = 'quick-reply-btn';
-        btn.textContent = category;
-        btn.onclick = () => handleCategoryClick(category);
+        btn.innerHTML = category.text;
+        
+        // Všetky tlačidlá používajú RAG systém
+        btn.onclick = () => {
+          appendMessage("Ty", category.text, "user");
+          
+          // Špeciálne otvorenie formulára v novom okne (pri Online formulár)
+          if (category.isFormLink) {
+            window.open('https://form.jotform.com/241893677272368', '_blank');
+          }
+          
+          // Vyhľadaj odpoveď cez RAG systém
+          handleQuickReplyWithRAG(category.query);
+        };
+        
         quickRepliesDiv.appendChild(btn);
       });
       
@@ -483,7 +574,7 @@
       } catch (error) {
         console.error("Chyba pri volaní API:", error);
         removeLastBotMessage();
-        appendMessage("FiF UK", "Prepáčte, nastala chyba pri spracovaní vašej otázky. Skúste to prosím znova alebo kontaktujte priamo Oddelenie personálnej práce.", "bot", false, false, true);
+        appendMessage("FiF UK", "Prepáčte, nastala chyba pri spracovaní vašej otázky. Skúste to prosím znova alebo kontaktujte priamo Kanceláriu dekana.", "bot", false, false, true);
       }
     }
 
@@ -564,7 +655,7 @@
         
         // Fallback pre lokálne testovanie
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-          appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Oddelenie personálnej práce.", "bot", false, false, true);
+          appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Kanceláriu dekana.", "bot", false, false, true);
         } else {
           appendMessage("FiF UK", `Ups, nastala chyba: ${error.message}`, "bot");
         }
@@ -653,7 +744,7 @@ async function sendMessage() {
     
     // Fallback pre lokálne testovanie
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Oddelenie personálnej práce.", "bot", false, false, true);
+      appendMessage("FiF UK", "Na túto otázku neviem dostatočne odpovedať. Pre viac informácií kontaktujte prosím Kanceláriu dekana.", "bot", false, false, true);
     } else {
       appendMessage("FiF UK", `Ups, nastala chyba: ${error.message}`, "bot");
     }

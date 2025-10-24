@@ -12,24 +12,34 @@ class RAGSystem {
     
     // Synonymá pre lepšie vyhľadávanie (prispôsobené pre FiF UK)
     this.synonyms = {
-      'profesor': ['profesorsky', 'profesura', 'profesor', 'inauguracny', 'inauguracia'],
-      'docent': ['docentsky', 'docentura', 'docent', 'habilitacny', 'habilitacia'],
-      'vyberkone': ['vyberove', 'konanie', 'vyber', 'konkurz', 'selection'],
-      'kriterium': ['kriteria', 'podmienky', 'poziadavky', 'requirements', 'predpoklady'],
-      'publikacia': ['publikacie', 'publikacny', 'vysledky', 'vystup', 'clanok', 'monografia'],
-      'citacia': ['citacie', 'citovany', 'ohlas', 'ohlasovost', 'citation'],
-      'projekt': ['projekty', 'vyskum', 'grant', 'vega', 'apvv', 'kega'],
-      'doktorand': ['doktorandi', 'doktorandsky', 'dizertacia', 'phd', 'skolitel'],
-      'katedra': ['katedry', 'pracovisko', 'oddelenie', 'department'],
+      'profesor': ['profesorsky', 'profesura', 'profesor', 'inauguracny', 'inauguracia', 'inauguracne'],
+      'docent': ['docentsky', 'docentura', 'docent', 'habilitacny', 'habilitacia', 'habilitacne'],
+      'vyberove': ['vyberkone', 'vyberove', 'konanie', 'vyber', 'konkurz', 'selection'],
+      'kriterium': ['kriteria', 'podmienky', 'poziadavky', 'requirements', 'predpoklady', 'minimalne'],
+      'publikacia': ['publikacie', 'publikacny', 'vysledky', 'vystup', 'clanok', 'monografia', 'vysledok', 'vystupy'],
+      'citacia': ['citacie', 'citovany', 'ohlas', 'ohlasovost', 'citation', 'ohlasy'],
+      'projekt': ['projekty', 'vyskum', 'grant', 'vega', 'apvv', 'kega', 'vyskumny'],
+      'doktorand': ['doktorandi', 'doktorandsky', 'dizertacia', 'phd', 'skolitel', 'dizertacny'],
+      'katedra': ['katedry', 'pracovisko', 'oddelenie', 'department', 'kaa', 'kaka', 'kam', 'kdvu', 'kest', 'kfdf', 'kgns', 'kksf', 'kkiv', 'klmv', 'kmjl', 'kmk', 'kmuz', 'kped', 'kpol', 'kpr', 'kpsych', 'krom', 'krvs', 'ksf', 'ksd', 'ksjtk', 'ksllv', 'ksoc', 'kvd', 'kvas', 'kzur'],
       'dekan': ['dekana', 'dekanske', 'vedenie', 'fakulta'],
-      'ucitel': ['ucitela', 'pedagogicky', 'pedagog', 'vyucba', 'vyucujuci'],
-      'zmluva': ['pracovny', 'pomer', 'contract', 'employment', 'obsadenie'],
+      'ucitel': ['ucitela', 'pedagogicky', 'pedagog', 'vyucba', 'vyucujuci', 'vysokoskolsky'],
+      'zmluva': ['pracovny', 'pomer', 'contract', 'employment', 'obsadenie', 'pracovna'],
       'funkcia': ['funkcne', 'miesto', 'pozicia', 'position'],
       'studium': ['studijny', 'program', 'odbor', 'bakalarske', 'magisterske', 'doktorandske'],
       'komisia': ['vyberova', 'rada', 'committee', 'hodnotenie'],
-      'ziadost': ['prihlaska', 'application', 'formular', 'dokumenty'],
-      'kontakt': ['spojenie', 'informacie', 'udaje', 'email', 'telefon', 'adresa'],
-      'termin': ['lehota', 'datum', 'cas', 'deadline', 'faza']
+      'ziadost': ['prihlaska', 'application', 'formular', 'dokumenty', 'registraturne', 'cislo'],
+      'kontakt': ['spojenie', 'informacie', 'udaje', 'email', 'telefon', 'adresa', 'bakova', 'gabriela'],
+      'termin': ['lehota', 'datum', 'cas', 'deadline', 'faza', 'tyzden', 'tyzdne'],
+      'formular': ['formulare', 'ziadost', 'prihlaska', 'cast', 'casti', 'vyplnenie'],
+      'priloha': ['prilohy', 'prilozit', 'nahrat', 'dokument', 'dokumenty', 'vupch', 'zivotopis'],
+      'vzdelavanie': ['vzdelavacie', 'vzdelavacia', 'cinnost', 'pedagogicka', 'ucebnica', 'skriptum'],
+      'vedecka': ['vedecky', 'vedeckovyskumna', 'vyskumna', 'tvoriva', 'umelecka', 'skola'],
+      'kategoria': ['kategorie', 'a+', 'a', 'a-', 'v1', 'v2', 'v3', 'p1'],
+      'wos': ['scopus', 'web', 'science', 'databaza', 'registrovany'],
+      'opakované': ['opakovane', 'opakovat', 'znovu', 'obsadenie', 'obsadit'],
+      'predpis': ['predpisy', 'vnutorny', 'smernica', 'zakon', 'legislativa', 'vp', '7/2024', '7/2025', '6/2025', '19/2022'],
+      'suhas': ['suhlas', 'spracovanie', 'zverejnenie', 'gdpr', 'osobne', 'udaje'],
+      'lektor': ['lektora', 'asistent', 'asistenta', 'odborny', 'pracovnik', 'pracovnika', 'vyskumny']
     };
   }
 
@@ -56,8 +66,14 @@ class RAGSystem {
       id: r.id, 
       title: r.title, 
       category: r.category,
-      score: r.relevanceScore 
+      score: r.relevanceScore.toFixed(2)
     })));
+    
+    // Ak je najvyššie skóre nízke, pridaj varovanie
+    if (results.length > 0 && results[0].relevanceScore < 10) {
+      console.log('⚠️ Nízka relevancia výsledkov - možno neexistuje presná odpoveď v databáze');
+    }
+    
     return results;
   }
 
@@ -72,7 +88,7 @@ class RAGSystem {
     // 1. Scoring pre kategóriu (prioritizácia podľa typu obsahu)
     queryWords.forEach(word => {
       if (normalizedCategory.includes(word)) {
-        score += 3; // Bonus za relevantnosť kategórie
+        score += 4; // Zvýšený bonus za relevantnosť kategórie
       }
     });
     
@@ -83,51 +99,81 @@ class RAGSystem {
         keyword.includes(word) || word.includes(keyword) || this.isSimilar(word, keyword)
       );
       if (keywordMatch) {
-        score += 7; // Vysoká váha pre keywords
+        score += 8; // Zvýšená váha pre keywords
       }
       
       // Názov
       if (normalizedTitle.includes(word)) {
-        score += 5;
+        score += 6; // Zvýšené skóre pre title match
       }
       
       // Obsah (s TF-IDF boost pre zriedkavé slová)
       if (normalizedContent.includes(word)) {
         const frequency = (normalizedContent.match(new RegExp(word, 'g')) || []).length;
-        score += Math.min(frequency * 1.2, 5); // Max 5 body za slovo v obsahu
+        score += Math.min(frequency * 1.5, 6); // Zvýšený max na 6 bodov
       }
     });
 
     // 3. Scoring pre bigramy (2-slovné frázy)
     bigrams.forEach(bigram => {
       if (normalizedContent.includes(bigram) || normalizedTitle.includes(bigram)) {
-        score += 6; // Vysoké skóre pre presné frázy
+        score += 7; // Zvýšené skóre pre presné frázy
       }
       normalizedKeywords.forEach(keyword => {
         if (keyword.includes(bigram)) {
-          score += 8; // Extra vysoké skóre pre bigram v keywords
+          score += 10; // Extra vysoké skóre pre bigram v keywords
         }
       });
     });
 
     // 4. Bonus za presný match celej frázy
     if (normalizedContent.includes(fullQuery) || normalizedTitle.includes(fullQuery)) {
-      score += 10; // Vysoký bonus za presný match
+      score += 12; // Zvýšený bonus za presný match
     }
 
     // 5. Bonus za čísla (roky, čísla predpisov, telefónne čísla)
     const numbers = fullQuery.match(/\d+/g);
     if (numbers) {
       numbers.forEach(num => {
-        if (normalizedContent.includes(num) || item.id.includes(num)) {
-          score += 4; // Bonus za zhodu čísel
+        if (normalizedContent.includes(num) || normalizedTitle.includes(num)) {
+          score += 5; // Zvýšený bonus za zhodu čísel
         }
       });
     }
 
     // 6. Bonus za ID match (napr. VP_7_2025)
-    if (item.id && fullQuery.includes(item.id.toLowerCase())) {
-      score += 15; // Veľký bonus za priamy match ID
+    if (item.id && fullQuery.includes(item.id.toString().toLowerCase())) {
+      score += 20; // Veľký bonus za priamy match ID
+    }
+    
+    // 7. Bonus za špecifické výberové konanie frázy
+    const vcPhrases = ['vyberove konanie', 'vyberove konania', 'vyberovom konani', 'vyberoveho konania'];
+    if (vcPhrases.some(phrase => fullQuery.includes(phrase))) {
+      if (normalizedCategory.includes('vyberove konanie')) {
+        score += 5;
+      }
+    }
+    
+    // 8. Bonus za kritériá - rozlišovanie medzi docentskými a profesorskými
+    const isDocentQuery = queryWords.some(w => ['docent', 'docentsky', 'habilitacny', 'habilitacia'].includes(w));
+    const isProfesorQuery = queryWords.some(w => ['profesor', 'profesorsky', 'inauguracny', 'inauguracia'].includes(w));
+    
+    if (isDocentQuery && normalizedCategory.includes('habilitacne')) {
+      score += 6;
+    }
+    if (isProfesorQuery && normalizedCategory.includes('inauguracne')) {
+      score += 6;
+    }
+    
+    // 9. Bonus za formulár a konkrétne časti
+    const castMatch = fullQuery.match(/cast\s*(\d+)/);
+    if (castMatch && normalizedTitle.includes('cast ' + castMatch[1])) {
+      score += 8;
+    }
+    
+    // 10. Bonus za link - ak je uvedený link, je to často dôležitý zdroj
+    if (item.link && item.link !== '') {
+      score += 2;
     }
 
     return score;
@@ -235,31 +281,80 @@ class RAGSystem {
           contextPart += ` (ID: ${item.id})`;
         }
         contextPart += `:\n${item.content}`;
+        
+        // Pridaj link ak existuje
+        if (item.link && item.link !== '') {
+          contextPart += `\n📎 Link: ${item.link}`;
+        }
+        
         return contextPart;
       })
       .join('\n\n');
     
     // Kontrola či obsahuje kontaktné informácie
     const hasContactInfo = relevantContent.some(item => 
-      item.category === 'Kontakt - výberové konania' || 
-      item.keywords.some(kw => ['kontakt', 'email', 'telefon'].includes(kw.toLowerCase()))
+      item.category === 'Kontaktné informácie' || 
+      item.keywords.some(kw => ['kontakt', 'email', 'telefon', 'bakova', 'gabriela'].includes(kw.toLowerCase()))
     );
     
-    // Kontrola či ide o kritériá alebo predpisy
-    const isCriteriaRelated = relevantContent.some(item => 
-      item.category.includes('Vnútorný predpis') || 
-      item.category.includes('Habilitačné a inauguračné konanie')
+    // Kontrola či ide o kritériá (habilitačné alebo inauguračné)
+    const hasHabilitacneCriteria = relevantContent.some(item => 
+      item.category.includes('Habilitačné kritériá')
+    );
+    
+    const hasInauguracneCriteria = relevantContent.some(item => 
+      item.category.includes('Inauguračné kritériá')
+    );
+    
+    // Kontrola či ide o vnútorné predpisy
+    const hasVnutornePredpisy = relevantContent.some(item => 
+      item.category.includes('Vnútorné predpisy')
+    );
+    
+    // Kontrola či ide o formulár
+    const hasFormular = relevantContent.some(item => 
+      item.category.includes('Formulár')
+    );
+    
+    // Kontrola či ide o prílohy
+    const hasPrilohy = relevantContent.some(item => 
+      item.category.includes('Prílohy')
+    );
+    
+    // Kontrola či ide o opakované obsadenie
+    const hasOpakovaneObsadenie = relevantContent.some(item => 
+      item.category.includes('Opakované obsadenie')
     );
     
     const contactNote = hasContactInfo 
-      ? '\n\nPOZNÁMKA: Pri odpovedaní na otázky o kontaktoch použi presne uvedené kontaktné údaje (email, telefón).'
+      ? '\n\n⚠️ KONTAKTY: Pri odpovedaní na otázky o kontaktoch použi PRESNE uvedené kontaktné údaje (email, telefón, meno). Neuvádzaj žiadne iné kontakty. Gabriela Baková pracuje v Kancelárii dekana.'
       : '';
     
-    const criteriaNote = isCriteriaRelated
-      ? '\n\nPOZNÁMKA: Uvádzaj presné požiadavky a kritériá ako sú uvedené v predpisoch. Pri nejasnostiach odporuč kontaktovanie zodpovednej osoby.'
+    const habilitacneNote = hasHabilitacneCriteria
+      ? '\n\n📋 HABILITAČNÉ KRITÉRIÁ: Uvádzaj presné minimálne požiadavky pre docentov. Rozlišuj medzi kategóriami A+, A, A- a ich počtami. Pri nejasnostiach odporuč kontakt na zodpovednú osobu.'
       : '';
     
-    return `PRESNÉ INFORMÁCIE O FILOZOFICKEJ FAKULTE UK (používaj LEN tieto fakty):\n\n${context}\n\nINŠTRUKCIE: Odpovedaj presne podľa týchto informácií z databázy FiF UK. NEPRÍDÁVAJ žiadne vlastné interpretácie alebo detaily, ktoré nie sú explicitne uvedené v kontexte. Pri odkazovaní na vnútorné predpisy uvádzaj ich čísla (napr. VP č. 7/2025).${contactNote}${criteriaNote}`;
+    const inauguracneNote = hasInauguracneCriteria
+      ? '\n\n📋 INAUGURAČNÉ KRITÉRIÁ: Uvádzaj presné minimálne požiadavky pre profesorov. Rozlišuj medzi kategóriami A+, A, A- a ich počtami. Vyššie požiadavky ako pre docentov. Pri nejasnostiach odporuč kontakt na zodpovednú osobu.'
+      : '';
+    
+    const predpisNote = hasVnutornePredpisy
+      ? '\n\n📜 VNÚTORNÉ PREDPISY: Pri odkazovaní na predpisy uvádzaj ich presné čísla (napr. VP č. 7/2024, VP č. 6/2025, VP č. 19/2022). Ak je uvedený link, odporuč ho používateľovi.'
+      : '';
+    
+    const formularNote = hasFormular
+      ? '\n\n📝 FORMULÁR: Vysvetľuj jednotlivé časti formulára postupne a zrozumiteľne. Upozorni na povinné polia označené hviezdičkou.'
+      : '';
+    
+    const prilohaNote = hasPrilohy
+      ? '\n\n📎 PRÍLOHY: Vysvetľuj, ktoré prílohy sú povinné a ktoré nie. Upozorni na špecifické požiadavky pre jednotlivé prílohy (napr. VUPCH, doklady o vzdelaní).'
+      : '';
+    
+    const opakovaneNote = hasOpakovaneObsadenie
+      ? '\n\n🔄 OPAKOVANÉ OBSADENIE: Rozlišuj medzi podmienkami pre opakované obsadenie docenta, profesora a postup z docenta na profesora. Pozor na požiadavky V1, V2, V3, P1 a ich kombinácie.'
+      : '';
+    
+    return `PRESNÉ INFORMÁCIE O FILOZOFICKEJ FAKULTE UK (používaj LEN tieto fakty):\n\n${context}\n\n📌 INŠTRUKCIE: Odpovedaj PRESNE podľa týchto informácií z databázy FiF UK. NEPRÍDÁVAJ žiadne vlastné interpretácie alebo detaily, ktoré nie sú explicitne uvedené v kontexte. Ak informácia nie je v kontexte, POVEDZ to a odporuč kontaktovanie zodpovednej osoby (Gabriela Baková, gabriela.bakova@uniba.sk).${contactNote}${habilitacneNote}${inauguracneNote}${predpisNote}${formularNote}${prilohaNote}${opakovaneNote}`;
   }
 
   // Vyhľadávanie podľa ID
