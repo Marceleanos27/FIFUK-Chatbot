@@ -780,10 +780,10 @@ async function sendMessage() {
       // Spracovanie **text** na <strong>text</strong>
       let formattedMessage = message.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
       
-      // Automatické vytvorenie hyperlinkov z URL
+      // Automatické vytvorenie hyperlinkov z URL (bez zachytávania interpunkcie na konci)
       formattedMessage = formattedMessage.replace(
-        /(https?:\/\/[^\s<]+)(?![^<]*>)/g,
-        '<a href="$1" target="_blank">$1</a>'
+        /(https?:\/\/[^\s<)}\]]+?)([)}\].,;:!?]*)(?=\s|$|<)/g,
+        '<a href="$1" target="_blank">$1</a>$2'
       );
 
       msgDiv.innerHTML = formattedMessage;
