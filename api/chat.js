@@ -10,12 +10,15 @@ export default async function handler(req, res) {
   try {
     let enhancedMessages = [...messages];
     
-    // Ak je povolený RAG, pridaj kontext do poslednej user správy
+    // Ak je povolený RAG, pridaj kontext ako samostatnú system správu pred poslednú user správu
     if (useRAG && ragContext) {
       const lastUserIndex = enhancedMessages.length - 1;
       if (enhancedMessages[lastUserIndex] && enhancedMessages[lastUserIndex].role === 'user') {
-        const originalQuestion = enhancedMessages[lastUserIndex].content;
-        enhancedMessages[lastUserIndex].content = `${ragContext}\n\nOtázka zákazníka: ${originalQuestion}`;
+        // Vlož RAG kontext ako system správu pred poslednú user správu
+        enhancedMessages.splice(lastUserIndex, 0, {
+          role: 'system',
+          content: `Relevantný kontext z databázy:\n${ragContext}\n\nPoužite tento kontext na zodpovedanie nadchádzajúcej otázky používateľa.`
+        });
       }
     }
 

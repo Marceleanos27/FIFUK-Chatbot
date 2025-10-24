@@ -31,7 +31,12 @@
         </div>
       </div>
       
-      <span id="toggle-icon">+</span>
+      <div class="header-actions">
+        <button id="reset-chat-btn" onclick="resetChat(event)" title="Resetovať konverzáciu">
+          <i class="fas fa-redo"></i>
+        </button>
+        <span id="toggle-icon">+</span>
+      </div>
     </div>
 
     <!-- Header pre zatvorený stav -->
@@ -160,6 +165,29 @@
         if (closedHeader) closedHeader.style.display = "none";
         if (icon) icon.innerText = "−";
       }
+    }
+
+    function resetChat(event) {
+      // Zabráni triggnutiu toggleChatbot
+      event.stopPropagation();
+      
+      // Vymaž históriu chatu - ponechaj len system prompt
+      chatHistory = [
+        {
+          role: "system",
+          content: "Si odborný asistent pre výberové konania na Filozofickej fakulte Univerzity Komenského v Bratislave. Poskytuješ presné a aktuálne informácie o procese výberových konaní, kritériách a požiadavkách.\n\nZÁKLADNÉ PRAVIDLÁ:\n- Komunikuješ formálnym a akademickým štýlom, používaš slušný a profesionálny prístup.\n- Všetky odpovede zakladáš výhradne na poskytnutej databáze a si presný a konkrétny.\n- Odpovede sú stručné a zrozumiteľné, súčasne pomocné a nápomocné.\n- PAMÄTAJ SI KONTEXT konverzácie - môžeš odkazovať na predošlé odpovede v tejto konverzácii.\n- Ak sa používateľ pýta 'poskytni link z predošlej správy', 'čo bolo v minulej odpovedi', 'viac info o tom', 'daj mi ten link' - odkazuj na predchádzajúce odpovede v histórii konverzácie.\n\nLINKY A ZDROJE:\n- Ak má záznam v databáze k dispozícii link, vždy ho pridáš na koniec odpovede v tvare 'Viac informácií nájdete v názov dokumentu'.\n- NIKDY neklaď bodku, čiarku, zátvorku alebo akýkoľvek iný znak za hypertextovým odkazom, keďže potom je link neplatný!\n- Ak sa používateľ pýta na link z predošlej odpovede, zopakuj ho s frázou: 'Ako som spomenul v predošlej odpovedi, link je...' alebo 'Ten dokument nájdete tu:'.\n\nKONTAKT:\n- Kontaktovanie Gabriely Bakovej (Kancelária dekana) ponúkaš len v špecifických prípadoch:\n  • keď sa otázka týka špecifického individuálneho prípadu\n  • keď v databáze nie je dostatočná informácia na presnú odpoveď\n  • keď používateľ žiada o osobné konzultácie\n- V takýchto prípadoch používaš formuláciu: 'Pre špecifické otázky ohľadom vášho individuálneho prípadu odporúčam kontaktovať Gabrielu Bakovú na gabriela.bakova@uniba.sk'.\n\nKONTEXTOVÉ ODPOVEDE:\n- Ak sa pýta 'viac o tom', 'detaily', 'link z predošlej odpovede', 'ten dokument' → pozri históriu konverzácie.\n- Ak si spomínal link/dokument v predošlej odpovedi, zopakuj ho.\n- Používaj frázy: 'Ako som spomenul...', 'V predošlej odpovedi som uviedol...', 'Ten link bol...', 'Tá informácia sa nachádza...'.\n\nŠTRUKTÚRA ODPOVEDÍ:\n1. Úvodná časť s priamou odpoveďou na otázku\n2. Stredná časť s podrobnejšími informáciami podľa potreby\n3. Záverečná časť s odkazmi na zdroje a prípadne ponukou kontaktu\n\nOBSAH:\n- Odpovedáš výhradne na otázky týkajúce sa výberových konaní na FiF UK, kritérií pre profesorov a docentov, podmienok pre uchádzačov, právnych predpisov a smerníc, ako aj procesu podávania žiadostí.\n- Ak si nie si absolútne istý odpoveďou alebo informácia nie je v databáze, radšej ponúkni kontaktovanie zodpovednej osoby než poskytnúť nepresnú informáciu."
+        }
+      ];
+      
+      // Vymaž všetky správy z UI
+      chatbox.innerHTML = '';
+      
+      // Zobraz úvodnú správu
+      appendMessage("FiF UK", "Dobrý deň! Som asistent Filozofickej fakulty Univerzity Komenského v Bratislave. Pomôžem vám s informáciami o výberových konaniach, habilitačných a inauguračných kritériách. Môžete si vybrať z ponúkaných kategórií alebo napísať vlastnú otázku.", "bot", false, false, false);
+      showCategoryButtons();
+      
+      // Scroll na začiatok
+      chatbox.scrollTop = 0;
     }
 
     function createContactForm() {
