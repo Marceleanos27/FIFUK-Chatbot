@@ -65,7 +65,7 @@
         bottom: "20px",
         right: "20px",
         borderRadius: {
-          open: "20px",
+          open: "0",
           closed: "0"
         }
       };

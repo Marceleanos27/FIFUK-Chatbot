@@ -899,7 +899,7 @@ button:active {
     width: 230px;
     height: 50px;
     right: 5px;
-    border-radius: 25px;
+    border-radius: 0;
   }
   
   /* V iframe režime - VŽDY desktop veľkosti */
@@ -915,7 +915,7 @@ button:active {
   body.iframe-mode #chatbot-container.closed {
     width: 100% !important;
     height: 100% !important;
-    border-radius: 50% !important;
+    border-radius: 0 !important;
   }
   
   /* Mobilné štýly IBA pre NON-iframe */
