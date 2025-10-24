@@ -20,7 +20,7 @@
   iframe.style.width = "280px"; // Začína zatvorený
   iframe.style.height = "56px"; // Začína zatvorený
   iframe.style.border = "none";
-  iframe.style.borderRadius = "28px"; // Zaoblené rohy pre zatvorený stav
+  iframe.style.borderRadius = "0"; // Ostré rohy pre zatvorený stav
   iframe.style.zIndex = "99999";
   iframe.style.boxShadow = "0 8px 24px rgba(33, 89, 160, 0.3)";
   iframe.style.transition = "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
@@ -41,32 +41,18 @@
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     
-    if (vw <= 420) {
-      // Veľmi malé mobilné zariadenia
+    if (vw <= 768) {
+      // Mobilné zariadenia a tablety - celá šírka a výška pri otvorení
       return {
-        openWidth: `${Math.min(vw - 20, 380)}px`,
-        openHeight: `${Math.min(vh - 40, 650)}px`,
-        closedWidth: "240px",
-        closedHeight: "50px",
-        bottom: "10px",
-        right: "10px",
+        openWidth: `${vw}px`,
+        openHeight: `${vh}px`,
+        closedWidth: vw <= 420 ? "240px" : "260px",
+        closedHeight: vw <= 420 ? "50px" : "52px",
+        bottom: "0",
+        right: "0",
         borderRadius: {
-          open: "16px",
-          closed: "25px"
-        }
-      };
-    } else if (vw <= 768) {
-      // Mobilné zariadenia a tablety
-      return {
-        openWidth: `${Math.min(vw - 40, 380)}px`,
-        openHeight: `${Math.min(vh - 60, 650)}px`,
-        closedWidth: "260px",
-        closedHeight: "52px",
-        bottom: "15px",
-        right: "15px",
-        borderRadius: {
-          open: "18px",
-          closed: "26px"
+          open: "0",
+          closed: "0"
         }
       };
     } else {
@@ -80,7 +66,7 @@
         right: "20px",
         borderRadius: {
           open: "20px",
-          closed: "28px"
+          closed: "0"
         }
       };
     }
@@ -89,13 +75,28 @@
   // Aplikuje responzívne veľkosti
   function applyResponsiveSizes(isOpen = false) {
     const sizes = getResponsiveSizes();
+    const isMobile = window.innerWidth <= 768;
     
     if (isOpen) {
       iframe.style.transition = "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
       iframe.style.width = sizes.openWidth;
       iframe.style.height = sizes.openHeight;
       iframe.style.borderRadius = sizes.borderRadius.open;
-      iframe.style.boxShadow = "0 24px 48px rgba(33, 89, 160, 0.35)";
+      iframe.style.boxShadow = isMobile ? "none" : "0 24px 48px rgba(33, 89, 160, 0.35)";
+      
+      // Na mobiloch nastaví iframe na celú obrazovku
+      if (isMobile) {
+        iframe.style.bottom = "0";
+        iframe.style.right = "0";
+        iframe.style.left = "0";
+        iframe.style.top = "0";
+        iframe.style.position = "fixed";
+      } else {
+        iframe.style.bottom = sizes.bottom;
+        iframe.style.right = sizes.right;
+        iframe.style.left = "auto";
+        iframe.style.top = "auto";
+      }
       
       // Pošle správu do iframe o otvorení
       setTimeout(() => {
@@ -110,6 +111,17 @@
       iframe.style.borderRadius = sizes.borderRadius.closed;
       iframe.style.boxShadow = "0 8px 24px rgba(33, 89, 160, 0.3)";
       
+      // Zatvorený stav vždy v rohu
+      if (isMobile) {
+        iframe.style.bottom = "10px";
+        iframe.style.right = "10px";
+      } else {
+        iframe.style.bottom = sizes.bottom;
+        iframe.style.right = sizes.right;
+      }
+      iframe.style.left = "auto";
+      iframe.style.top = "auto";
+      
       // Pošle správu do iframe o zatvorení
       setTimeout(() => {
         if (iframe.contentWindow) {
@@ -117,10 +129,6 @@
         }
       }, 50);
     }
-    
-    iframe.style.bottom = sizes.bottom;
-    iframe.style.right = sizes.right;
-    iframe.style.left = "auto";
   }
 
   let isOpen = false;
