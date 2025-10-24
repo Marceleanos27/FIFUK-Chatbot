@@ -6,7 +6,7 @@
   const VERCEL_URL = "https://fifuk-chatbot.vercel.app/";
 
   // Povolene domény
-  const allowed = ["uniba.sk", "ragnetiq.com", "www.ragnetiq.com", "localhost", "127.0.0.1"];
+  const allowed = ["uniba.sk", "fphil.uniba.sk", "ragnetiq.com", "www.ragnetiq.com", "localhost", "127.0.0.1"];
   if (!allowed.includes(window.location.hostname)) {
     console.warn("Tento widget nie je povolený na tejto doméne");
     return; // NEvytvára iframe
@@ -167,3 +167,4 @@
   // Nastaví počiatočné responzívne veľkosti
   applyResponsiveSizes(false);
 })();
+
