@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostika Chat Logger</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #f0f2f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2159A0;
+      border-bottom: 3px solid #2159A0;
+      padding-bottom: 10px;
+    }
+    .status {
+      padding: 15px;
+      border-radius: 5px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .loading { background: #fff3cd; color: #856404; }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .info { background: #d1ecf1; color: #0c5460; }
+    pre {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      border-left: 4px solid #2159A0;
+    }
+    button {
+      background: #2159A0;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 5px;
+    }
+    button:hover { background: #1B4B87; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    .step {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      border-left: 4px solid #2159A0;
+    }
+    .step h3 { margin-top: 0; color: #2159A0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Diagnostika Chat Logger API</h1>
+    
+    <div class="info" style="margin-bottom: 20px;">
+      Tento nástroj vám pomôže identifikovať problém s ukladaním chatov.
+    </div>
+
+    <button onclick="runDiagnostics()">▶️ Spustiť diagnostiku</button>
+    <button onclick="testAPI()">🧪 Test API volania</button>
+    
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const API_ENDPOINT = 'https://fifuk-chatbot.vercel.app/api/saveChat';
+    const resultsDiv = document.getElementById('results');
+
+    async function runDiagnostics() {
+      resultsDiv.innerHTML = '<div class="status loading">⏳ Spúšťam diagnostiku...</div>';
+      
+      let html = '<h2>📊 Výsledky diagnostiky</h2>';
+      
+      // Step 1: Check endpoint accessibility
+      html += '<div class="step">';
+      html += '<h3>1️⃣ Kontrola dostupnosti API endpointu</h3>';
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: 'OPTIONS'
+        });
+        html += `<div class="status success">✅ Endpoint je dostupný (Status: ${response.status})</div>`;
+      } catch (error) {
+        html += `<div class="status error">❌ Endpoint nie je dostupný: ${error.message}</div>`;
+        html += '<p><strong>Riešenie:</strong> Skontrolujte, či je projekt nasadený na Vercel.</p>';
+      }
+      html += '</div>';
+
+      // Step 2: Test with minimal data
+      html += '<div class="step">';
+      html += '<h3>2️⃣ Test s minimálnymi dátami</h3>';
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userMessage: 'Test',
+            botResponse: 'Test response',
+            website: 'test.com'
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          html += '<div class="status success">✅ API endpoint funguje správne!</div>';
+          html += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        } else {
+          html += `<div class="status error">❌ API vrátilo chybu (${response.status})</div>`;
+          html += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+          
+          // Provide specific solutions
+          html += '<h4>🔧 Možné riešenia:</h4><ul>';
+          
+          if (data.details && data.details.includes('SUPABASE')) {
+            html += '<li><strong>Chýbajú environment variables v Vercel:</strong><br>';
+            html += '→ Choďte do Vercel Dashboard → Project → Settings → Environment Variables<br>';
+            html += '→ Pridajte: <code>SUPABASE_URL</code> a <code>SUPABASE_KEY</code></li>';
+          }
+          
+          if (data.details && data.details.includes('table')) {
+            html += '<li><strong>Tabuľka neexistuje alebo má zlé stĺpce:</strong><br>';
+            html += '→ Skontrolujte, či tabuľka <code>chat_logs</code> existuje v Supabase<br>';
+            html += '→ Musí mať stĺpce: <code>user_message</code>, <code>bot_response</code>, <code>website</code>, <code>created_at</code></li>';
+          }
+          
+          if (data.details && data.details.includes('permission')) {
+            html += '<li><strong>Problém s oprávneniami:</strong><br>';
+            html += '→ Skontrolujte RLS (Row Level Security) policies v Supabase<br>';
+            html += '→ Uistite sa, že politika povoľuje INSERT operácie</li>';
+          }
+          
+          html += '</ul>';
+        }
+      } catch (error) {
+        html += `<div class="status error">❌ Chyba pri volaní API: ${error.message}</div>`;
+      }
+      html += '</div>';
+
+      // Step 3: Check current environment
+      html += '<div class="step">';
+      html += '<h3>3️⃣ Informácie o prostredí</h3>';
+      html += '<pre>';
+      html += 'Current URL: ' + window.location.href + '\n';
+      html += 'Hostname: ' + window.location.hostname + '\n';
+      html += 'API Endpoint: ' + API_ENDPOINT + '\n';
+      html += 'Browser: ' + navigator.userAgent;
+      html += '</pre>';
+      html += '</div>';
+
+      // Step 4: Recommendations
+      html += '<div class="step">';
+      html += '<h3>4️⃣ Kontrolný zoznam</h3>';
+      html += '<ul style="line-height: 1.8;">';
+      html += '<li>☑️ Je projekt nasadený na Vercel?</li>';
+      html += '<li>☑️ Sú nastavené <code>SUPABASE_URL</code> a <code>SUPABASE_KEY</code> v Vercel?</li>';
+      html += '<li>☑️ Existuje tabuľka <code>chat_logs</code> v Supabase?</li>';
+      html += '<li>☑️ Má tabuľka správne stĺpce (user_message, bot_response, website, created_at)?</li>';
+      html += '<li>☑️ Sú nastavené RLS policies pre INSERT?</li>';
+      html += '<li>☑️ Je <code>@supabase/supabase-js</code> nainštalovaný? (spustite <code>npm install</code>)</li>';
+      html += '</ul>';
+      html += '</div>';
+
+      resultsDiv.innerHTML = html;
+    }
+
+    async function testAPI() {
+      resultsDiv.innerHTML = '<div class="status loading">⏳ Testujem API...</div>';
+      
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userMessage: 'Diagnostický test: ' + new Date().toISOString(),
+            botResponse: 'Toto je testovacia odpoveď od bota.',
+            website: window.location.hostname
+          })
+        });
+
+        const data = await response.json();
+        
+        let html = '<h2>🧪 Výsledok testu API</h2>';
+        html += `<div class="status ${response.ok ? 'success' : 'error'}">`;
+        html += `${response.ok ? '✅' : '❌'} Status: ${response.status}`;
+        html += '</div>';
+        
+        html += '<h3>📤 Odoslaná požiadavka:</h3>';
+        html += '<pre>' + JSON.stringify({
+          userMessage: 'Diagnostický test: ' + new Date().toISOString(),
+          botResponse: 'Toto je testovacia odpoveď od bota.',
+          website: window.location.hostname
+        }, null, 2) + '</pre>';
+        
+        html += '<h3>📥 Odpoveď servera:</h3>';
+        html += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        
+        if (!response.ok) {
+          html += '<div class="status error">';
+          html += '<h4>❌ Chyba detekovaná</h4>';
+          html += '<p><strong>Detaily:</strong> ' + (data.details || data.error || 'Neznáma chyba') + '</p>';
+          
+          if (data.hint) {
+            html += '<p><strong>Nápoveda:</strong> ' + data.hint + '</p>';
+          }
+          
+          html += '<h4>🔧 Kroky na opravu:</h4>';
+          html += '<ol>';
+          html += '<li>Otvorte Vercel Dashboard</li>';
+          html += '<li>Choďte do Settings → Environment Variables</li>';
+          html += '<li>Skontrolujte, či existujú <code>SUPABASE_URL</code> a <code>SUPABASE_KEY</code></li>';
+          html += '<li>Otvorte Supabase Dashboard → Table Editor</li>';
+          html += '<li>Skontrolujte, či existuje tabuľka <code>chat_logs</code></li>';
+          html += '<li>Skontrolujte RLS policies (Authentication → Policies)</li>';
+          html += '</ol>';
+          html += '</div>';
+        } else {
+          html += '<div class="status success">';
+          html += '<h4>✅ Úspech!</h4>';
+          html += '<p>API funguje správne. Chat bol úspešne uložený do databázy.</p>';
+          html += '<p>Môžete overiť v Supabase Dashboard → Table Editor → chat_logs</p>';
+          html += '</div>';
+        }
+        
+        resultsDiv.innerHTML = html;
+      } catch (error) {
+        resultsDiv.innerHTML = `
+          <div class="status error">
+            <h3>❌ Chyba siete</h3>
+            <p>${error.message}</p>
+            <p>Možné príčiny:</p>
+            <ul>
+              <li>API endpoint neexistuje alebo nie je dostupný</li>
+              <li>CORS problém</li>
+              <li>Projekt nie je nasadený na Vercel</li>
+            </ul>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
