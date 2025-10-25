@@ -9,12 +9,14 @@ CREATE TABLE IF NOT EXISTS chat_logs (
   user_message TEXT NOT NULL,
   bot_response TEXT NOT NULL,
   website VARCHAR(255),
+  user_ip VARCHAR(45),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 -- 2. Vytvorenie indexov pre rýchlejšie vyhľadávanie
 CREATE INDEX IF NOT EXISTS idx_chat_logs_website ON chat_logs(website);
 CREATE INDEX IF NOT EXISTS idx_chat_logs_created_at ON chat_logs(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_chat_logs_user_ip ON chat_logs(user_ip);
 
 -- 3. Povolenie Row Level Security (RLS)
 ALTER TABLE chat_logs ENABLE ROW LEVEL SECURITY;
@@ -50,8 +52,8 @@ WHERE tablename = 'chat_logs';
 -- TEST: Vložte testovací záznam
 -- =====================================================
 
-INSERT INTO chat_logs (user_message, bot_response, website)
-VALUES ('Test správa', 'Test odpoveď', 'test.com');
+INSERT INTO chat_logs (user_message, bot_response, website, user_ip)
+VALUES ('Test správa', 'Test odpoveď', 'test.com', '192.168.1.1');
 
 -- Overte, že sa záznam uložil
 SELECT * FROM chat_logs ORDER BY created_at DESC LIMIT 5;
@@ -61,5 +63,6 @@ SELECT * FROM chat_logs ORDER BY created_at DESC LIMIT 5;
 -- =====================================================
 -- 1. Tento skript je bezpečný - používa IF NOT EXISTS a DROP IF EXISTS
 -- 2. RLS policies povoľujú INSERT a SELECT všetkým (upravte podľa potrieb)
--- 3. Indexy zrýchlia vyhľadávanie podľa website a dátumu
+-- 3. Indexy zrýchlia vyhľadávanie podľa website, dátumu a IP adresy
 -- 4. created_at sa automaticky nastaví na aktuálny čas
+-- 5. user_ip zbiera IPv4 alebo IPv6 adresu používateľa

@@ -42,10 +42,18 @@ export default async function handler(req, res) {
     // Extract data from request body
     const { userMessage, botResponse, website } = req.body;
 
+    // Get user's IP address from request headers
+    const userIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || 
+                   req.headers['x-real-ip'] || 
+                   req.connection?.remoteAddress || 
+                   req.socket?.remoteAddress ||
+                   'unknown';
+
     console.log('Received data:', {
       hasUserMessage: !!userMessage,
       hasBotResponse: !!botResponse,
-      website: website
+      website: website,
+      userIp: userIp
     });
 
     // Validate required fields
@@ -60,7 +68,8 @@ export default async function handler(req, res) {
     const chatData = {
       user_message: userMessage,
       bot_response: botResponse,
-      website: website || 'unknown'
+      website: website || 'unknown',
+      user_ip: userIp
     };
 
     console.log('Attempting to insert data into chat_logs table...');

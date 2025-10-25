@@ -134,7 +134,7 @@
           if (data.details && data.details.includes('table')) {
             html += '<li><strong>Tabuľka neexistuje alebo má zlé stĺpce:</strong><br>';
             html += '→ Skontrolujte, či tabuľka <code>chat_logs</code> existuje v Supabase<br>';
-            html += '→ Musí mať stĺpce: <code>user_message</code>, <code>bot_response</code>, <code>website</code>, <code>created_at</code></li>';
+            html += '→ Musí mať stĺpce: <code>user_message</code>, <code>bot_response</code>, <code>website</code>, <code>user_ip</code>, <code>created_at</code></li>';
           }
           
           if (data.details && data.details.includes('permission')) {
