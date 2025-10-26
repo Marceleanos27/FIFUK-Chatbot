@@ -390,7 +390,7 @@
 
       // Start timing
       const startTime = Date.now();
-      let detectedCategory = null;
+      let detectedCategory = 'všeobecné'; // Default
 
       try {
         await delay(800);
@@ -409,26 +409,14 @@
             useRAG = true;
             console.log('Quick Reply RAG kontext:', sources);
             
-            // RAG-based kategorizácia
-            const topResult = relevantContent[0].title.toLowerCase();
-            if (topResult.includes('cen') || topResult.includes('balík')) {
-              detectedCategory = 'ceny';
-            } else if (topResult.includes('kontakt') || topResult.includes('stretnutie')) {
-              detectedCategory = 'kontakt';
-            } else if (topResult.includes('produkt') || topResult.includes('funkc')) {
-              detectedCategory = 'produkty';
-            } else if (topResult.includes('proces') || topResult.includes('implementác')) {
-              detectedCategory = 'proces';
-            } else if (topResult.includes('podpora') || topResult.includes('technick')) {
-              detectedCategory = 'podpora';
-            } else {
-              detectedCategory = 'všeobecné';
-            }
+            // Použij kategóriu z top RAG výsledku (najvyššie skóre)
+            detectedCategory = relevantContent[0].category || 'všeobecné';
+            console.log('Kategória z RAG (top result):', detectedCategory);
           }
         }
         
-        // Fallback na keyword analýzu
-        if (!detectedCategory) {
+        // Fallback na keyword analýzu ak RAG nenašiel nič
+        if (!useRAG) {
           detectedCategory = categorizeMessage(query);
         }
 
@@ -708,22 +696,9 @@
       // Start timing
       const startTime = Date.now();
       
-      // Detekuj kategóriu z item category alebo title
-      let detectedCategory = 'všeobecné';
-      if (item.category) {
-        const catLower = item.category.toLowerCase();
-        if (catLower.includes('cen') || catLower.includes('balík')) {
-          detectedCategory = 'ceny';
-        } else if (catLower.includes('kontakt') || catLower.includes('stretnutie')) {
-          detectedCategory = 'kontakt';
-        } else if (catLower.includes('produkt') || catLower.includes('funkc')) {
-          detectedCategory = 'produkty';
-        } else if (catLower.includes('proces') || catLower.includes('implementác')) {
-          detectedCategory = 'proces';
-        } else if (catLower.includes('podpora') || catLower.includes('technick')) {
-          detectedCategory = 'podpora';
-        }
-      }
+      // Použij kategóriu priamo z item (už je to z RAG databázy)
+      const detectedCategory = item.category || 'všeobecné';
+      console.log('Kategória z item:', detectedCategory);
       
       try {
         await delay(500);
@@ -803,7 +778,7 @@
 
       // Start timing
       const startTime = Date.now();
-      let detectedCategory = null;
+      let detectedCategory = 'všeobecné'; // Default
 
       try {
         await delay(800);
@@ -822,26 +797,14 @@
             useRAG = true;
             console.log('Používam RAG s kontextom:', sources);
             
-            // RAG-based kategorizácia
-            const topResult = relevantContent[0].title.toLowerCase();
-            if (topResult.includes('cen') || topResult.includes('balík')) {
-              detectedCategory = 'ceny';
-            } else if (topResult.includes('kontakt') || topResult.includes('stretnutie')) {
-              detectedCategory = 'kontakt';
-            } else if (topResult.includes('produkt') || topResult.includes('funkc')) {
-              detectedCategory = 'produkty';
-            } else if (topResult.includes('proces') || topResult.includes('implementác')) {
-              detectedCategory = 'proces';
-            } else if (topResult.includes('podpora') || topResult.includes('technick')) {
-              detectedCategory = 'podpora';
-            } else {
-              detectedCategory = 'všeobecné';
-            }
+            // Použij kategóriu z top RAG výsledku (najvyššie skóre)
+            detectedCategory = relevantContent[0].category || 'všeobecné';
+            console.log('Kategória z RAG (top result):', detectedCategory);
           }
         }
         
-        // Fallback na keyword analýzu
-        if (!detectedCategory) {
+        // Fallback na keyword analýzu ak RAG nenašiel nič
+        if (!useRAG) {
           detectedCategory = categorizeMessage(query);
         }
 
@@ -1005,7 +968,7 @@ async function sendMessage() {
   const startTime = Date.now();
   
   // Detekcia kategórie
-  let detectedCategory = null;
+  let detectedCategory = 'všeobecné'; // Default
 
   try {
     await delay(800);
@@ -1024,30 +987,17 @@ async function sendMessage() {
         useRAG = true;
         console.log('Používam RAG s kontextom:', sources);
         
-        // RAG-based kategorizácia z top výsledku
-        const topResult = relevantContent[0].title.toLowerCase();
-        if (topResult.includes('cen') || topResult.includes('balík')) {
-          detectedCategory = 'ceny';
-        } else if (topResult.includes('kontakt') || topResult.includes('stretnutie')) {
-          detectedCategory = 'kontakt';
-        } else if (topResult.includes('produkt') || topResult.includes('funkc')) {
-          detectedCategory = 'produkty';
-        } else if (topResult.includes('proces') || topResult.includes('implementác')) {
-          detectedCategory = 'proces';
-        } else if (topResult.includes('podpora') || topResult.includes('technick')) {
-          detectedCategory = 'podpora';
-        } else {
-          detectedCategory = 'všeobecné';
-        }
+        // Použij kategóriu z top RAG výsledku (najvyššie skóre)
+        detectedCategory = relevantContent[0].category || 'všeobecné';
+        console.log('Kategória z RAG (top result):', detectedCategory);
       }
     }
     
     // Fallback na keyword analýzu ak RAG nenašiel nič
-    if (!useRAG || !detectedCategory) {
+    if (!useRAG) {
       detectedCategory = categorizeMessage(message);
+      console.log('Kategória z keyword analýzy (fallback):', detectedCategory);
     }
-    
-    console.log('Detekovaná kategória:', detectedCategory);
 
     // API volanie s RAG kontextom
     const response = await fetch("/api/chat", {
