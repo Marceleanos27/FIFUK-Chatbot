@@ -558,8 +558,8 @@
             chatHistory.push({ role: "assistant", content: formularResponse });
             
             // Save the conversation to your Vercel API endpoint
-            // Inštantná odpoveď = 0ms, kategória proces (formulár)
-            saveChatToAPI(category.text, formularResponse, currentMessageIndex, 0, 'proces');
+            // Inštantná odpoveď = 0ms, kategória z databázy
+            saveChatToAPI(category.text, formularResponse, currentMessageIndex, 0, 'Výberové konanie - Formulár');
             return;
           }
           
