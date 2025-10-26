@@ -379,10 +379,18 @@
 
     // Nová funkcia pre spracovanie quick reply cez RAG systém
     async function handleQuickReplyWithRAG(query) {
+      // Increment message index
+      messageIndex++;
+      const currentMessageIndex = messageIndex;
+      
       chatHistory.push({ role: "user", content: query });
 
       // Zobraz typing indicator
       appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
+
+      // Start timing
+      const startTime = Date.now();
+      let detectedCategory = null;
 
       try {
         await delay(800);
@@ -400,7 +408,28 @@
             sources = relevantContent.map(item => item.title);
             useRAG = true;
             console.log('Quick Reply RAG kontext:', sources);
+            
+            // RAG-based kategorizácia
+            const topResult = relevantContent[0].title.toLowerCase();
+            if (topResult.includes('cen') || topResult.includes('balík')) {
+              detectedCategory = 'ceny';
+            } else if (topResult.includes('kontakt') || topResult.includes('stretnutie')) {
+              detectedCategory = 'kontakt';
+            } else if (topResult.includes('produkt') || topResult.includes('funkc')) {
+              detectedCategory = 'produkty';
+            } else if (topResult.includes('proces') || topResult.includes('implementác')) {
+              detectedCategory = 'proces';
+            } else if (topResult.includes('podpora') || topResult.includes('technick')) {
+              detectedCategory = 'podpora';
+            } else {
+              detectedCategory = 'všeobecné';
+            }
           }
+        }
+        
+        // Fallback na keyword analýzu
+        if (!detectedCategory) {
+          detectedCategory = categorizeMessage(query);
         }
 
         // API volanie s RAG kontextom
@@ -424,6 +453,9 @@
         const data = await response.json();
         let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
 
+        // Calculate response time
+        const timeToRespond = Date.now() - startTime;
+
         // Kontrola či odpoveď vyžaduje kontaktné tlačidlo
         const isContactRelated = reply.includes("kontakt") || 
                                 reply.includes("telefón") || 
@@ -436,8 +468,8 @@
         appendMessage("FiF UK", reply, "bot", false, false, isContactRelated);
         chatHistory.push({ role: "assistant", content: reply });
 
-        // Save the conversation to your Vercel API endpoint
-        await saveChatToAPI(query, reply);
+        // Save the conversation to your Vercel API endpoint with metadata
+        await saveChatToAPI(query, reply, currentMessageIndex, timeToRespond, detectedCategory);
 
       } catch (error) {
         console.error("Chyba:", error);
@@ -516,6 +548,10 @@
           
           // Špeciálne spracovanie pre Online formulár - inštantná odpoveď
           if (category.isFormLink) {
+            // Increment message index
+            messageIndex++;
+            const currentMessageIndex = messageIndex;
+            
             const formularResponse = "**Online formulár žiadosti o zaradenie do výberového konania**\n\n" +
               "Formulár môžete vyplniť priamo online na nasledujúcom linku:\n" +
               "https://form.jotform.com/241893677272368\n\n" +
@@ -534,7 +570,8 @@
             chatHistory.push({ role: "assistant", content: formularResponse });
             
             // Save the conversation to your Vercel API endpoint
-            saveChatToAPI(category.text, formularResponse);
+            // Inštantná odpoveď = 0ms, kategória proces (formulár)
+            saveChatToAPI(category.text, formularResponse, currentMessageIndex, 0, 'proces');
             return;
           }
           
@@ -655,6 +692,10 @@
 
     // Spracovanie kliknutia na konkrétnu tému
     async function handleTopicClick(item) {
+      // Increment message index
+      messageIndex++;
+      const currentMessageIndex = messageIndex;
+      
       // Pridaj správu užívateľa
       appendMessage("Ty", item.title, "user");
       
@@ -663,6 +704,26 @@
       
       // Zobraz loading správu s typing indicator
       appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
+      
+      // Start timing
+      const startTime = Date.now();
+      
+      // Detekuj kategóriu z item category alebo title
+      let detectedCategory = 'všeobecné';
+      if (item.category) {
+        const catLower = item.category.toLowerCase();
+        if (catLower.includes('cen') || catLower.includes('balík')) {
+          detectedCategory = 'ceny';
+        } else if (catLower.includes('kontakt') || catLower.includes('stretnutie')) {
+          detectedCategory = 'kontakt';
+        } else if (catLower.includes('produkt') || catLower.includes('funkc')) {
+          detectedCategory = 'produkty';
+        } else if (catLower.includes('proces') || catLower.includes('implementác')) {
+          detectedCategory = 'proces';
+        } else if (catLower.includes('podpora') || catLower.includes('technick')) {
+          detectedCategory = 'podpora';
+        }
+      }
       
       try {
         await delay(500);
@@ -698,6 +759,9 @@
         const data = await response.json();
         let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
 
+        // Calculate response time
+        const timeToRespond = Date.now() - startTime;
+
         // Odstráň loading správu
         removeLastBotMessage();
         
@@ -710,8 +774,8 @@
         // Pridaj odpoveď do histórie
         chatHistory.push({ role: "assistant", content: reply });
         
-        // Save the conversation to your Vercel API endpoint
-        await saveChatToAPI(item.title, reply);
+        // Save the conversation to your Vercel API endpoint with metadata
+        await saveChatToAPI(item.title, reply, currentMessageIndex, timeToRespond, detectedCategory);
         
       } catch (error) {
         console.error("Chyba pri volaní API:", error);
@@ -728,10 +792,18 @@
 
     // Funkcia pre vyhľadávanie v databáze
     async function searchInDatabase(query) {
+      // Increment message index
+      messageIndex++;
+      const currentMessageIndex = messageIndex;
+      
       chatHistory.push({ role: "user", content: query });
 
       // Vždy používaj RAG systém pre odpovede
       appendMessage("FiF UK", '<div class="typing-indicator"><span></span><span></span><span></span></div>', "bot", true);
+
+      // Start timing
+      const startTime = Date.now();
+      let detectedCategory = null;
 
       try {
         await delay(800);
@@ -749,7 +821,28 @@
             sources = relevantContent.map(item => item.title);
             useRAG = true;
             console.log('Používam RAG s kontextom:', sources);
+            
+            // RAG-based kategorizácia
+            const topResult = relevantContent[0].title.toLowerCase();
+            if (topResult.includes('cen') || topResult.includes('balík')) {
+              detectedCategory = 'ceny';
+            } else if (topResult.includes('kontakt') || topResult.includes('stretnutie')) {
+              detectedCategory = 'kontakt';
+            } else if (topResult.includes('produkt') || topResult.includes('funkc')) {
+              detectedCategory = 'produkty';
+            } else if (topResult.includes('proces') || topResult.includes('implementác')) {
+              detectedCategory = 'proces';
+            } else if (topResult.includes('podpora') || topResult.includes('technick')) {
+              detectedCategory = 'podpora';
+            } else {
+              detectedCategory = 'všeobecné';
+            }
           }
+        }
+        
+        // Fallback na keyword analýzu
+        if (!detectedCategory) {
+          detectedCategory = categorizeMessage(query);
         }
 
         // API volanie s RAG kontextom
@@ -773,6 +866,9 @@
         const data = await response.json();
         let reply = data.choices?.[0]?.message?.content?.trim() || "Prepáčte, neviem na to odpovedať.";
 
+        // Calculate response time
+        const timeToRespond = Date.now() - startTime;
+
         // Kontrola či odpoveď obsahuje nedostatočné informácie
         const isInsufficientAnswer = reply.includes("nemám presné informácie") || 
                                     reply.includes("kontaktujte") ||
@@ -791,8 +887,8 @@
         appendMessage("FiF UK", reply, "bot", false, false, isInsufficientAnswer || isContactRelated);
         chatHistory.push({ role: "assistant", content: reply });
 
-        // Save the conversation to your Vercel API endpoint
-        await saveChatToAPI(query, reply);
+        // Save the conversation to your Vercel API endpoint with metadata
+        await saveChatToAPI(query, reply, currentMessageIndex, timeToRespond, detectedCategory);
 
       } catch (error) {
         console.error("Chyba:", error);
