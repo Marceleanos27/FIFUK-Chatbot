@@ -15,11 +15,11 @@ class RAGSystem {
       'profesor': ['profesorsky', 'profesura', 'profesor', 'inauguracny', 'inauguracia', 'inauguracne'],
       'docent': ['docentsky', 'docentura', 'docent', 'habilitacny', 'habilitacia', 'habilitacne'],
       'vyberove': ['vyberkone', 'vyberove', 'konanie', 'vyber', 'konkurz', 'selection'],
-      'kriterium': ['kriteria', 'podmienky', 'poziadavky', 'requirements', 'predpoklady', 'minimalne'],
-      'publikacia': ['publikacie', 'publikacny', 'vysledky', 'vystup', 'clanok', 'monografia', 'vysledok', 'vystupy'],
-      'citacia': ['citacie', 'citovany', 'ohlas', 'ohlasovost', 'citation', 'ohlasy'],
-      'projekt': ['projekty', 'vyskum', 'grant', 'vega', 'apvv', 'kega', 'vyskumny'],
-      'doktorand': ['doktorandi', 'doktorandsky', 'dizertacia', 'phd', 'skolitel', 'dizertacny'],
+      'kriterium': ['kriteria', 'podmienky', 'poziadavky', 'requirements', 'predpoklady', 'minimalne', 'minimalna', 'poziadavka'],
+      'publikacia': ['publikacie', 'publikacny', 'vysledky', 'vystup', 'clanok', 'monografia', 'vysledok', 'vystupy', 'vedecky', 'vysledok'],
+      'citacia': ['citacie', 'citovany', 'ohlas', 'ohlasovost', 'citation', 'ohlasy', 'citacna', 'frekvencia'],
+      'projekt': ['projekty', 'vyskum', 'grant', 'vega', 'apvv', 'kega', 'vyskumny', 'europska', 'unia', 'medzinarodny', 'uspesne', 'skonceny', 'ukonceny'],
+      'doktorand': ['doktorandi', 'doktorandsky', 'dizertacia', 'phd', 'skolitel', 'dizertacny', 'dizertacna', 'skuska', 'riadne', 'skoncene', 'studium'],
       'katedra': ['katedry', 'pracovisko', 'oddelenie', 'department', 'kaa', 'kaka', 'kam', 'kdvu', 'kest', 'kfdf', 'kgns', 'kksf', 'kkiv', 'klmv', 'kmjl', 'kmk', 'kmuz', 'kped', 'kpol', 'kpr', 'kpsych', 'krom', 'krvs', 'ksf', 'ksd', 'ksjtk', 'ksllv', 'ksoc', 'kvd', 'kvas', 'kzur'],
       'dekan': ['dekana', 'dekanske', 'vedenie', 'fakulta'],
       'ucitel': ['ucitela', 'pedagogicky', 'pedagog', 'vyucba', 'vyucujuci', 'vysokoskolsky'],
@@ -33,13 +33,24 @@ class RAGSystem {
       'formular': ['formulare', 'ziadost', 'prihlaska', 'cast', 'casti', 'vyplnenie'],
       'priloha': ['prilohy', 'prilozit', 'nahrat', 'dokument', 'dokumenty', 'vupch', 'zivotopis'],
       'vzdelavanie': ['vzdelavacie', 'vzdelavacia', 'cinnost', 'pedagogicka', 'ucebnica', 'skriptum'],
-      'vedecka': ['vedecky', 'vedeckovyskumna', 'vyskumna', 'tvoriva', 'umelecka', 'skola'],
-      'kategoria': ['kategorie', 'a+', 'a', 'a-', 'v1', 'v2', 'v3', 'p1'],
-      'wos': ['scopus', 'web', 'science', 'databaza', 'registrovany'],
+      'vedecka': ['vedecky', 'vedeckovyskumna', 'vyskumna', 'tvoriva', 'umelecka', 'skola', 'cinnost', 'tvoriva'],
+      'kategoria': ['kategorie', 'a+', 'a', 'a-', 'v1', 'v2', 'v3', 'p1', 'zaradenie', 'interpretacia'],
+      'wos': ['scopus', 'web', 'science', 'databaza', 'registrovany', 'registrovane'],
       'opakované': ['opakovane', 'opakovat', 'znovu', 'obsadenie', 'obsadit'],
-      'predpis': ['predpisy', 'vnutorny', 'smernica', 'zakon', 'legislativa', 'vp', '7/2024', '7/2025', '6/2025', '19/2022'],
-      'suhas': ['suhlas', 'spracovanie', 'zverejnenie', 'gdpr', 'osobne', 'udaje'],
-      'lektor': ['lektora', 'asistent', 'asistenta', 'odborny', 'pracovnik', 'pracovnika', 'vyskumny']
+      'predpis': ['predpisy', 'vnutorny', 'smernica', 'zakon', 'legislativa', 'vp', '7/2024', '7/2025', '6/2025', '19/2022', '23/2021'],
+      'suhlas': ['suhas', 'spracovanie', 'zverejnenie', 'gdpr', 'osobne', 'udaje'],
+      'lektor': ['lektora', 'asistent', 'asistenta', 'odborny', 'pracovnik', 'pracovnika', 'vyskumny'],
+      'autorske': ['autorsky', 'harky', 'ah', 'rozsah', 'podiel'],
+      'medzinarodny': ['medzinarodne', 'medzinarodna', 'medzinarodny', 'zahranicie', 'zahranicny', 'international'],
+      'jazyk': ['jazyky', 'anglictina', 'nemcina', 'francuzstina', 'spanielcina', 'standardny', 'komunikacia'],
+      'hindex': ['h-index', 'hirsch', 'index', 'centralny', 'register'],
+      'obdobie': ['obdobia', 'roky', 'rokov', 'celé', 'ostatnych', '6', 'sest'],
+      'uchasdzac': ['uchasdzacka', 'uchasdzaci', 'kandidat', 'kandidatka', 'prihlaseny'],
+      'vedúci': ['veduci', 'veduca', 'sefredaktor', 'riesitel', 'zodpovedny'],
+      'materska': ['rodičovská', 'materske', 'rodičovske', 'dovolenka', 'práceneschopnosť', 'praceneschopnost', 'starostlivost', 'odkazana', 'osoba'],
+      'monografia': ['monografie', 'kniha', 'vedecka', 'publikacia'],
+      'odborny': ['odborna', 'odborne', 'pedagogicky', 'pedagogicka', 'pedagogicke'],
+      'filologicky': ['filologia', 'filologicke', 'filologicka', 'preklad', 'umelecky']
     };
   }
 
@@ -54,17 +65,34 @@ class RAGSystem {
       return [];
     }
 
-    const results = this.knowledgeBase.map(item => {
+    // Detekcia typu dotazu pre lepšie logovanie
+    const isDocentQuery = queryWords.some(w => ['docent', 'docentsky', 'docentura', 'habilitacny', 'habilitacia', 'habilitacne'].includes(w));
+    const isProfesorQuery = queryWords.some(w => ['profesor', 'profesorsky', 'profesura', 'inauguracny', 'inauguracia', 'inauguracne'].includes(w));
+    
+    const allScores = this.knowledgeBase.map(item => {
       const score = this.calculateRelevanceScore(item, expandedWords, normalizedQuery, bigrams);
       return { ...item, relevanceScore: score };
-    })
-    .filter(item => item.relevanceScore > 0)
-    .sort((a, b) => b.relevanceScore - a.relevanceScore)
-    .slice(0, maxResults);
+    });
+    
+    // Logovanie penalizovaných výsledkov
+    const penalized = allScores.filter(item => item.relevanceScore < 0);
+    if (penalized.length > 0) {
+      console.log('🚫 Penalizované výsledky (nesprávny typ kritérií):', penalized.map(p => ({
+        id: p.id,
+        title: p.title.substring(0, 50),
+        category: p.category,
+        score: p.relevanceScore.toFixed(2)
+      })));
+    }
+    
+    const results = allScores
+      .filter(item => item.relevanceScore > 0)
+      .sort((a, b) => b.relevanceScore - a.relevanceScore)
+      .slice(0, maxResults);
 
-    console.log('RAG Search Results:', results.map(r => ({ 
+    console.log(`✅ RAG Search Results${isDocentQuery ? ' [DOCENT dotaz]' : ''}${isProfesorQuery ? ' [PROFESOR dotaz]' : ''}:`, results.map(r => ({ 
       id: r.id, 
-      title: r.title, 
+      title: r.title.substring(0, 60), 
       category: r.category,
       score: r.relevanceScore.toFixed(2)
     })));
@@ -72,6 +100,11 @@ class RAGSystem {
     // Ak je najvyššie skóre nízke, pridaj varovanie
     if (results.length > 0 && results[0].relevanceScore < 10) {
       console.log('⚠️ Nízka relevancia výsledkov - možno neexistuje presná odpoveď v databáze');
+    }
+    
+    // Varovanie ak nie sú žiadne výsledky
+    if (results.length === 0) {
+      console.log('❌ Žiadne relevantné výsledky po filtrácii');
     }
     
     return results;
@@ -154,15 +187,48 @@ class RAGSystem {
       }
     }
     
-    // 8. Bonus za kritériá - rozlišovanie medzi docentskými a profesorskými
-    const isDocentQuery = queryWords.some(w => ['docent', 'docentsky', 'habilitacny', 'habilitacia'].includes(w));
-    const isProfesorQuery = queryWords.some(w => ['profesor', 'profesorsky', 'inauguracny', 'inauguracia'].includes(w));
+    // 8. STRIKTNÉ rozlišovanie medzi docentskými a profesorskými kritériami
+    const isDocentQuery = queryWords.some(w => ['docent', 'docentsky', 'docentura', 'habilitacny', 'habilitacia', 'habilitacne'].includes(w));
+    const isProfesorQuery = queryWords.some(w => ['profesor', 'profesorsky', 'profesura', 'inauguracny', 'inauguracia', 'inauguracne'].includes(w));
     
-    if (isDocentQuery && normalizedCategory.includes('habilitacne')) {
-      score += 6;
+    const isHabilitacneCategory = normalizedCategory.includes('habilitacne');
+    const isInauguracneCategory = normalizedCategory.includes('inauguracne');
+    
+    // VEĽKÝ BONUS ak sa zhoduje typ kritérií s dotazom
+    if (isDocentQuery && isHabilitacneCategory) {
+      score += 20; // Zvýšený bonus pre správny match
     }
-    if (isProfesorQuery && normalizedCategory.includes('inauguracne')) {
-      score += 6;
+    if (isProfesorQuery && isInauguracneCategory) {
+      score += 20; // Zvýšený bonus pre správny match
+    }
+    
+    // VEĽKÁ PENALIZÁCIA ak sa NEzhoduje typ kritérií
+    // Ak pýtajú na docenta, ale položka je o profesorovi -> veľká penalizácia
+    if (isDocentQuery && isInauguracneCategory) {
+      score -= 50; // SILNÁ penalizácia za nesprávny typ
+    }
+    // Ak pýtajú na profesora, ale položka je o docentovi -> veľká penalizácia
+    if (isProfesorQuery && isHabilitacneCategory) {
+      score -= 50; // SILNÁ penalizácia za nesprávny typ
+    }
+    
+    // Extra kontrola v názve a obsahu
+    if (isDocentQuery) {
+      if (normalizedTitle.includes('profesor') && !normalizedTitle.includes('docent')) {
+        score -= 30; // Penalizácia ak je profesor v názve
+      }
+      if (normalizedContent.includes('inauguracne kriteria')) {
+        score -= 20; // Penalizácia ak je inauguračné v obsahu
+      }
+    }
+    
+    if (isProfesorQuery) {
+      if (normalizedTitle.includes('docent') && !normalizedTitle.includes('profesor')) {
+        score -= 30; // Penalizácia ak je docent v názve
+      }
+      if (normalizedContent.includes('habilitacne kriteria')) {
+        score -= 20; // Penalizácia ak je habilitačné v obsahu
+      }
     }
     
     // 9. Bonus za formulár a konkrétne časti
@@ -174,6 +240,12 @@ class RAGSystem {
     // 10. Bonus za link - ak je uvedený link, je to často dôležitý zdroj
     if (item.link && item.link !== '') {
       score += 2;
+    }
+
+    // 11. FINÁLNA KONTROLA: Ak je skóre záporné kvôli penalizácii, vráť 0
+    // Toto zabezpečí, že NESPRÁVNE typy kritérií sa vôbec nezahrňujú do výsledkov
+    if (score < 0) {
+      return 0;
     }
 
     return score;
@@ -306,6 +378,16 @@ class RAGSystem {
       item.category.includes('Inauguračné kritériá')
     );
     
+    // KRITICKÁ KONTROLA: Ak sa miešajú habilitačné a inauguračné kritériá, zaloguj varovanie
+    if (hasHabilitacneCriteria && hasInauguracneCriteria) {
+      console.error('⛔ VAROVANIE: Výsledky obsahujú OBOJE habilitačné aj inauguračné kritériá! Toto by nemalo nastať.');
+      console.error('Relevantné položky:', relevantContent.map(item => ({
+        id: item.id,
+        category: item.category,
+        title: item.title.substring(0, 50)
+      })));
+    }
+    
     // Kontrola či ide o vnútorné predpisy
     const hasVnutornePredpisy = relevantContent.some(item => 
       item.category.includes('Vnútorné predpisy')
@@ -330,12 +412,17 @@ class RAGSystem {
       ? '\n\n⚠️ KONTAKTY: Pri odpovedaní na otázky o kontaktoch použi PRESNE uvedené kontaktné údaje (email, telefón, meno). Neuvádzaj žiadne iné kontakty. Gabriela Baková pracuje v Kancelárii dekana.'
       : '';
     
+    // KRITICKÉ VAROVANIE ak sa miešajú typy kritérií
+    const mixedCriteriaWarning = (hasHabilitacneCriteria && hasInauguracneCriteria)
+      ? '\n\n🚨🚨🚨 KRITICKÉ VAROVANIE: NEPOUŽÍVAJ tieto informácie! Výsledky obsahujú OBOJE habilitačné aj inauguračné kritériá, čo je CHYBA. Odpovedz používateľovi, že nastala chyba vo vyhľadávaní a nech špecifikuje, či sa pýta na DOCENTA (habilitačné) alebo PROFESORA (inauguračné) kritériá. 🚨🚨🚨'
+      : '';
+    
     const habilitacneNote = hasHabilitacneCriteria
-      ? '\n\n📋 HABILITAČNÉ KRITÉRIÁ: Uvádzaj presné minimálne požiadavky pre docentov. Rozlišuj medzi kategóriami A+, A, A- a ich počtami. Pri nejasnostiach odporuč kontakt na zodpovednú osobu.'
+      ? '\n\n📋 HABILITAČNÉ KRITÉRIÁ PRE DOCENTA: Uvádzaj presné minimálne požiadavky:\n- Časť 1: Vedeckovýskumná tvorivá činnosť (5 výstupov A+/A/A- za celé obdobie, 2 za 6 rokov)\n- Časť 2: Ohlasy na publikačné výstupy (25 celkom, 6 za 6 rokov, 3 vo WoS/Scopus)\n- Časť 3: Výskumné projekty (2 s účasťou, 1 úspešne skončený)\n- Časť 4: Iné kritériá (15 vedeckých výstupov, 1 s min. 3 AH, 3 v medzinárodnom jazyku, 9 odborných/pedagogických, 3 medzinárodné podujatia, h-index 2)\n- Časť 5: Zoznam výstupov s dôvodmi zaradenia\nPOZOR: Obdobie 6 rokov sa predlžuje pri materskej/rodičovskej dovolenke, práceneschopnosti atď.\n⚠️ NEZMIEŇUJ SA O PROFESORSKÝCH/INAUGURAČNÝCH KRITÉRIÁCH!'
       : '';
     
     const inauguracneNote = hasInauguracneCriteria
-      ? '\n\n📋 INAUGURAČNÉ KRITÉRIÁ: Uvádzaj presné minimálne požiadavky pre profesorov. Rozlišuj medzi kategóriami A+, A, A- a ich počtami. Vyššie požiadavky ako pre docentov. Pri nejasnostiach odporuč kontakt na zodpovednú osobu.'
+      ? '\n\n📋 INAUGURAČNÉ KRITÉRIÁ PRE PROFESORA: Uvádzaj presné minimálne požiadavky (VYŠŠIE ako pre docenta):\n- Časť 1: Vedeckovýskumná tvorivá činnosť (12 výstupov A+/A/A- za celé obdobie, 2 za 6 rokov, 5 len A+/A)\n- Časť 2: Ohlasy (55 celkom, 10 za 6 rokov, 12 vo WoS/Scopus)\n- Časť 3: Vedecká škola (min. 1 doktorand s ukončeným štúdiom, 1 po dizertačnej skúške)\n- Časť 4: Výskumné projekty (2 ako vedúci/1 úspešne skončený + 2 ako účastník/1 úspešne skončený)\n- Časť 5: Iné kritériá (40 vedeckých výstupov, 1 monografia 6 AH, 1 výstup 3 AH, 9 v medzinárodnom jazyku, 18 odborných/pedagogických, 9 medzinárodných podujatí, h-index 6)\n- Časť 6: Zoznam výstupov\nPOZOR: Obdobie 6 rokov sa predlžuje pri materskej/rodičovskej dovolenke, práceneschopnosti atď.\n⚠️ NEZMIEŇUJ SA O DOCENTSKÝCH/HABILITAČNÝCH KRITÉRIÁCH!'
       : '';
     
     const predpisNote = hasVnutornePredpisy
@@ -351,10 +438,10 @@ class RAGSystem {
       : '';
     
     const opakovaneNote = hasOpakovaneObsadenie
-      ? '\n\n🔄 OPAKOVANÉ OBSADENIE: Rozlišuj medzi podmienkami pre opakované obsadenie docenta, profesora a postup z docenta na profesora. Pozor na požiadavky V1, V2, V3, P1 a ich kombinácie.'
+      ? '\n\n🔄 OPAKOVANÉ OBSADENIE: Rozlišuj medzi podmienkami pre:\n- Opakované obsadenie docenta (bezprostredne pred nástupom pôsobil ako docent/profesor na FiF UK)\n- Opakované obsadenie profesora (bezprostredne pred nástupom pôsobil ako profesor na FiF UK)\n- Postup z docenta na profesora (bezprostredne pred nástupom pôsobil ako docent na FiF UK)\nKaždá kategória má špecifické požiadavky V1, V2, V3, P1 za obdobie 5+1 rokov. Pozor na kritériá WoS/Scopus, monografie, projekty a zahraničné ohlasy!'
       : '';
     
-    return `PRESNÉ INFORMÁCIE O FILOZOFICKEJ FAKULTE UK (používaj LEN tieto fakty):\n\n${context}\n\n📌 INŠTRUKCIE: Odpovedaj PRESNE podľa týchto informácií z databázy FiF UK. NEPRÍDÁVAJ žiadne vlastné interpretácie alebo detaily, ktoré nie sú explicitne uvedené v kontexte. Ak informácia nie je v kontexte, POVEDZ to a odporuč kontaktovanie zodpovednej osoby (Gabriela Baková, gabriela.bakova@uniba.sk).${contactNote}${habilitacneNote}${inauguracneNote}${predpisNote}${formularNote}${prilohaNote}${opakovaneNote}`;
+    return `PRESNÉ INFORMÁCIE O FILOZOFICKEJ FAKULTE UK (používaj LEN tieto fakty):\n\n${context}${mixedCriteriaWarning}\n\n📌 INŠTRUKCIE: Odpovedaj PRESNE podľa týchto informácií z databázy FiF UK. NEPRÍDÁVAJ žiadne vlastné interpretácie alebo detaily, ktoré nie sú explicitne uvedené v kontexte. Ak informácia nie je v kontexte, POVEDZ to a odporuč kontaktovanie zodpovednej osoby (Gabriela Baková, gabriela.bakova@uniba.sk). Pri uvádzaní číselných kritérií buď EXAKTNÝ - uvádzaj presné minimálne požiadavky bez zaokrúhľovania alebo približných hodnôt. NIKDY NEMIEŠAJ habilitačné (docent) a inauguračné (profesor) kritériá - sú to dva úplne odlišné procesy s rôznymi požiadavkami!${contactNote}${habilitacneNote}${inauguracneNote}${predpisNote}${formularNote}${prilohaNote}${opakovaneNote}`;
   }
 
   // Vyhľadávanie podľa ID

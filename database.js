@@ -80,112 +80,105 @@ window.aiPowerData = {
     "id": 10,
     "category": "Habilitačné kritériá - Docent",
     "title": "Informácia o plnení minimálnych požiadaviek na obsadenie pracovného miesta docenta",
-    "content": "Táto časť formulára je určená výhradne pre uchádzačov o pracovné miesto vysokoškolský učiteľ - docent. Obsahuje šesť hlavných oblastí: 1. Vzdelávacia činnosť a tvorba študijných materiálov, 2. Vedeckovýskumná alebo tvorivá umelecká činnosť, 3. Ohlasy na publikačné alebo umelecké výstupy, 4. Vedecká škola, 5. Ďalšie špecifické kritériá odboru, 6. Zoznam výstupov započítaných na plnenie požiadaviek.",
-    "keywords": ["docent", "habilitačné kritériá", "minimálne požiadavky", "hodnotenie", "kvalifikačné predpoklady"],
+    "content": "Táto časť formulára je určená výhradne pre uchádzačov o pracovné miesto vysokoškolský učiteľ - docent. Obsahuje päť hlavných oblastí: 1. Vedeckovýskumná tvorivá činnosť, 2. Ohlasy na publikačné výstupy, 3. Výskumné projekty, 4. Iné kritériá, 5. Zoznam výstupov započítaných na plnenie požiadaviek. Poznámka: Obdobie ostatných 6 rokov sa predlžuje o dobu prerušenia výkonu pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, starostlivosti o odkázanú osobu alebo z iného dôvodu hodného zreteľa.",
+    "keywords": ["docent", "habilitačné kritériá", "minimálne požiadavky", "hodnotenie", "kvalifikačné predpoklady", "vedeckovýskumná činnosť", "publikačné výstupy"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 11,
     "category": "Habilitačné kritériá - Docent",
-    "title": "1. Vzdelávacia činnosť a tvorba študijných materiálov",
-    "content": "Vzdelávacia činnosť v rozsahu: Minimálne požiadavky: 3 roky po PhD. Dosiahnuté hodnoty: VPÍŠTE. Vysokoškolská učebnica alebo iné publikované práce s pedagogickým využitím: Minimálne požiadavky: 1 vysokoškolská učebnica, učebný text, skriptum, prehľadová, odborná, vedecká práca s pedagogickým využitím alebo časti v nich s celkovým rozsahom autorského podielu uchádzača/ky 3 AH. Dosiahnuté hodnoty: počet VPÍŠTE / celkový rozsah VPÍŠTE (AH). Záverečné práce obhájené pod vedením uchádzača/ky: Minimálne požiadavky: 3. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["vzdelávacia činnosť", "pedagogická prax", "vysokoškolská učebnica", "učebné texty", "skriptá", "autorský podiel", "AH", "záverečné práce", "vedenie študentov"],
+    "title": "1. Vedeckovýskumná tvorivá činnosť - Docent",
+    "content": "Na zaradenie výstupov do kategórií A+, A, A- sa používa schválená interpretácia. Počet vedeckých výstupov v kategóriách A+, A, A- za celé obdobie: Minimálna požiadavka: 5. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v kategóriách A+, A, A- za ostatných 6 rokov: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["vedeckovýskumná činnosť", "kategórie A+", "kategórie A", "kategórie A-", "vedecké výstupy", "celé obdobie", "6 rokov", "interpretácia kategórií"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 12,
     "category": "Habilitačné kritériá - Docent",
-    "title": "2. Vedeckovýskumná alebo tvorivá umelecká činnosť",
-    "content": "Výstupy v kategóriách A+, A, A- spolu: Minimálne požiadavky: 5. Dosiahnuté hodnoty: VPÍŠTE. z toho za ostatných 6 rokov: Minimálne požiadavky: 2. Dosiahnuté hodnoty: VPÍŠTE. Len výstupy v kategóriách A+ a A: Minimálne požiadavky: 0. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["výstupy", "kategórie A+", "kategórie A", "kategórie A-", "vedeckovýskumná činnosť", "umelecká činnosť", "publikácie"],
+    "title": "2. Ohlasy na publikačné výstupy - Docent",
+    "content": "Počet ohlasov za celé obdobie: Minimálna požiadavka: 25. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov za ostatných 6 rokov: Minimálna požiadavka: 6. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov registrovaných v databázach WoS alebo Scopus za celé obdobie: Minimálna požiadavka: 3. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["ohlasy", "citácie", "celé obdobie", "6 rokov", "WoS", "Scopus", "databázy citácií", "citačná frekvencia"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 13,
     "category": "Habilitačné kritériá - Docent",
-    "title": "3. Ohlasy na publikačné alebo umelecké výstupy",
-    "content": "Ohlasy spolu: Minimálne požiadavky: 25. Dosiahnuté hodnoty: VPÍŠTE. z toho za ostatných 6 rokov: Minimálne požiadavky: 6. Dosiahnuté hodnoty: VPÍŠTE. Len ohlasy registrované vo WoS, Scopus: Minimálne požiadavky: 3. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["ohlasy", "citačná frekvencia", "WoS", "Scopus", "recenzie", "ohlas publikačnej činnosti"],
+    "title": "3. Výskumné projekty - Docent",
+    "content": "Započítavajú sa projekty APVV, VEGA, KEGA, projekty Európskej únie a iné medzinárodné výskumné projekty, v ktorých sú granty udeľované na základe súťaže. Nezapočítavajú sa granty udeľované univerzitami alebo fakultami na základe interných grantových schém. Nezapočítavajú sa neúspešne skončené projekty alebo projekty, ktoré podľa hodnotenia nesplnili ciele. Počet výskumných projektov, v ktorých uchádzač/ka má účasť: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE. Počet už úspešne skončených výskumných projektov, v ktorých uchádzač/ka má účasť: Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["výskumné projekty", "APVV", "VEGA", "KEGA", "EÚ projekty", "medzinárodné projekty", "úspešné projekty", "ukončené projekty", "účasť v projekte"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 14,
     "category": "Habilitačné kritériá - Docent",
-    "title": "4. Vedecká škola",
-    "content": "Počet doktorandov/iek spolu: Minimálne požiadavky: n/a. Dosiahnuté hodnoty: VPÍŠTE. z toho s riadne skončeným štúdiom / po dizertačnej skúške: Minimálne požiadavky: n/a. Dosiahnuté hodnoty: VPÍŠTE. Účastník/čka / vedúci/a výskumného projektu: Minimálne požiadavky: 2 / 0. Dosiahnuté hodnoty: VPÍŠTE. z toho už úspešne skončené projekty: Minimálne požiadavky: 1 / 0. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["vedecká škola", "doktorandi", "dizertačná skúška", "výskumné projekty", "vedúci projektu", "riešiteľ projektu"],
+    "title": "4. Iné kritériá - Docent",
+    "content": "Počet všetkých vedeckých výstupov (vrátane výstupov započítaných v časti 1): Minimálna požiadavka: 15. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov s rozsahom najmenej 3 autorské hárky (ak má publikácia viac autorov, uchádzačov/kin podiel musí mať rozsah najmenej 3 autorské hárky): Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v štandardnom jazyku pre medzinárodnú komunikáciu (angličtina, nemčina, francúzština, španielčina; v prípade filologických odborov je ním aj jazyk, ktorý je predmetom danej filológie): Minimálna požiadavka: 3. Dosiahnutá hodnota: VPÍŠTE. Počet odborných a pedagogických výstupov (tieto publikácie je možné nahradiť vedeckými výstupmi bez publikovaných abstraktov, pričom jedným vedeckým výstupom sa nahrádzajú tri odborné alebo pedagogické výstupy; vedecké výstupy použité na tento účel sa nezapočítavajú do počtu všetkých vedeckých výstupov uvedených vyššie; v prípade filologických odborov sa publikovaný odborný alebo umelecký preklad s rozsahom najmenej 3 autorské hárky započítava ako tri odborné alebo pedagogické výstupy): Minimálna požiadavka: 9. Dosiahnutá hodnota: VPÍŠTE. Počet aktívnych účastí na medzinárodnom vedeckom podujatí: Minimálna požiadavka: 3. Dosiahnutá hodnota: VPÍŠTE. H-index (určuje sa na základe Centrálneho registra publikačnej činnosti, databázy vysokej školy alebo v inej databázy s vylúčením autocitácií): Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["vedecké výstupy", "autorské hárky", "medzinárodný jazyk", "angličtina", "nemčina", "francúzština", "španielčina", "odborné výstupy", "pedagogické výstupy", "medzinárodné podujatia", "h-index", "filologické odbory", "preklad"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 15,
     "category": "Habilitačné kritériá - Docent",
-    "title": "5. Ďalšie špecifické kritériá odboru",
-    "content": "Vedecká monografia s rozsahom najmenej 6 AH: Minimálne požiadavky: 0. Dosiahnuté hodnoty: VPÍŠTE. Ďalší vedecký výstup s rozsahom najmenej 3 AH: Minimálne požiadavky: 1. Dosiahnuté hodnoty: VPÍŠTE. Vedecké výstupy spolu (vrátane výstupov v ods. 2): Minimálne požiadavky: 15. Dosiahnuté hodnoty: VPÍŠTE. z toho v štandardnom jazyku pre medzinárodnú komunikáciu: Minimálne požiadavky: 3. Dosiahnuté hodnoty: VPÍŠTE. Odborné a pedagogické výstupy (bez výstupov v ods. 1): Minimálne požiadavky: 9. Dosiahnuté hodnoty: VPÍŠTE. Aktívna účasť na medzinárodnom vedeckom podujatí: Minimálne požiadavky: 3. Dosiahnuté hodnoty: VPÍŠTE. H-index: Minimálne požiadavky: 2. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["špecifické kritériá", "vedecká monografia", "medzinárodný jazyk", "odborné výstupy", "medzinárodné podujatia", "h-index", "AH"],
+    "title": "5. Zoznam výstupov započítaných na plnenie požiadaviek v časti 1 - Docent",
+    "content": "Požaduje sa aj uvedenie dôvodu na zaradenie výstupu do príslušnej kategórie v súlade so schválenou interpretáciou. Výstupy v kategórii A+: VPÍŠTE. Výstupy v kategórii A: VPÍŠTE. Výstupy v kategórii A-: VPÍŠTE. Upozornenie: Obdobie ostatných šiestich rokov spomenuté v častiach 1 a 2 sa predlžuje o dobu, počas ktorej uchádzač/ka mal/a dlhodobo prerušený výkon pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, pracovného voľna pre dlhodobú starostlivosť o odkázanú osobu alebo z iného dôvodu hodného zreteľa, pokiaľ sa tieto skutočnosti vyskytli v tomto období.",
+    "keywords": ["zoznam výstupov", "kategória A+", "kategória A", "kategória A-", "interpretácia kategórií", "dôvod zaradenia", "predĺženie obdobia", "materská dovolenka", "rodičovská dovolenka"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
-  {
-    "id": 16,
-    "category": "Habilitačné kritériá - Docent",
-    "title": "6. Zoznam výstupov započítaných na plnenie požiadaviek",
-    "content": "Zoznam výstupov započítaných na plnenie požiadaviek v 2. časti s uvedením dôvodu ich zaradenia do kategórií A+, A, resp. A- podľa schválenej interpretácie. Výstupy v kategórii A+: VPÍŠTE. Výstupy v kategórii A: VPÍŠTE. Výstupy v kategórii A-: VPÍŠTE. Poznámka: Je potrebné uviesť konkrétne výstupy a dôvody ich zaradenia do príslušných kategórií.",
-    "keywords": ["zoznam výstupov", "kategória A+", "kategória A", "kategória A-", "klasifikácia výstupov", "interpretácia kategórií"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
+
   {
     "id": 17,
     "category": "Inauguračné kritériá - Profesor",
     "title": "Informácia o plnení minimálnych požiadaviek na obsadenie pracovného miesta profesora",
-    "content": "Táto časť formulára je určená výhradne pre uchádzačov o pracovné miesto vysokoškolský učiteľ - profesor. Obsahuje šesť hlavných oblastí: 1. Vzdelávacia činnosť a tvorba študijných materiálov, 2. Vedeckovýskumná alebo tvorivá umelecká činnosť, 3. Ohlasy na publikačné alebo umelecké výstupy, 4. Vedecká škola, 5. Ďalšie špecifické kritériá odboru, 6. Zoznam výstupov započítaných na plnenie požiadaviek.",
-    "keywords": ["profesor", "inauguračné kritériá", "minimálne požiadavky", "hodnotenie", "kvalifikačné predpoklady"],
+    "content": "Táto časť formulára je určená výhradne pre uchádzačov o pracovné miesto vysokoškolský učiteľ - profesor. Obsahuje šesť hlavných oblastí: 1. Vedeckovýskumná tvorivá činnosť, 2. Ohlasy na publikačné výstupy, 3. Vedecká škola, 4. Výskumné projekty, 5. Iné kritériá, 6. Zoznam výstupov započítaných na plnenie požiadaviek. Poznámka: Obdobie ostatných 6 rokov sa predlžuje o dobu prerušenia výkonu pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, starostlivosti o odkázanú osobu alebo z iného dôvodu hodného zreteľa.",
+    "keywords": ["profesor", "inauguračné kritériá", "minimálne požiadavky", "hodnotenie", "kvalifikačné predpoklady", "vedeckovýskumná činnosť", "publikačné výstupy"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 18,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "1. Vzdelávacia činnosť a tvorba študijných materiálov - Profesor",
-    "content": "Vzdelávacia činnosť v rozsahu: Minimálne požiadavky: 3 roky po doc. Dosiahnuté hodnoty: VPÍŠTE. Vysokoškolská učebnica alebo iné publikované práce s pedagogickým využitím: Minimálne požiadavky: 1 vysokoškolská učebnica s rozsahom najmenej 3 AH a s autorským podielom uchádzača/ky najmenej 3 AH alebo najmenej 2 učebné texty, skriptá, prehľadové, odborné, vedecké práce s pedagogickým využitím alebo časti v nich s celkovým rozsahom autorského podielu uchádzača/ky 6 AH. Dosiahnuté hodnoty: vysokoškolská učebnica - počet VPÍŠTE / celkový rozsah VPÍŠTE (AH); iná publikovaná práca s pedagogickým využitím - počet VPÍŠTE / celkový rozsah VPÍŠTE (AH). Záverečné práce obhájené pod vedením uchádzača/ky: Minimálne požiadavky: 6. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["vzdelávacia činnosť", "pedagogická prax", "vysokoškolská učebnica", "učebné texty", "skriptá", "autorský podiel", "AH", "záverečné práce", "vedenie študentov", "post-docentúra"],
+    "title": "1. Vedeckovýskumná tvorivá činnosť - Profesor",
+    "content": "Na zaradenie výstupov do kategórií A+, A, A- sa používa schválená interpretácia. Počet vedeckých výstupov v kategóriách A+, A, A- za celé obdobie: Minimálna požiadavka: 12. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v kategóriách A+, A, A- za ostatných 6 rokov: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v kategóriách A+ a A za celé obdobie: Minimálna požiadavka: 5. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["vedeckovýskumná činnosť", "kategórie A+", "kategórie A", "kategórie A-", "vedecké výstupy", "celé obdobie", "6 rokov", "vyššie kritériá", "interpretácia kategórií"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 19,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "2. Vedeckovýskumná alebo tvorivá umelecká činnosť - Profesor",
-    "content": "Výstupy v kategóriách A+, A, A- spolu: Minimálne požiadavky: 12. Dosiahnuté hodnoty: VPÍŠTE. z toho za ostatných 6 rokov: Minimálne požiadavky: 2. Dosiahnuté hodnoty: VPÍŠTE. Len výstupy v kategóriách A+ a A: Minimálne požiadavky: 5. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["výstupy", "kategórie A+", "kategórie A", "kategórie A-", "vedeckovýskumná činnosť", "umelecká činnosť", "publikácie", "vyššie kritériá"],
+    "title": "2. Ohlasy na publikačné výstupy - Profesor",
+    "content": "Počet ohlasov za celé obdobie: Minimálna požiadavka: 55. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov za ostatných 6 rokov: Minimálna požiadavka: 10. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov registrovaných v databázach WoS alebo Scopus za celé obdobie: Minimálna požiadavka: 12. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["ohlasy", "citácie", "celé obdobie", "6 rokov", "WoS", "Scopus", "databázy citácií", "citačná frekvencia", "vyššie kritériá"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 20,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "3. Ohlasy na publikačné alebo umelecké výstupy - Profesor",
-    "content": "Ohlasy spolu: Minimálne požiadavky: 55. Dosiahnuté hodnoty: VPÍŠTE. z toho za ostatných 6 rokov: Minimálne požiadavky: 10. Dosiahnuté hodnoty: VPÍŠTE. Len ohlasy registrované vo WoS, Scopus: Minimálne požiadavky: 12. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["ohlasy", "citačná frekvencia", "WoS", "Scopus", "recenzie", "ohlas publikačnej činnosti", "vyššie kritériá"],
+    "title": "3. Vedecká škola - Profesor",
+    "content": "Počet doktorandov/iek s riadne skončeným štúdiom: Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet doktorandov/iek po dizertačnej skúške: Minimálna požiadavka: 1 (resp. 0, ak dosiahnutý počet doktorandov/iek s riadne skončeným štúdiom je najmenej 2). Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["vedecká škola", "doktorandi", "dizertačná skúška", "ukončené štúdium", "PhD študenti", "vedenie doktorandov"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 21,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "4. Vedecká škola - Profesor",
-    "content": "Počet doktorandov/iek spolu: Minimálne požiadavky: 2. Dosiahnuté hodnoty: VPÍŠTE. z toho s riadne skončeným štúdiom / po dizertačnej skúške: Minimálne požiadavky: 1 / 1. Dosiahnuté hodnoty: VPÍŠTE. Účastník/čka / vedúci/a výskumného projektu: Minimálne požiadavky: 2 / 2. Dosiahnuté hodnoty: VPÍŠTE. z toho už úspešne skončené projekty: Minimálne požiadavky: 1 / 1. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["vedecká škola", "doktorandi", "dizertačná skúška", "výskumné projekty", "vedúci projektu", "riešiteľ projektu", "ukončené štúdium"],
+    "title": "4. Výskumné projekty - Profesor",
+    "content": "Započítavajú sa projekty APVV, VEGA, KEGA, projekty Európskej únie a iné medzinárodné výskumné projekty, v ktorých sú granty udeľované na základe súťaže. Nezapočítavajú sa granty udeľované univerzitami alebo fakultami na základe interných grantových schém. Nezapočítavajú sa neúspešne skončené projekty alebo projekty, ktoré podľa hodnotenia nesplnili ciele. Počet výskumných projektov, v ktorých uchádzač/ka má účasť ako vedúci/a projektu: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE. Počet už úspešne skončených výskumných projektov, v ktorých uchádzač/ka má účasť ako vedúci/a projektu: Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet výskumných projektov, v ktorých uchádzač/ka má inú účasť: Minimálna požiadavka: 2 (resp. menej, ak dosiahnutý počet projektov, v ktorých uchádzač/ka má účasť ako vedúci/a, je vyšší o chýbajúci počet). Dosiahnutá hodnota: VPÍŠTE. Počet už úspešne skončených výskumných projektov, v ktorých uchádzač/ka má inú účasť: Minimálna požiadavka: 1 (resp. 0, ak dosiahnutý počet úspešne skončených projektov, v ktorých uchádzač/ka má účasť ako vedúci/a, je najmenej 2). Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["výskumné projekty", "APVV", "VEGA", "KEGA", "EÚ projekty", "medzinárodné projekty", "vedúci projektu", "riešiteľ projektu", "úspešné projekty", "ukončené projekty"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 22,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "5. Ďalšie špecifické kritériá odboru - Profesor",
-    "content": "Vedecká monografia s rozsahom najmenej 6 AH: Minimálne požiadavky: 1. Dosiahnuté hodnoty: VPÍŠTE. Ďalší vedecký výstup s rozsahom najmenej 3 AH: Minimálne požiadavky: 1. Dosiahnuté hodnoty: VPÍŠTE. Vedecké výstupy spolu (vrátane výstupov v ods. 2): Minimálne požiadavky: 40. Dosiahnuté hodnoty: VPÍŠTE. z toho v štandardnom jazyku pre medzinárodnú komunikáciu: Minimálne požiadavky: 9. Dosiahnuté hodnoty: VPÍŠTE. Odborné a pedagogické výstupy (bez výstupov v ods. 1): Minimálne požiadavky: 18. Dosiahnuté hodnoty: VPÍŠTE. Aktívna účasť na medzinárodnom vedeckom podujatí: Minimálne požiadavky: 9. Dosiahnuté hodnoty: VPÍŠTE. H-index: Minimálne požiadavky: 6. Dosiahnuté hodnoty: VPÍŠTE.",
-    "keywords": ["špecifické kritériá", "vedecká monografia", "medzinárodný jazyk", "odborné výstupy", "medzinárodné podujatia", "h-index", "AH", "vyššie kritériá"],
+    "title": "5. Iné kritériá - Profesor",
+    "content": "Počet všetkých vedeckých výstupov (vrátane výstupov započítaných v časti 1): Minimálna požiadavka: 40. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých monografií s rozsahom najmenej 6 autorských hárkov (ak má publikácia viac autorov, uchádzačov/kin podiel musí mať rozsah najmenej 6 autorských hárkov): Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet ďalších vedeckých výstupov s rozsahom najmenej 3 autorské hárky (ak má publikácia viac autorov, uchádzačov/kin podiel musí mať rozsah najmenej 3 autorské hárky): Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v štandardnom jazyku pre medzinárodnú komunikáciu (angličtina, nemčina, francúzština, španielčina; v prípade filologických odborov je ním aj jazyk, ktorý je predmetom danej filológie): Minimálna požiadavka: 9. Dosiahnutá hodnota: VPÍŠTE. Počet odborných a pedagogických výstupov (tieto publikácie je možné nahradiť vedeckými výstupmi bez publikovaných abstraktov, pričom jedným vedeckým výstupom sa nahrádzajú tri odborné alebo pedagogické výstupy; vedecké výstupy použité na tento účel sa nezapočítavajú do počtu všetkých vedeckých výstupov uvedených vyššie; v prípade filologických odborov sa publikovaný odborný alebo umelecký preklad s rozsahom najmenej 3 autorské hárky započítava ako tri odborné alebo pedagogické výstupy): Minimálna požiadavka: 18. Dosiahnutá hodnota: VPÍŠTE. Počet aktívnych účastí na medzinárodnom vedeckom podujatí: Minimálna požiadavka: 9. Dosiahnutá hodnota: VPÍŠTE. H-index (určuje sa na základe Centrálneho registra publikačnej činnosti, databázy vysokej školy alebo v inej databázy s vylúčením autocitácií): Minimálna požiadavka: 6. Dosiahnutá hodnota: VPÍŠTE.",
+    "keywords": ["vedecké výstupy", "vedecká monografia", "autorské hárky", "medzinárodný jazyk", "angličtina", "nemčina", "francúzština", "španielčina", "odborné výstupy", "pedagogické výstupy", "medzinárodné podujatia", "h-index", "filologické odbory", "preklad", "vyššie kritériá"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
     "id": 23,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "6. Zoznam výstupov započítaných na plnenie požiadaviek - Profesor",
-    "content": "Zoznam výstupov započítaných na plnenie požiadaviek v 2. časti s uvedením dôvodu ich zaradenia do kategórií A+, A, resp. A- podľa schválenej interpretácie. Výstupy v kategórii A+: VPÍŠTE. Výstupy v kategórii A: VPÍŠTE. Výstupy v kategórii A-: VPÍŠTE. Poznámka: Je potrebné uviesť konkrétne výstupy a dôvody ich zaradenia do príslušných kategórií.",
-    "keywords": ["zoznam výstupov", "kategória A+", "kategória A", "kategória A-", "klasifikácia výstupov", "interpretácia kategórií"],
+    "title": "6. Zoznam výstupov započítaných na plnenie požiadaviek v časti 1 - Profesor",
+    "content": "Požaduje sa aj uvedenie dôvodu na zaradenie výstupu do príslušnej kategórie v súlade so schválenou interpretáciou. Výstupy v kategórii A+: VPÍŠTE. Výstupy v kategórii A: VPÍŠTE. Výstupy v kategórii A-: VPÍŠTE. Upozornenie: Obdobie ostatných šiestich rokov spomenuté v častiach 1 a 2 sa predlžuje o dobu, počas ktorej uchádzač/ka mal/a dlhodobo prerušený výkon pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, pracovného voľna pre dlhodobú starostlivosť o odkázanú osobu alebo z iného dôvodu hodného zreteľa, pokiaľ sa tieto skutočnosti vyskytli v tomto období.",
+    "keywords": ["zoznam výstupov", "kategória A+", "kategória A", "kategória A-", "interpretácia kategórií", "dôvod zaradenia", "predĺženie obdobia", "materská dovolenka", "rodičovská dovolenka"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
