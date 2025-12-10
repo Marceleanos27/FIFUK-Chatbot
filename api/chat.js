@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         model: "deepseek-chat",
         messages: enhancedMessages,
         temperature: 0.4,
-        max_tokens: 1500,
+        max_tokens: 1000,
         stream: false
       })
     });

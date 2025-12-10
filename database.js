@@ -6,11 +6,67 @@ window.aiPowerData = {
   knowledgeBase: [ 
   {
     "id": 1,
-    "category": "Výberové konanie - Formulár",
-    "title": "Úvod a inštrukcie pre výberové konanie",
-    "content": "Formulár na výberové konania. Výberové konanie sa riadi: zákonom č. 131/2002 Z. z. o vysokých školách a o zmene a doplnení niektorých zákonov, vnútorným predpisom Univerzity Komenského v Bratislave č. 19/2022 Zásady výberového konania, vnútorným predpisom UK č. 6/2025, vnútorným predpisom FiF UK č. 7/2024 Organizácia výberových konaní na FiF UK a vnútorným predpisom FiF UK č. 7/2025. S cieľom zabezpečiť spravodlivý a transparentný proces výberového konania sa požaduje poskytnutie pravdivých a úplných informácií.",
-    "keywords": ["výberové konanie", "právne predpisy", "transparentnosť", "žiadosť", "inštrukcie"],
+    "category": "Výberové konanie - Formulár (pracovné miesto)",
+    "title": "Úvod a inštrukcie pre výberové konanie - Žiadosť o zaradenie do výberového konania (pracovné miesto)",
+    "content": "Formulár Žiadosť o zaradenie do výberového konania (pracovné miesto) slúži pre uchádzačov o pracovné miesto alebo funkčné miesto. Výberové konanie sa riadi: zákonom č. 131/2002 Z. z. o vysokých školách a o zmene a doplnení niektorých zákonov, vnútorným predpisom Univerzity Komenského v Bratislave č. 19/2022 Zásady výberového konania, vnútorným predpisom UK č. 6/2025, vnútorným predpisom FiF UK č. 9/2025 Organizácia výberových konaní na FiF UK a vnútorným predpisom FiF UK č. 7/2025. S cieľom zabezpečiť spravodlivý a transparentný proces výberového konania sa požaduje poskytnutie pravdivých a úplných informácií. Pred vyplnením formulára si môžete pozrieť náhľad formulára na príslušnú pozíciu.",
+    "keywords": ["výberové konanie", "právne predpisy", "transparentnosť", "žiadosť", "inštrukcie", "pracovné miesto", "funkčné miesto", "náhľad formulára"],
     "link": "https://form.jotform.com/241893677272368"
+  },
+  {
+    "id": 56,
+    "category": "Výberové konanie - Formulár (pracovné miesto)",
+    "title": "Náhľad formulára - Žiadosť o zaradenie do výberového konania (pracovné miesto)",
+    "content": "Pred vyplnením formulára Žiadosť o zaradenie do výberového konania (pracovné miesto) si môžete pozrieť náhľad formulára na príslušnú pozíciu. Náhľad vám pomôže pripraviť si všetky potrebné dokumenty a informácie vopred.",
+    "keywords": ["náhľad formulára", "preview", "príprava", "dokumenty", "pracovné miesto", "funkčné miesto"],
+    "link": "https://uniba.sk/fileadmin/ruk/uradna_vyveska/Vyberove_konanie/FIFUK/casova_os/sk/nahlady_formulara.pdf"
+  },
+  {
+    "id": 57,
+    "category": "Výberové konanie - Formulár (funkcia)",
+    "title": "Úvod a inštrukcie - Žiadosť o zaradenie do výberového konania (funkcia)",
+    "content": "Formulár Žiadosť o zaradenie do výberového konania (funkcia) slúži pre uchádzačov o funkciu vedúceho katedry. Výberové konanie sa riadi: zákonom č. 131/2002 Z. z. o vysokých školách, vnútorným predpisom UK č. 19/2022 Zásady výberového konania v znení neskorších dodatkov, vnútorným predpisom FiF UK č. 9/2025 Organizácia výberových konaní na FiF UK. S cieľom zabezpečiť spravodlivé a transparentné výberové konanie sa požaduje poskytnutie pravdivých a úplných informácií.",
+    "keywords": ["výberové konanie", "funkcia", "vedúci katedry", "žiadosť", "formulár", "právne predpisy", "transparentnosť"],
+    "link": "https://form.jotform.com/253416038117351"
+  },
+  {
+    "id": 58,
+    "category": "Výberové konanie - Formulár (funkcia)",
+    "title": "Časť 1 - Úvodné informácie (funkcia)",
+    "content": "1. Obsadzovaná funkcia vo výberovom konaní: vedúci/a katedry. 2. Katedra: VYBERTE (Katedra anglistiky a amerikanistiky (KAA), Katedra archeológie a kultúrnej antropológie (KAKA), Katedra archívnictva a muzeológie (KAM), Katedra dejín výtvarného umenia (KDVU), Katedra estetiky (KEST), Katedra filozofie a dejín filozofie (KFDF), Katedra germanistiky, nederlandistiky a škandinavistiky (KGNS), Katedra klasickej a semitskej filológie (KKSF), Katedra knižničnej a informačnej vedy (KKIV), Katedra logiky a metodológie vied (KLMV), Katedra maďarského jazyka a literatúry (KMJL), Katedra marketingovej komunikácie (KMK), Katedra muzikológie (KMUZ), Katedra pedagogiky (KPED), Katedra politológie (KPOL), Katedra porovnávacej religionistiky (KPR), Katedra psychológie (KPSYCH), Katedra romanistiky (KROM), Katedra rusistiky a východoeurópskych štúdií (KRVS), Katedra slovanských filológií (KSF), Katedra slovenských dejín (KSD), Katedra slovenského jazyka a teórie komunikácie (KSJTK), Katedra slovenskej literatúry a literárnej vedy (KSLLV), Katedra sociológie (KSOC), Katedra všeobecných dejín (KVD), Katedra východoázijských štúdií (KVAS), Katedra žurnalistiky (KZUR)). 3. Registratúrne číslo z oznamu o vyhlásenom výberovom konaní: FiF OPP VPÍŠTE B III. Poznámka: Hviezdička označuje povinné pole.",
+    "keywords": ["obsadzovaná funkcia", "vedúci katedry", "katedra", "registračné číslo", "povinné pole", "úvodné informácie"],
+    "link": ""
+  },
+  {
+    "id": 59,
+    "category": "Výberové konanie - Formulár (funkcia)",
+    "title": "Štruktúra formulára žiadosti (funkcia)",
+    "content": "Štruktúra formulára žiadosti o funkciu vedúceho katedry: 1. časť – úvodné informácie. 2. časť – osobné údaje uchádzača/ky (meno, priezvisko, tituly, telefónne číslo, e-mail, trvalé bydlisko). 3. časť – nahratie povinnej prílohy: koncepcia rozvoja pracoviska na štvorročné obdobie v personálnej, pedagogickej a vedeckovýskumnej oblasti. 4. časť – súhlas so spracovaním osobných údajov.",
+    "keywords": ["štruktúra formulára", "funkcia", "vedúci katedry", "koncepcia rozvoja", "príloha", "osobné údaje", "súhlas so spracovaním"],
+    "link": ""
+  },
+  {
+    "id": 60,
+    "category": "Výberové konanie - Formulár (funkcia)",
+    "title": "Časť 2 - Osobné údaje uchádzača/ky (funkcia)",
+    "content": "Základné informácie: Meno (povinné), Priezvisko (povinné), Tituly pred menom, Tituly za menom. Telefónne číslo: +421 900 000 000. E-mail (povinný): napr. email@uniba.sk. Trvalé bydlisko (povinné): Ulica a číslo, Mesto, PSČ. Ste v súčasnosti zamestnaný/á na FiF UK ako vysokoškolský/á učiteľ/ka alebo výskumný/á pracovník/čka? (povinné). Všetky polia označené hviezdičkou sú povinné.",
+    "keywords": ["osobné údaje", "meno", "priezvisko", "tituly", "telefón", "email", "trvalé bydlisko", "zamestnanie na FiF UK", "funkcia"],
+    "link": ""
+  },
+  {
+    "id": 61,
+    "category": "Výberové konanie - Prílohy (funkcia)",
+    "title": "Koncepcia rozvoja pracoviska - povinná príloha",
+    "content": "Povinná príloha pre uchádzačov o funkciu vedúceho katedry: Koncepcia rozvoja pracoviska na štvorročné obdobie v personálnej, pedagogickej a vedeckovýskumnej oblasti. Súbor je potrebné nahrať cez rozhranie 'Browse Files' alebo pretiahnuť do vyznačenej oblasti (Drag and drop).",
+    "keywords": ["koncepcia rozvoja", "štvorročné obdobie", "personálna oblasť", "pedagogická oblasť", "vedeckovýskumná oblasť", "príloha", "vedúci katedry", "funkcia"],
+    "link": ""
+  },
+  {
+    "id": 62,
+    "category": "Výberové konanie - Formulár (funkcia)",
+    "title": "Súhlas so spracovaním osobných údajov (funkcia)",
+    "content": "Podaním žiadosti o zaradenie do výberového konania udeľujem súhlas Univerzite Komenského v Bratislave, Filozofickej fakulte, so spracovaním mojich osobných údajov na účely uvedeného výberového konania v rozsahu údajov poskytnutých v tejto žiadosti a jej prílohách, a to podľa čl. 6 ods. 1 písm. a) a čl. 7 Nariadenia Európskeho parlamentu a Rady (EÚ) č. 2016/679 o ochrane fyzických osôb pri spracúvaní osobných údajov a voľnom pohybe takýchto údajov a v súlade a § 5 písm. a) a § 14 zákona č. 18/2018 Z. z. o ochrane osobných údajov. Beriem na vedomie, že svoj súhlas mám právo kedykoľvek odvolať bez uvedenia dôvodu, a to podobnou písomnou formou, akou bol udelený, a že odvolanie súhlasu nemá vplyv na zákonnosť spracúvania mojich osobných údajov založeného na súhlase pred jeho odvolaním. Povinné polia: Miesto (povinné), Dnešný dátum (povinné), Podpis.",
+    "keywords": ["súhlas so spracovaním", "osobné údaje", "GDPR", "Nariadenie 2016/679", "zákon 18/2018 Z.z.", "odvolanie súhlasu", "funkcia", "podpis", "dátum"],
+    "link": ""
   },
   {
     "id": 2,
@@ -79,106 +135,18 @@ window.aiPowerData = {
   {
     "id": 10,
     "category": "Habilitačné kritériá - Docent",
-    "title": "Informácia o plnení minimálnych požiadaviek na obsadenie pracovného miesta docenta",
-    "content": "Táto časť formulára je určená výhradne pre uchádzačov o pracovné miesto vysokoškolský učiteľ - docent. Obsahuje päť hlavných oblastí: 1. Vedeckovýskumná tvorivá činnosť, 2. Ohlasy na publikačné výstupy, 3. Výskumné projekty, 4. Iné kritériá, 5. Zoznam výstupov započítaných na plnenie požiadaviek. Poznámka: Obdobie ostatných 6 rokov sa predlžuje o dobu prerušenia výkonu pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, starostlivosti o odkázanú osobu alebo z iného dôvodu hodného zreteľa.",
-    "keywords": ["docent", "habilitačné kritériá", "minimálne požiadavky", "hodnotenie", "kvalifikačné predpoklady", "vedeckovýskumná činnosť", "publikačné výstupy"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 11,
-    "category": "Habilitačné kritériá - Docent",
-    "title": "1. Vedeckovýskumná tvorivá činnosť - Docent",
-    "content": "Na zaradenie výstupov do kategórií A+, A, A- sa používa schválená interpretácia. Počet vedeckých výstupov v kategóriách A+, A, A- za celé obdobie: Minimálna požiadavka: 5. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v kategóriách A+, A, A- za ostatných 6 rokov: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["vedeckovýskumná činnosť", "kategórie A+", "kategórie A", "kategórie A-", "vedecké výstupy", "celé obdobie", "6 rokov", "interpretácia kategórií"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 12,
-    "category": "Habilitačné kritériá - Docent",
-    "title": "2. Ohlasy na publikačné výstupy - Docent",
-    "content": "Počet ohlasov za celé obdobie: Minimálna požiadavka: 25. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov za ostatných 6 rokov: Minimálna požiadavka: 6. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov registrovaných v databázach WoS alebo Scopus za celé obdobie: Minimálna požiadavka: 3. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["ohlasy", "citácie", "celé obdobie", "6 rokov", "WoS", "Scopus", "databázy citácií", "citačná frekvencia"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 13,
-    "category": "Habilitačné kritériá - Docent",
-    "title": "3. Výskumné projekty - Docent",
-    "content": "Započítavajú sa projekty APVV, VEGA, KEGA, projekty Európskej únie a iné medzinárodné výskumné projekty, v ktorých sú granty udeľované na základe súťaže. Nezapočítavajú sa granty udeľované univerzitami alebo fakultami na základe interných grantových schém. Nezapočítavajú sa neúspešne skončené projekty alebo projekty, ktoré podľa hodnotenia nesplnili ciele. Počet výskumných projektov, v ktorých uchádzač/ka má účasť: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE. Počet už úspešne skončených výskumných projektov, v ktorých uchádzač/ka má účasť: Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["výskumné projekty", "APVV", "VEGA", "KEGA", "EÚ projekty", "medzinárodné projekty", "úspešné projekty", "ukončené projekty", "účasť v projekte"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 14,
-    "category": "Habilitačné kritériá - Docent",
-    "title": "4. Iné kritériá - Docent",
-    "content": "Počet všetkých vedeckých výstupov (vrátane výstupov započítaných v časti 1): Minimálna požiadavka: 15. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov s rozsahom najmenej 3 autorské hárky (ak má publikácia viac autorov, uchádzačov/kin podiel musí mať rozsah najmenej 3 autorské hárky): Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v štandardnom jazyku pre medzinárodnú komunikáciu (angličtina, nemčina, francúzština, španielčina; v prípade filologických odborov je ním aj jazyk, ktorý je predmetom danej filológie): Minimálna požiadavka: 3. Dosiahnutá hodnota: VPÍŠTE. Počet odborných a pedagogických výstupov (tieto publikácie je možné nahradiť vedeckými výstupmi bez publikovaných abstraktov, pričom jedným vedeckým výstupom sa nahrádzajú tri odborné alebo pedagogické výstupy; vedecké výstupy použité na tento účel sa nezapočítavajú do počtu všetkých vedeckých výstupov uvedených vyššie; v prípade filologických odborov sa publikovaný odborný alebo umelecký preklad s rozsahom najmenej 3 autorské hárky započítava ako tri odborné alebo pedagogické výstupy): Minimálna požiadavka: 9. Dosiahnutá hodnota: VPÍŠTE. Počet aktívnych účastí na medzinárodnom vedeckom podujatí: Minimálna požiadavka: 3. Dosiahnutá hodnota: VPÍŠTE. H-index (určuje sa na základe Centrálneho registra publikačnej činnosti, databázy vysokej školy alebo v inej databázy s vylúčením autocitácií): Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["vedecké výstupy", "autorské hárky", "medzinárodný jazyk", "angličtina", "nemčina", "francúzština", "španielčina", "odborné výstupy", "pedagogické výstupy", "medzinárodné podujatia", "h-index", "filologické odbory", "preklad"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 15,
-    "category": "Habilitačné kritériá - Docent",
-    "title": "5. Zoznam výstupov započítaných na plnenie požiadaviek v časti 1 - Docent",
-    "content": "Požaduje sa aj uvedenie dôvodu na zaradenie výstupu do príslušnej kategórie v súlade so schválenou interpretáciou. Výstupy v kategórii A+: VPÍŠTE. Výstupy v kategórii A: VPÍŠTE. Výstupy v kategórii A-: VPÍŠTE. Upozornenie: Obdobie ostatných šiestich rokov spomenuté v častiach 1 a 2 sa predlžuje o dobu, počas ktorej uchádzač/ka mal/a dlhodobo prerušený výkon pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, pracovného voľna pre dlhodobú starostlivosť o odkázanú osobu alebo z iného dôvodu hodného zreteľa, pokiaľ sa tieto skutočnosti vyskytli v tomto období.",
-    "keywords": ["zoznam výstupov", "kategória A+", "kategória A", "kategória A-", "interpretácia kategórií", "dôvod zaradenia", "predĺženie obdobia", "materská dovolenka", "rodičovská dovolenka"],
+    "title": "Habilitačné kritériá pre docenta - prehľad",
+    "content": "Pre pracovné miesto docenta je potrebné splniť habilitačné kritériá v 5 oblastiach: 1) Vedeckovýskumná činnosť - min. 5 výstupov A+/A/A- celkovo, 2 za posledných 6 rokov. 2) Ohlasy - min. 25 celkovo, 6 za posledných 6 rokov, 3 vo WoS/Scopus. 3) Výskumné projekty - min. 2 projekty (APVV, VEGA, KEGA, EÚ), z toho 1 úspešne ukončený. 4) Ďalšie kritériá - min. 15 vedeckých výstupov, h-index min. 2, 3 medzinárodné konferencie. 5) Zoznam výstupov v kategóriách A+/A/A-. Obdobie 6 rokov sa predlžuje o materskú/rodičovskú dovolenku, práceneschopnosť alebo starostlivosť o odkázanú osobu. Kompletné kritériá nájdete v priloženom PDF dokumente.",
+    "keywords": ["docent", "habilitačné kritériá", "minimálne požiadavky", "vedecké výstupy", "ohlasy", "citácie", "projekty", "h-index", "WoS", "Scopus", "kategória A+", "kategória A", "kategória A-"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
 
   {
     "id": 17,
     "category": "Inauguračné kritériá - Profesor",
-    "title": "Informácia o plnení minimálnych požiadaviek na obsadenie pracovného miesta profesora",
-    "content": "Táto časť formulára je určená výhradne pre uchádzačov o pracovné miesto vysokoškolský učiteľ - profesor. Obsahuje šesť hlavných oblastí: 1. Vedeckovýskumná tvorivá činnosť, 2. Ohlasy na publikačné výstupy, 3. Vedecká škola, 4. Výskumné projekty, 5. Iné kritériá, 6. Zoznam výstupov započítaných na plnenie požiadaviek. Poznámka: Obdobie ostatných 6 rokov sa predlžuje o dobu prerušenia výkonu pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, starostlivosti o odkázanú osobu alebo z iného dôvodu hodného zreteľa.",
-    "keywords": ["profesor", "inauguračné kritériá", "minimálne požiadavky", "hodnotenie", "kvalifikačné predpoklady", "vedeckovýskumná činnosť", "publikačné výstupy"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 18,
-    "category": "Inauguračné kritériá - Profesor",
-    "title": "1. Vedeckovýskumná tvorivá činnosť - Profesor",
-    "content": "Na zaradenie výstupov do kategórií A+, A, A- sa používa schválená interpretácia. Počet vedeckých výstupov v kategóriách A+, A, A- za celé obdobie: Minimálna požiadavka: 12. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v kategóriách A+, A, A- za ostatných 6 rokov: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v kategóriách A+ a A za celé obdobie: Minimálna požiadavka: 5. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["vedeckovýskumná činnosť", "kategórie A+", "kategórie A", "kategórie A-", "vedecké výstupy", "celé obdobie", "6 rokov", "vyššie kritériá", "interpretácia kategórií"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 19,
-    "category": "Inauguračné kritériá - Profesor",
-    "title": "2. Ohlasy na publikačné výstupy - Profesor",
-    "content": "Počet ohlasov za celé obdobie: Minimálna požiadavka: 55. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov za ostatných 6 rokov: Minimálna požiadavka: 10. Dosiahnutá hodnota: VPÍŠTE. Počet ohlasov registrovaných v databázach WoS alebo Scopus za celé obdobie: Minimálna požiadavka: 12. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["ohlasy", "citácie", "celé obdobie", "6 rokov", "WoS", "Scopus", "databázy citácií", "citačná frekvencia", "vyššie kritériá"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 20,
-    "category": "Inauguračné kritériá - Profesor",
-    "title": "3. Vedecká škola - Profesor",
-    "content": "Počet doktorandov/iek s riadne skončeným štúdiom: Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet doktorandov/iek po dizertačnej skúške: Minimálna požiadavka: 1 (resp. 0, ak dosiahnutý počet doktorandov/iek s riadne skončeným štúdiom je najmenej 2). Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["vedecká škola", "doktorandi", "dizertačná skúška", "ukončené štúdium", "PhD študenti", "vedenie doktorandov"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 21,
-    "category": "Inauguračné kritériá - Profesor",
-    "title": "4. Výskumné projekty - Profesor",
-    "content": "Započítavajú sa projekty APVV, VEGA, KEGA, projekty Európskej únie a iné medzinárodné výskumné projekty, v ktorých sú granty udeľované na základe súťaže. Nezapočítavajú sa granty udeľované univerzitami alebo fakultami na základe interných grantových schém. Nezapočítavajú sa neúspešne skončené projekty alebo projekty, ktoré podľa hodnotenia nesplnili ciele. Počet výskumných projektov, v ktorých uchádzač/ka má účasť ako vedúci/a projektu: Minimálna požiadavka: 2. Dosiahnutá hodnota: VPÍŠTE. Počet už úspešne skončených výskumných projektov, v ktorých uchádzač/ka má účasť ako vedúci/a projektu: Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet výskumných projektov, v ktorých uchádzač/ka má inú účasť: Minimálna požiadavka: 2 (resp. menej, ak dosiahnutý počet projektov, v ktorých uchádzač/ka má účasť ako vedúci/a, je vyšší o chýbajúci počet). Dosiahnutá hodnota: VPÍŠTE. Počet už úspešne skončených výskumných projektov, v ktorých uchádzač/ka má inú účasť: Minimálna požiadavka: 1 (resp. 0, ak dosiahnutý počet úspešne skončených projektov, v ktorých uchádzač/ka má účasť ako vedúci/a, je najmenej 2). Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["výskumné projekty", "APVV", "VEGA", "KEGA", "EÚ projekty", "medzinárodné projekty", "vedúci projektu", "riešiteľ projektu", "úspešné projekty", "ukončené projekty"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 22,
-    "category": "Inauguračné kritériá - Profesor",
-    "title": "5. Iné kritériá - Profesor",
-    "content": "Počet všetkých vedeckých výstupov (vrátane výstupov započítaných v časti 1): Minimálna požiadavka: 40. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých monografií s rozsahom najmenej 6 autorských hárkov (ak má publikácia viac autorov, uchádzačov/kin podiel musí mať rozsah najmenej 6 autorských hárkov): Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet ďalších vedeckých výstupov s rozsahom najmenej 3 autorské hárky (ak má publikácia viac autorov, uchádzačov/kin podiel musí mať rozsah najmenej 3 autorské hárky): Minimálna požiadavka: 1. Dosiahnutá hodnota: VPÍŠTE. Počet vedeckých výstupov v štandardnom jazyku pre medzinárodnú komunikáciu (angličtina, nemčina, francúzština, španielčina; v prípade filologických odborov je ním aj jazyk, ktorý je predmetom danej filológie): Minimálna požiadavka: 9. Dosiahnutá hodnota: VPÍŠTE. Počet odborných a pedagogických výstupov (tieto publikácie je možné nahradiť vedeckými výstupmi bez publikovaných abstraktov, pričom jedným vedeckým výstupom sa nahrádzajú tri odborné alebo pedagogické výstupy; vedecké výstupy použité na tento účel sa nezapočítavajú do počtu všetkých vedeckých výstupov uvedených vyššie; v prípade filologických odborov sa publikovaný odborný alebo umelecký preklad s rozsahom najmenej 3 autorské hárky započítava ako tri odborné alebo pedagogické výstupy): Minimálna požiadavka: 18. Dosiahnutá hodnota: VPÍŠTE. Počet aktívnych účastí na medzinárodnom vedeckom podujatí: Minimálna požiadavka: 9. Dosiahnutá hodnota: VPÍŠTE. H-index (určuje sa na základe Centrálneho registra publikačnej činnosti, databázy vysokej školy alebo v inej databázy s vylúčením autocitácií): Minimálna požiadavka: 6. Dosiahnutá hodnota: VPÍŠTE.",
-    "keywords": ["vedecké výstupy", "vedecká monografia", "autorské hárky", "medzinárodný jazyk", "angličtina", "nemčina", "francúzština", "španielčina", "odborné výstupy", "pedagogické výstupy", "medzinárodné podujatia", "h-index", "filologické odbory", "preklad", "vyššie kritériá"],
-    "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
-  },
-  {
-    "id": 23,
-    "category": "Inauguračné kritériá - Profesor",
-    "title": "6. Zoznam výstupov započítaných na plnenie požiadaviek v časti 1 - Profesor",
-    "content": "Požaduje sa aj uvedenie dôvodu na zaradenie výstupu do príslušnej kategórie v súlade so schválenou interpretáciou. Výstupy v kategórii A+: VPÍŠTE. Výstupy v kategórii A: VPÍŠTE. Výstupy v kategórii A-: VPÍŠTE. Upozornenie: Obdobie ostatných šiestich rokov spomenuté v častiach 1 a 2 sa predlžuje o dobu, počas ktorej uchádzač/ka mal/a dlhodobo prerušený výkon pedagogickej a výskumnej činnosti z dôvodu materskej alebo rodičovskej dovolenky, dlhodobej práceneschopnosti, pracovného voľna pre dlhodobú starostlivosť o odkázanú osobu alebo z iného dôvodu hodného zreteľa, pokiaľ sa tieto skutočnosti vyskytli v tomto období.",
-    "keywords": ["zoznam výstupov", "kategória A+", "kategória A", "kategória A-", "interpretácia kategórií", "dôvod zaradenia", "predĺženie obdobia", "materská dovolenka", "rodičovská dovolenka"],
+    "title": "Inauguračné kritériá pre profesora - prehľad",
+    "content": "Pre pracovné miesto profesora je potrebné splniť inauguračné kritériá v 6 oblastiach: 1) Vedeckovýskumná činnosť - min. 12 výstupov A+/A/A- celkovo, 2 za posledných 6 rokov, 5 v kategóriách A+/A. 2) Ohlasy - min. 55 celkovo, 10 za posledných 6 rokov, 12 vo WoS/Scopus. 3) Vedecká škola - min. 1 doktorand s ukončeným štúdiom + 1 po dizertačnej skúške. 4) Výskumné projekty - min. 2 ako vedúci projektu (APVV, VEGA, KEGA, EÚ), z toho 1 úspešne ukončený; + 2 s inou účasťou. 5) Ďalšie kritériá - min. 40 vedeckých výstupov, 1 monografia (6 AH), h-index min. 6, 9 medzinárodných konferencií. 6) Zoznam výstupov v kategóriách A+/A/A-. Obdobie 6 rokov sa predlžuje o materskú/rodičovskú dovolenku, práceneschopnosť alebo starostlivosť o odkázanú osobu. Kompletné kritériá nájdete v priloženom PDF dokumente.",
+    "keywords": ["profesor", "inauguračné kritériá", "minimálne požiadavky", "vedecké výstupy", "ohlasy", "citácie", "projekty", "h-index", "WoS", "Scopus", "doktorandi", "vedecká škola", "kategória A+", "kategória A", "kategória A-", "monografia"],
     "link": "https://fphil.uniba.sk/fileadmin/fif/veda/habilitacie_vymenuvania/FiF_UK_HIK_schvalene.pdf"
   },
   {
@@ -288,10 +256,10 @@ window.aiPowerData = {
   {
     "id": 37,
     "category": "Vnútorné predpisy - FiF UK",
-    "title": "Vnútorný predpis č. 7/2024 - Organizácia výberových konaní na FiF UK",
-    "content": "Smernica dekana Univerzity Komenského v Bratislave, Filozofickej fakulty - Organizácia výberových konaní na Univerzite Komenského v Bratislave, Filozofickej fakulte. Tento predpis upravuje organizáciu výberových konaní na obsadenie pracovných miest vysokoškolských učiteľov, výskumných pracovníkov, funkčných miest profesorov, docentov a funkcie vedúcich katedier.",
-    "keywords": ["vnútorný predpis", "7/2024", "smernica dekana", "organizácia výberových konaní", "FiF UK", "právny predpis"],
-    "link": ""
+    "title": "Vnútorný predpis č. 9/2025 - Organizácia výberových konaní na FiF UK",
+    "content": "Smernica dekana Univerzity Komenského v Bratislave, Filozofickej fakulty - Organizácia výberových konaní na Univerzite Komenského v Bratislave, Filozofickej fakulte. Tento predpis nadobúda platnosť a účinnosť 10. decembra 2025. Ruší sa vnútorný predpis č. 7/2024 Pravidlá organizácie výberových konaní na FiF UK. Výberové konania, ktoré boli vyhlásené pred nadobudnutím účinnosti tohto vnútorného predpisu, sa dokončia podľa pravidiel platných v čase ich vyhlásenia. Predpis upravuje organizáciu výberových konaní na obsadenie pracovných miest vysokoškolských učiteľov, výskumných pracovníkov, funkčných miest profesorov, docentov a funkcie vedúcich katedier.",
+    "keywords": ["vnútorný predpis", "9/2025", "smernica dekana", "organizácia výberových konaní", "FiF UK", "právny predpis", "december 2025"],
+    "link": "https://fphil.uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/2025/VP_9_2025.pdf"
   },
   {
     "id": 38,
@@ -315,7 +283,7 @@ window.aiPowerData = {
     "title": "Vyhlásenie a zverejnenie výberového konania",
     "content": "(4) Výberové konanie na obsadenie pracovného miesta a funkčného miesta vyhlasuje dekan zverejnením oznamu o výberovom konaní (Príloha č. 1). Výberové konanie na obsadenie funkcie vyhlasuje dekan zverejnením oznamu o výberovom konaní (Príloha č. 2).",
     "keywords": ["vyhlásenie dekana", "zverejnenie oznamu", "príloha 1", "príloha 2", "funkčné miesto", "pracovné miesto"],
-    "link": "https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/prilohy/2024/VP_7_2024_P1.dotx"
+    "link": ""
   },
   {
     "id": 41,
@@ -323,7 +291,7 @@ window.aiPowerData = {
     "title": "Hodnotenie uchádzača - predbežné posúdenie",
     "content": "(1) Pred pozvaním uchádzača na výberové konanie na obsadenie funkčného miesta profesora alebo funkčného miesta docenta výberová komisia posúdi, či uchádzač plní platné inauguračné kritériá na FiF UK, resp. platné habilitačné kritériá na FiF UK, na základe príloh k žiadosti o zaradenie do výberového konania. Ak výberová komisia zistí, že uchádzač neplní požadované kritériá, vypracuje správu, v ktorej konkretizuje nesplnené kritériá (Príloha č. 6). Uchádzač, ktorý neplní kritériá, nie je pozvaný na výberové konanie.",
     "keywords": ["predbežné hodnotenie", "výberová komisia", "inauguračné kritériá", "habilitačné kritériá", "nesplnené kritériá", "správa", "nepozvaný uchádzač"],
-    "link": "https://uniba.sk/fileadmin/fif/o_fakulte/dokumenty_vnutorne_predpisy/vnutorne_predpisy/prilohy/2024/VP_7_2024_P6.dotx"
+    "link": ""
   },
   {
     "id": 42,

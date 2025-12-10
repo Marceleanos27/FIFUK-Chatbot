@@ -55,7 +55,7 @@ class RAGSystem {
   }
 
   // Hlavná metóda pre vyhľadávanie relevantného obsahu
-  searchRelevantContent(query, maxResults = 5) {
+  searchRelevantContent(query, maxResults = 3) {
     const normalizedQuery = this.normalizeText(query);
     const queryWords = this.extractKeywords(normalizedQuery);
     const bigrams = this.extractBigrams(normalizedQuery);
@@ -65,9 +65,15 @@ class RAGSystem {
       return [];
     }
 
-    // Detekcia typu dotazu pre lepšie logovanie
+    // Detekcia typu dotazu pre lepšie logovanie a optimalizáciu
     const isDocentQuery = queryWords.some(w => ['docent', 'docentsky', 'docentura', 'habilitacny', 'habilitacia', 'habilitacne'].includes(w));
     const isProfesorQuery = queryWords.some(w => ['profesor', 'profesorsky', 'profesura', 'inauguracny', 'inauguracia', 'inauguracne'].includes(w));
+    const isKriteriaQuery = queryWords.some(w => ['kriteria', 'kriterium', 'podmienky', 'poziadavky', 'minimalne'].includes(w));
+    
+    // Pre dotazy na kritériá vrátime menej výsledkov (kritériá sú teraz zhrnuté)
+    if (isKriteriaQuery && (isDocentQuery || isProfesorQuery)) {
+      maxResults = 2;
+    }
     
     const allScores = this.knowledgeBase.map(item => {
       const score = this.calculateRelevanceScore(item, expandedWords, normalizedQuery, bigrams);
