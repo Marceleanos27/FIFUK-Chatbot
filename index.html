@@ -159,6 +159,23 @@
       
       // Zobrazenie úvodnej správy s dynamickými kategóriami
       appendMessage("FiF UK", "Dobrý deň! Som asistent Filozofickej fakulty Univerzity Komenského v Bratislave. Pomôžem vám s informáciami o výberových konaniach, habilitačných a inauguračných kritériách. Môžete si vybrať z ponúkaných kategórií alebo napísať vlastnú otázku.", "bot", false, false, false);
+      
+      // Pridaj GDPR odkaz cez DOM
+      const firstBotMessage = chatbox.querySelector('.message.bot:last-child');
+      if (firstBotMessage) {
+        const gdprContainer = document.createElement('span');
+        gdprContainer.style.cssText = 'display: block; text-align: right; margin-top: 8px;';
+        
+        const gdprLink = document.createElement('a');
+        gdprLink.href = 'https://ragnetiq.com/gdpr';
+        gdprLink.target = '_blank';
+        gdprLink.textContent = 'GDPR';
+        gdprLink.style.fontSize = '9px';
+        
+        gdprContainer.appendChild(gdprLink);
+        firstBotMessage.appendChild(gdprContainer);
+      }
+      
       showCategoryButtons();
     });
 
@@ -262,6 +279,23 @@
       
       // Zobraz úvodnú správu
       appendMessage("FiF UK", "Dobrý deň! Som asistent Filozofickej fakulty Univerzity Komenského v Bratislave. Pomôžem vám s informáciami o výberových konaniach, habilitačných a inauguračných kritériách. Môžete si vybrať z ponúkaných kategórií alebo napísať vlastnú otázku.", "bot", false, false, false);
+      
+      // Pridaj GDPR odkaz cez DOM
+      const firstBotMessage = chatbox.querySelector('.message.bot:last-child');
+      if (firstBotMessage) {
+        const gdprContainer = document.createElement('span');
+        gdprContainer.style.cssText = 'display: block; text-align: right; margin-top: 8px;';
+        
+        const gdprLink = document.createElement('a');
+        gdprLink.href = 'https://ragnetiq.com/gdpr';
+        gdprLink.target = '_blank';
+        gdprLink.textContent = 'GDPR';
+        gdprLink.style.fontSize = '9px';
+        
+        gdprContainer.appendChild(gdprLink);
+        firstBotMessage.appendChild(gdprContainer);
+      }
+      
       showCategoryButtons();
       
       // Scroll na začiatok
