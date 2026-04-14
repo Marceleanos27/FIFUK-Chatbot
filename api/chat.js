@@ -25,7 +25,7 @@ function buildGeminiRequest(messages, generationConfig) {
       : message.role === 'user'
         ? 'user'
         : null;
-
+ 
     if (!role) {
       continue;
     }
